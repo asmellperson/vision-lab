@@ -1,0 +1,1080 @@
+{
+  "schema_version": 1,
+  "release_tag": "models-2026-09-29",
+  "source_commit": "25606d6393a93e0c046f264e596542500c9a2de7",
+  "snapshot_date": "2026-09-29",
+  "checksum_note": "Local integrity checks, not upstream signatures.",
+  "exclusions": [
+    "models/*/.cache/",
+    "models/resnet18/resnet18.onnx (generated inference cache)",
+    "data/",
+    "node_modules/",
+    "frontend/dist/"
+  ],
+  "models": [
+    {
+      "id": "resnet18",
+      "source": "https://pytorch.org/vision/stable/models/resnet.html",
+      "revision": "IMAGENET1K_V1",
+      "catalog_version": "IMAGENET1K_V1",
+      "declared_license": "BSD-3-Clause (torchvision)",
+      "archive": "vision-lab-model-resnet18.tar.gz",
+      "size": 43583118,
+      "sha256": "09061fee7ccf0c893b2a1be67c7c677b6cadb91f941b21ec83c4821e711f511b",
+      "files": [
+        {
+          "path": "models/resnet18/inventory.json",
+          "size": 375,
+          "sha256": "c6ccd6161e1737f1ae2c9a1bc0a9b7da0e72a4e3517f55bacff680c4c92e955c"
+        },
+        {
+          "path": "models/resnet18/release-metadata/SOURCE_NOTICE.md",
+          "size": 790,
+          "sha256": "9563829b1c4c96a261bd1377f2a9bc0b7d3845839b8b18ea861cfa66c4e57250"
+        },
+        {
+          "path": "models/resnet18/release-metadata/license-sources.json",
+          "size": 340,
+          "sha256": "5ab6ecef09a2c14e5a73b6f873f1816007d8337ee40910134d8880cc0c68aa92"
+        },
+        {
+          "path": "models/resnet18/release-metadata/licenses/torchvision.txt",
+          "size": 1517,
+          "sha256": "6502f676851cfe25f8af75531dfb32375b7325b73c37e7b43741fa422893e71d"
+        },
+        {
+          "path": "models/resnet18/resnet18.pth",
+          "size": 46830571,
+          "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec"
+        }
+      ]
+    },
+    {
+      "id": "deeplab",
+      "source": "https://pytorch.org/vision/stable/models/deeplabv3.html",
+      "revision": "COCO_WITH_VOC_LABELS_V1",
+      "catalog_version": "COCO_WITH_VOC_LABELS_V1",
+      "declared_license": "BSD-3-Clause (torchvision)",
+      "archive": "vision-lab-model-deeplab.tar.gz",
+      "size": 41188654,
+      "sha256": "fc6d00c378431215357faf9b75bad8d7900dbccd6855c9388dcc84026326286c",
+      "files": [
+        {
+          "path": "models/deeplab/deeplab.pth",
+          "size": 44356159,
+          "sha256": "fc3c493d68e89cc31ef488c803d5d7dd2f3190fb570598faa49fef69be8e5e70"
+        },
+        {
+          "path": "models/deeplab/inventory.json",
+          "size": 388,
+          "sha256": "416e284c5056ab7a999a0f1aaae14a2f40e8b4541d2d6d2f3d8cf2d3e6fff520"
+        },
+        {
+          "path": "models/deeplab/release-metadata/SOURCE_NOTICE.md",
+          "size": 812,
+          "sha256": "9c3d89fb6f4457ed31f6f9bfdfc5f1e93d74a59ed0f8263237be69a24b684d4a"
+        },
+        {
+          "path": "models/deeplab/release-metadata/license-sources.json",
+          "size": 340,
+          "sha256": "5ab6ecef09a2c14e5a73b6f873f1816007d8337ee40910134d8880cc0c68aa92"
+        },
+        {
+          "path": "models/deeplab/release-metadata/licenses/torchvision.txt",
+          "size": 1517,
+          "sha256": "6502f676851cfe25f8af75531dfb32375b7325b73c37e7b43741fa422893e71d"
+        }
+      ]
+    },
+    {
+      "id": "r3d",
+      "source": "https://pytorch.org/vision/stable/models/video.html",
+      "revision": "KINETICS400_V1",
+      "catalog_version": "KINETICS400_V1",
+      "declared_license": "BSD-3-Clause (torchvision)",
+      "archive": "vision-lab-model-r3d.tar.gz",
+      "size": 124362466,
+      "sha256": "80e7a3595f02c07862f48eb414605722436f1f6ee3bf5f5b1b1f57df34584827",
+      "files": [
+        {
+          "path": "models/r3d/inventory.json",
+          "size": 372,
+          "sha256": "6a9da40d87edb1baba9f5fb95037fca53ac370b7a80a756072e7c05623d9c858"
+        },
+        {
+          "path": "models/r3d/r3d.pth",
+          "size": 133546016,
+          "sha256": "b3b3357ead25631ec9c57362ff2128a92d0427e01e2cd184951a44380c3f2e9d"
+        },
+        {
+          "path": "models/r3d/release-metadata/SOURCE_NOTICE.md",
+          "size": 786,
+          "sha256": "caf5d743f9e26b67e3dde051d7923f5620674fb5703dfa1ce9b95d4b77eabdcf"
+        },
+        {
+          "path": "models/r3d/release-metadata/license-sources.json",
+          "size": 340,
+          "sha256": "5ab6ecef09a2c14e5a73b6f873f1816007d8337ee40910134d8880cc0c68aa92"
+        },
+        {
+          "path": "models/r3d/release-metadata/licenses/torchvision.txt",
+          "size": 1517,
+          "sha256": "6502f676851cfe25f8af75531dfb32375b7325b73c37e7b43741fa422893e71d"
+        }
+      ]
+    },
+    {
+      "id": "yolov8n",
+      "source": "https://docs.ultralytics.com/models/yolov8/",
+      "revision": "YOLOv8 / assets v8.3.0",
+      "catalog_version": "YOLOv8 / assets v8.3.0",
+      "declared_license": "AGPL-3.0 / Ultralytics Enterprise",
+      "archive": "vision-lab-model-yolov8n.tar.gz",
+      "size": 5998506,
+      "sha256": "cb0830f2d31a9e113120f50c8ef82b674ca656058451f29f7d6132cb87c4e3be",
+      "files": [
+        {
+          "path": "models/yolov8n/inventory.json",
+          "size": 373,
+          "sha256": "b605eaaabe632ee53af8308b2aee90ff1036e415590935ad8d58393ea1289678"
+        },
+        {
+          "path": "models/yolov8n/release-metadata/SOURCE_NOTICE.md",
+          "size": 805,
+          "sha256": "afc0094b7808765d22826169d21612d63b232e53fd7418ebf13775e9c75b88e1"
+        },
+        {
+          "path": "models/yolov8n/release-metadata/license-sources.json",
+          "size": 354,
+          "sha256": "29bcac76d0b42b715119ff7714ceeb7f60f518bd0083fff60b226c66cbec6ea2"
+        },
+        {
+          "path": "models/yolov8n/release-metadata/licenses/ultralytics.txt",
+          "size": 34523,
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        },
+        {
+          "path": "models/yolov8n/yolov8n.pt",
+          "size": 6549796,
+          "sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36"
+        }
+      ]
+    },
+    {
+      "id": "yolov8n-seg",
+      "source": "https://docs.ultralytics.com/models/yolov8/",
+      "revision": "YOLOv8 / assets v8.3.0",
+      "catalog_version": "YOLOv8 / assets v8.3.0",
+      "declared_license": "AGPL-3.0 / Ultralytics Enterprise",
+      "archive": "vision-lab-model-yolov8n-seg.tar.gz",
+      "size": 6476492,
+      "sha256": "4dc887fbfee2bc2790b668011ab7bf24cf3b88677102b222184b85ebe77615aa",
+      "files": [
+        {
+          "path": "models/yolov8n-seg/inventory.json",
+          "size": 376,
+          "sha256": "e298c9de7f2b5236499a815101862232a904fc5a0bfe9b08a067681781ae8926"
+        },
+        {
+          "path": "models/yolov8n-seg/release-metadata/SOURCE_NOTICE.md",
+          "size": 809,
+          "sha256": "c67db644ab7de31660185ea3a2c9723c623617892156bdb439a9357b7c153b49"
+        },
+        {
+          "path": "models/yolov8n-seg/release-metadata/license-sources.json",
+          "size": 354,
+          "sha256": "29bcac76d0b42b715119ff7714ceeb7f60f518bd0083fff60b226c66cbec6ea2"
+        },
+        {
+          "path": "models/yolov8n-seg/release-metadata/licenses/ultralytics.txt",
+          "size": 34523,
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        },
+        {
+          "path": "models/yolov8n-seg/yolov8n-seg.pt",
+          "size": 7071756,
+          "sha256": "a7cd8f929e1903d78a12a48efecab430209f18dc46cb96c3599a5980c63c423c"
+        }
+      ]
+    },
+    {
+      "id": "yolov8n-pose",
+      "source": "https://docs.ultralytics.com/models/yolov8/",
+      "revision": "YOLOv8 / assets v8.3.0",
+      "catalog_version": "YOLOv8 / assets v8.3.0",
+      "declared_license": "AGPL-3.0 / Ultralytics Enterprise",
+      "archive": "vision-lab-model-yolov8n-pose.tar.gz",
+      "size": 6257360,
+      "sha256": "ea58ca9854492b5f50401b4593ef10f3acdb587e1042108c93eb08157fb4cbeb",
+      "files": [
+        {
+          "path": "models/yolov8n-pose/inventory.json",
+          "size": 377,
+          "sha256": "f7ab0c278588348b6e684c3207cfcbb5de53681bf616113af9748ed99db9c9da"
+        },
+        {
+          "path": "models/yolov8n-pose/release-metadata/SOURCE_NOTICE.md",
+          "size": 810,
+          "sha256": "7656b58471fa72127fd31194422ef05d89e0738b0479dd2eafa74fad6a09897a"
+        },
+        {
+          "path": "models/yolov8n-pose/release-metadata/license-sources.json",
+          "size": 354,
+          "sha256": "29bcac76d0b42b715119ff7714ceeb7f60f518bd0083fff60b226c66cbec6ea2"
+        },
+        {
+          "path": "models/yolov8n-pose/release-metadata/licenses/ultralytics.txt",
+          "size": 34523,
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        },
+        {
+          "path": "models/yolov8n-pose/yolov8n-pose.pt",
+          "size": 6832633,
+          "sha256": "c6fa93dd1ee4a2c18c900a45c1d864a1c6f7aba75d84f91648a30b7fb641d212"
+        }
+      ]
+    },
+    {
+      "id": "yolov8n-obb",
+      "source": "https://docs.ultralytics.com/models/yolov8/",
+      "revision": "YOLOv8 / assets v8.3.0",
+      "catalog_version": "YOLOv8 / assets v8.3.0",
+      "declared_license": "AGPL-3.0 / Ultralytics Enterprise",
+      "archive": "vision-lab-model-yolov8n-obb.tar.gz",
+      "size": 5943071,
+      "sha256": "b0f1c0f01bfc3671b686fd5596e14011cdbf772432bffc882981d7bfe652b05e",
+      "files": [
+        {
+          "path": "models/yolov8n-obb/inventory.json",
+          "size": 377,
+          "sha256": "b8482b5e75e98c546bd3e385afef52237cab0b2621e3b92df3459b4eb1f3b3d6"
+        },
+        {
+          "path": "models/yolov8n-obb/release-metadata/SOURCE_NOTICE.md",
+          "size": 809,
+          "sha256": "ef0ed812d20e1016736b409d284d734c9bed118de249d0697f952556856d13a8"
+        },
+        {
+          "path": "models/yolov8n-obb/release-metadata/license-sources.json",
+          "size": 354,
+          "sha256": "29bcac76d0b42b715119ff7714ceeb7f60f518bd0083fff60b226c66cbec6ea2"
+        },
+        {
+          "path": "models/yolov8n-obb/release-metadata/licenses/ultralytics.txt",
+          "size": 34523,
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        },
+        {
+          "path": "models/yolov8n-obb/yolov8n-obb.pt",
+          "size": 6567590,
+          "sha256": "fa6e4cd2691f132875c143135affaa66b5d89394ebb1d07d19770a9b6382c1b8"
+        }
+      ]
+    },
+    {
+      "id": "sam2",
+      "source": "https://github.com/facebookresearch/sam2",
+      "revision": "SAM2 Hiera tiny / Ultralytics packaged",
+      "catalog_version": "SAM2 Hiera tiny / Ultralytics packaged",
+      "declared_license": "Apache-2.0 (Meta); Ultralytics adapter AGPL-3.0",
+      "archive": "vision-lab-model-sam2.tar.gz",
+      "size": 72437303,
+      "sha256": "95834223a284a3f8bd8088944c64d9045f6627bd38ae5eb1f76208b505b3aecc",
+      "files": [
+        {
+          "path": "models/sam2/inventory.json",
+          "size": 386,
+          "sha256": "503d1d2f528b2e05aa68abd85c916987f0eff08ea3ed001ce380abf536e04bfe"
+        },
+        {
+          "path": "models/sam2/release-metadata/SOURCE_NOTICE.md",
+          "size": 845,
+          "sha256": "1cdcf86decdb254fe01b9b8b3c7e0888fade756a107d891e1e3ca7e05c11fbb9"
+        },
+        {
+          "path": "models/sam2/release-metadata/license-sources.json",
+          "size": 689,
+          "sha256": "03d87a0b4491a51fbe23833d523dd2f1c16f85750b5e49846b3e561481602b89"
+        },
+        {
+          "path": "models/sam2/release-metadata/licenses/sam2.txt",
+          "size": 11357,
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "path": "models/sam2/release-metadata/licenses/ultralytics.txt",
+          "size": 34523,
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        },
+        {
+          "path": "models/sam2/sam2_t.pt",
+          "size": 78064050,
+          "sha256": "94375f988270836169320bd901960c67b5770e8bef3867d70102f01a8b5ca501"
+        }
+      ]
+    },
+    {
+      "id": "rapidocr",
+      "source": "https://github.com/RapidAI/RapidOCR",
+      "revision": "rapidocr-onnxruntime 1.4.4",
+      "catalog_version": "rapidocr-onnxruntime 1.4.4",
+      "declared_license": "Apache-2.0",
+      "archive": "vision-lab-model-rapidocr.tar.gz",
+      "size": 14947075,
+      "sha256": "c74dc7a6bfd3252612beb943110fcd377856cedcf5eb0178106740fb63dc077f",
+      "files": [
+        {
+          "path": "models/rapidocr/config.yaml",
+          "size": 1221,
+          "sha256": "bf94a1da4cba828e67b1d61e27cee14d9e7da27c9f272e04048a17e41ae97332"
+        },
+        {
+          "path": "models/rapidocr/inventory.json",
+          "size": 886,
+          "sha256": "878f2b7905e5fe966cfa675a76f86aa33546c97bcfd1faeb010f7ae6f5a1c35f"
+        },
+        {
+          "path": "models/rapidocr/models/ch_PP-OCRv4_det_infer.onnx",
+          "size": 4745517,
+          "sha256": "d2a7720d45a54257208b1e13e36a8479894cb74155a5efe29462512d42f49da9"
+        },
+        {
+          "path": "models/rapidocr/models/ch_PP-OCRv4_rec_infer.onnx",
+          "size": 10857958,
+          "sha256": "48fc40f24f6d2a207a2b1091d3437eb3cc3eb6b676dc3ef9c37384005483683b"
+        },
+        {
+          "path": "models/rapidocr/models/ch_ppocr_mobile_v2.0_cls_infer.onnx",
+          "size": 585532,
+          "sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c"
+        },
+        {
+          "path": "models/rapidocr/release-metadata/SOURCE_NOTICE.md",
+          "size": 783,
+          "sha256": "2d6103ef654282cbdc945c2ec58d7e6110182f0a7742c45fe219f1960c2b69ec"
+        },
+        {
+          "path": "models/rapidocr/release-metadata/license-sources.json",
+          "size": 683,
+          "sha256": "326b7c733fb6668d7b9f37fea518a40533b0d7a76851de04da6e357f460f05a0"
+        },
+        {
+          "path": "models/rapidocr/release-metadata/licenses/paddleocr.txt",
+          "size": 11376,
+          "sha256": "3840c5c0c61c294264d2dd77b8777be6ddd90121ef4e0e64abcd22edea581d6e"
+        },
+        {
+          "path": "models/rapidocr/release-metadata/licenses/rapidocr.txt",
+          "size": 11422,
+          "sha256": "3e0af25fdd06aa9586ae97adb00ea927ebe5a3805ac77d2d3a81ce5f55693333"
+        }
+      ]
+    },
+    {
+      "id": "depth-anything",
+      "source": "https://huggingface.co/depth-anything/Depth-Anything-V2-Small-hf",
+      "revision": "5426e4f0f36572d16453bbda7a8389317b1bef99",
+      "catalog_version": "download revision locked in inventory.json",
+      "declared_license": "Apache-2.0",
+      "archive": "vision-lab-model-depth-anything.tar.gz",
+      "size": 92359716,
+      "sha256": "ab9f482d50c958cefc6a8a37ab75e12f51b0c14feb92457dfc0783be7353a2dd",
+      "files": [
+        {
+          "path": "models/depth-anything/README.md",
+          "size": 4400,
+          "sha256": "319566441daaac0c5ed83e75a8fd19bae0863f3275e23f147c06fe0906edf6fb"
+        },
+        {
+          "path": "models/depth-anything/config.json",
+          "size": 950,
+          "sha256": "c56698d3643dde1f83ea2212759e6b31a22b8f827246a36dd007ee8a22b3ff75"
+        },
+        {
+          "path": "models/depth-anything/inventory.json",
+          "size": 864,
+          "sha256": "0b098262c0c54fdd3d0c058beb85ba854b0967fda055ea51200a85519da9311e"
+        },
+        {
+          "path": "models/depth-anything/model.safetensors",
+          "size": 99173660,
+          "sha256": "3152477ce0d8d6978d76b995120de97cb5b928701fd0f817769f59e249a16b70"
+        },
+        {
+          "path": "models/depth-anything/preprocessor_config.json",
+          "size": 775,
+          "sha256": "d41175c0d889477ca8fc67191e540faef14baf6275157b3fdecf78469e6bbf84"
+        },
+        {
+          "path": "models/depth-anything/release-metadata/SOURCE_NOTICE.md",
+          "size": 848,
+          "sha256": "9e84c7f8233a1e01e9b882fda50d818b36ecb18324ccc58bc43a4705446e6dfd"
+        },
+        {
+          "path": "models/depth-anything/release-metadata/license-sources.json",
+          "size": 378,
+          "sha256": "b95c3a32be959e00db813278175479a1daaf70c52c49ac680d8b5388f6e799f4"
+        },
+        {
+          "path": "models/depth-anything/release-metadata/licenses/depth-anything.txt",
+          "size": 11357,
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        }
+      ]
+    },
+    {
+      "id": "clip",
+      "source": "https://huggingface.co/openai/clip-vit-base-patch32",
+      "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+      "catalog_version": "download revision locked in inventory.json",
+      "declared_license": "MIT",
+      "archive": "vision-lab-model-clip.tar.gz",
+      "size": 411668387,
+      "sha256": "521285609a520a295a694da3e68efe9fb2f69f8efb8843d09b22ce74c4e5f8d9",
+      "files": [
+        {
+          "path": "models/clip/README.md",
+          "size": 7942,
+          "sha256": "8f0e8c678e0afe5f384f3bf8a6694c1cb53c41e52f86277967b6c5354cb0f9f4"
+        },
+        {
+          "path": "models/clip/config.json",
+          "size": 4186,
+          "sha256": "b575ef3c36f2a057fa19e221650105052d61cc9c1a972ec15019c6261ec98770"
+        },
+        {
+          "path": "models/clip/inventory.json",
+          "size": 1605,
+          "sha256": "dc39ad5b272f255faa9f68b5c152e91e8c67afb3b34d54a157a258fa26077958"
+        },
+        {
+          "path": "models/clip/merges.txt",
+          "size": 524657,
+          "sha256": "f526393189112391ce6f9795d4695f704121ce452c3aad1f5335cc41337eba85"
+        },
+        {
+          "path": "models/clip/preprocessor_config.json",
+          "size": 316,
+          "sha256": "910e70b3956ac9879ebc90b22fb3bc8a75b6a0677814500101a4c072bd7857bd"
+        },
+        {
+          "path": "models/clip/pytorch_model.bin",
+          "size": 605247071,
+          "sha256": "a63082132ba4f97a80bea76823f544493bffa8082296d62d71581a4feff1576f"
+        },
+        {
+          "path": "models/clip/release-metadata/SOURCE_NOTICE.md",
+          "size": 818,
+          "sha256": "1d3d7122361f11e214e1f19b793c401b0c5fa20333b17ba603d5517af6fe756f"
+        },
+        {
+          "path": "models/clip/release-metadata/license-sources.json",
+          "size": 311,
+          "sha256": "5bf6da987f93c76593dc6b5927fcc1aca2caa678cece177b263a8261feaf025d"
+        },
+        {
+          "path": "models/clip/release-metadata/licenses/clip.txt",
+          "size": 1064,
+          "sha256": "987e63b32f6c89ff5160e429458a872ff048e6860b590a3912e938f9da8f14db"
+        },
+        {
+          "path": "models/clip/special_tokens_map.json",
+          "size": 389,
+          "sha256": "f8c0d6c39aee3f8431078ef6646567b0aba7f2246e9c54b8b99d55c22b707cbf"
+        },
+        {
+          "path": "models/clip/tokenizer.json",
+          "size": 2224041,
+          "sha256": "b556ac8c99757ffb677208af34bc8c6721572114111a6e0aaf5fa69ff0b8d842"
+        },
+        {
+          "path": "models/clip/tokenizer_config.json",
+          "size": 592,
+          "sha256": "34b7336e4bee12e0a9730eaf5189f582ef3c3eea5027f65730e5717256755aad"
+        },
+        {
+          "path": "models/clip/vocab.json",
+          "size": 862328,
+          "sha256": "5047b556ce86ccaf6aa22b3ffccfc52d391ea4accdab9c2f2407da5b742d4363"
+        }
+      ]
+    },
+    {
+      "id": "owlvit",
+      "source": "https://huggingface.co/google/owlvit-base-patch32",
+      "revision": "cbc355fb364588351c5d51c7f74465e8e7ec6f72",
+      "catalog_version": "download revision locked in inventory.json",
+      "declared_license": "Apache-2.0",
+      "archive": "vision-lab-model-owlvit.tar.gz",
+      "size": 570940655,
+      "sha256": "48a024df793829472012317d6e7ce7db497a1469dca458f3c7b3aad0c9188b40",
+      "files": [
+        {
+          "path": "models/owlvit/README.md",
+          "size": 5146,
+          "sha256": "a16c707494da894773e85c1be976ae605a7b3a3ce92cf9ed277623dd25f236bf"
+        },
+        {
+          "path": "models/owlvit/config.json",
+          "size": 4418,
+          "sha256": "b5934e0d2933194b8a85f93674e577feaa1a1ba2dc1d143b2d5e5305ff7a9d7c"
+        },
+        {
+          "path": "models/owlvit/inventory.json",
+          "size": 1454,
+          "sha256": "809d1f3e1dccd44945e465448cc0708b4af859a8031873fb4f8034e2e14e2534"
+        },
+        {
+          "path": "models/owlvit/merges.txt",
+          "size": 524619,
+          "sha256": "9fd691f7c8039210e0fced15865466c65820d09b63988b0174bfe25de299051a"
+        },
+        {
+          "path": "models/owlvit/model.safetensors",
+          "size": 612983940,
+          "sha256": "4dbe0399f0b7d7c8dddf1535a98769cc30743bebc877aea681998c8d984ce52b"
+        },
+        {
+          "path": "models/owlvit/preprocessor_config.json",
+          "size": 392,
+          "sha256": "2010d320cd2c68a8bb1de69aaa8f89daf173ef17cc22a30e4baf44b2f0e9bb6e"
+        },
+        {
+          "path": "models/owlvit/release-metadata/SOURCE_NOTICE.md",
+          "size": 825,
+          "sha256": "2d1eb3afe18a82f1e93a3c07e7ae250793ec36a007d5c2bc4aa8bd03e955c6e7"
+        },
+        {
+          "path": "models/owlvit/release-metadata/license-sources.json",
+          "size": 344,
+          "sha256": "61ba23247df62c0e23b2fa89e6245aadcab8fd9443fbac3fcaed9414913b07ec"
+        },
+        {
+          "path": "models/owlvit/release-metadata/licenses/owlvit.txt",
+          "size": 13058,
+          "sha256": "432767cf806376886597e538ec4cf603335b9baa46fb9ef6466a12fd9c8a92dc"
+        },
+        {
+          "path": "models/owlvit/special_tokens_map.json",
+          "size": 460,
+          "sha256": "f118ab3a983206e4f32583448de6bd6aae4ee21869135cef1f5848a753cdaab6"
+        },
+        {
+          "path": "models/owlvit/tokenizer_config.json",
+          "size": 775,
+          "sha256": "da35aceebeda2adf44094a5867940b09379323b9390fa9197b57044e106bfb6e"
+        },
+        {
+          "path": "models/owlvit/vocab.json",
+          "size": 1059962,
+          "sha256": "e089ad92ba36837a0d31433e555c8f45fe601ab5c221d4f607ded32d9f7a4349"
+        }
+      ]
+    },
+    {
+      "id": "blip",
+      "source": "https://huggingface.co/Salesforce/blip-image-captioning-base",
+      "revision": "82a37760796d32b1411fe092ab5d4e227313294b",
+      "catalog_version": "download revision locked in inventory.json",
+      "declared_license": "BSD-3-Clause",
+      "archive": "vision-lab-model-blip.tar.gz",
+      "size": 920486897,
+      "sha256": "b204b0a19f97c08a9ef54b70fef60a6aa6efa1a5fdcadcda3883cdd2dcfef90e",
+      "files": [
+        {
+          "path": "models/blip/README.md",
+          "size": 6359,
+          "sha256": "eae8c14a066e611a51a803cccb35c892bbd78d1ca7db45fbb06f5fb79bff7ad1"
+        },
+        {
+          "path": "models/blip/config.json",
+          "size": 4563,
+          "sha256": "f7846f82f4e2c4a2ccbab9ae8b0e44873540a271a76a1288effd078180c13a82"
+        },
+        {
+          "path": "models/blip/inventory.json",
+          "size": 1466,
+          "sha256": "13955c048cad337273c743fca7603fd42a39a7b2d32767dd0f5572e8cdd9110e"
+        },
+        {
+          "path": "models/blip/preprocessor_config.json",
+          "size": 287,
+          "sha256": "065c10ec97edc5081fbd9655b3d9d25e2647ea6d5dab873325e88eed12d80a7d"
+        },
+        {
+          "path": "models/blip/pytorch_model.bin",
+          "size": 989820849,
+          "sha256": "d6638651a5526cc2ede56f2b5104d6851b0755816d220e5e046870430180c767"
+        },
+        {
+          "path": "models/blip/release-metadata/SOURCE_NOTICE.md",
+          "size": 836,
+          "sha256": "158ea98dd63be63c9e93bf9873529380eae9c8eecfea118f92db74239c898516"
+        },
+        {
+          "path": "models/blip/release-metadata/license-sources.json",
+          "size": 332,
+          "sha256": "c5ad5e2fea54fc120d67f34db18ad4a2d137065f2f548597b675cf3fa7ece72b"
+        },
+        {
+          "path": "models/blip/release-metadata/licenses/blip.txt",
+          "size": 1482,
+          "sha256": "7d5df2d28b2bf297ecec0b51eb23f6d8d0c39338dae8d92f6d61d9441f77b856"
+        },
+        {
+          "path": "models/blip/special_tokens_map.json",
+          "size": 125,
+          "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3"
+        },
+        {
+          "path": "models/blip/tokenizer.json",
+          "size": 711396,
+          "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+        },
+        {
+          "path": "models/blip/tokenizer_config.json",
+          "size": 506,
+          "sha256": "5c7f96096284c55e539eff95f4451c19efc34258ddb975a4400d052b77301e5e"
+        },
+        {
+          "path": "models/blip/vocab.txt",
+          "size": 231508,
+          "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+        }
+      ]
+    },
+    {
+      "id": "blip-vqa",
+      "source": "https://huggingface.co/Salesforce/blip-vqa-base",
+      "revision": "787b3d35d57e49572baabd22884b3d5a05acf072",
+      "catalog_version": "download revision locked in inventory.json",
+      "declared_license": "BSD-3-Clause",
+      "archive": "vision-lab-model-blip-vqa.tar.gz",
+      "size": 1429720822,
+      "sha256": "d30983ed8815c52fa4d8449c4eb2ef2eaf800fd232a50c2c960413c1ecef82da",
+      "files": [
+        {
+          "path": "models/blip-vqa/README.md",
+          "size": 5459,
+          "sha256": "03e051ff0a0461a06892f90ac0e10bd2eebc2dd47c3ffa65092b31576aa37e4c"
+        },
+        {
+          "path": "models/blip-vqa/config.json",
+          "size": 4559,
+          "sha256": "689a09e2a9980b7fcad329271c032254fde23b1ee7a90c67b003e1867dc9c098"
+        },
+        {
+          "path": "models/blip-vqa/inventory.json",
+          "size": 1455,
+          "sha256": "e7828cfe007b182b469210721d13326dcac0346764f5a7287fa184c28730f4fc"
+        },
+        {
+          "path": "models/blip-vqa/model.safetensors",
+          "size": 1538800584,
+          "sha256": "33786eed34def0c95fa948128cb4386be9b9219aa2c2e25f1c9c744692121bb7"
+        },
+        {
+          "path": "models/blip-vqa/preprocessor_config.json",
+          "size": 445,
+          "sha256": "0aa66e2e9ac3ea3b5cd4388c35072e22db4e1cc1f96c7872bed07749c712ade1"
+        },
+        {
+          "path": "models/blip-vqa/release-metadata/SOURCE_NOTICE.md",
+          "size": 827,
+          "sha256": "716aaf84a82b5b4710506bf74bf59d7f2cfc4c9f5a29a42d977811e03f8bf1ee"
+        },
+        {
+          "path": "models/blip-vqa/release-metadata/license-sources.json",
+          "size": 332,
+          "sha256": "c5ad5e2fea54fc120d67f34db18ad4a2d137065f2f548597b675cf3fa7ece72b"
+        },
+        {
+          "path": "models/blip-vqa/release-metadata/licenses/blip.txt",
+          "size": 1482,
+          "sha256": "7d5df2d28b2bf297ecec0b51eb23f6d8d0c39338dae8d92f6d61d9441f77b856"
+        },
+        {
+          "path": "models/blip-vqa/special_tokens_map.json",
+          "size": 125,
+          "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3"
+        },
+        {
+          "path": "models/blip-vqa/tokenizer.json",
+          "size": 711396,
+          "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+        },
+        {
+          "path": "models/blip-vqa/tokenizer_config.json",
+          "size": 592,
+          "sha256": "48d1c9120fe61c9741286050189b030e936f23797a65fd0a179078661e1c43bb"
+        },
+        {
+          "path": "models/blip-vqa/vocab.txt",
+          "size": 231508,
+          "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+        }
+      ]
+    },
+    {
+      "id": "detr-panoptic",
+      "source": "https://huggingface.co/facebook/detr-resnet-50-panoptic",
+      "revision": "d53b52a799403a8867920f82c869e40732b47037",
+      "catalog_version": "download revision locked in inventory.json",
+      "declared_license": "Apache-2.0",
+      "archive": "vision-lab-model-detr-panoptic.tar.gz",
+      "size": 160207788,
+      "sha256": "eb7247f6e3ecaea9309e6c506108a253281f45897feb39bc361c02e3a26d73f3",
+      "files": [
+        {
+          "path": "models/detr-panoptic/README.md",
+          "size": 5851,
+          "sha256": "85e8d1dfa657c91be3f6a446d7baac0b786f0806aa6b086ee22236072c8e22f5"
+        },
+        {
+          "path": "models/detr-panoptic/config.json",
+          "size": 11607,
+          "sha256": "626a96c954c61d36157216f8d757d27f1d277bc7e4e8edcbe388acaf43fe443f"
+        },
+        {
+          "path": "models/detr-panoptic/inventory.json",
+          "size": 858,
+          "sha256": "f9dac6f7a291cf19756e7364ed88feb4c1c5246dbbb7040450f6807a492be304"
+        },
+        {
+          "path": "models/detr-panoptic/preprocessor_config.json",
+          "size": 289,
+          "sha256": "5cfff969435e7a277dd20a91a8d5b61eed1902d68dbf545a3d7d627e19b354af"
+        },
+        {
+          "path": "models/detr-panoptic/pytorch_model.bin",
+          "size": 172245279,
+          "sha256": "3f8024c4744402adf5ebba3be495c91e5af388d73fb32f1e0a93c053767abeca"
+        },
+        {
+          "path": "models/detr-panoptic/release-metadata/SOURCE_NOTICE.md",
+          "size": 838,
+          "sha256": "a5f7b5971ad2b6a011ece5f8ed7a348f851f9f2fb3331257ed0dbb8210b6f98b"
+        },
+        {
+          "path": "models/detr-panoptic/release-metadata/license-sources.json",
+          "size": 338,
+          "sha256": "795f22422c41476942738d7f0668f8405ce3a1f5d36b98d94f62922154af4fed"
+        },
+        {
+          "path": "models/detr-panoptic/release-metadata/licenses/detr.txt",
+          "size": 11354,
+          "sha256": "b208c52b00a2df2c8f4c3298c34407bf2bfe409968213372251c91fcc737a1a5"
+        }
+      ]
+    },
+    {
+      "id": "layout",
+      "source": "https://github.com/opendatalab/DocLayout-YOLO",
+      "revision": "DocStructBench imgsz1024 / DocLayout-YOLO 0.0.4",
+      "catalog_version": "DocStructBench imgsz1024 / DocLayout-YOLO 0.0.4",
+      "declared_license": "AGPL-3.0",
+      "archive": "vision-lab-model-layout.tar.gz",
+      "size": 37579221,
+      "sha256": "3607820156027bc89ef63e221be6b2c7fe104a4d2a10d6cff5948a7745cfb96c",
+      "files": [
+        {
+          "path": "models/layout/doclayout.pt",
+          "size": 40709302,
+          "sha256": "9a2ee0220fe3d9ad31b47e1d9f1282f46959a54e4618fce9cffcc9715b8286e2"
+        },
+        {
+          "path": "models/layout/inventory.json",
+          "size": 402,
+          "sha256": "95ae344e0137c411d6a134e29801598af8ecf40c190512b8bac0bec3ec86fd1e"
+        },
+        {
+          "path": "models/layout/release-metadata/SOURCE_NOTICE.md",
+          "size": 831,
+          "sha256": "f686786df8ad4d4e4cb6724d8a1006b928741c4f77f094565d5e01a4c2e52e1c"
+        },
+        {
+          "path": "models/layout/release-metadata/license-sources.json",
+          "size": 350,
+          "sha256": "724ac745d07e5ec606687d66d96ad9ae22fb6c1ac96eb11d7180aa70d511c307"
+        },
+        {
+          "path": "models/layout/release-metadata/licenses/layout.txt",
+          "size": 34523,
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        }
+      ]
+    },
+    {
+      "id": "edsr",
+      "source": "https://huggingface.co/caidas/swin2SR-classical-sr-x2-64",
+      "revision": "cee1c923c6a37361c6e5650b65dcf4be821e5d52",
+      "catalog_version": "download revision locked in inventory.json",
+      "declared_license": "Apache-2.0",
+      "archive": "vision-lab-model-edsr.tar.gz",
+      "size": 45102323,
+      "sha256": "377d931509b0fd425ee53d2cbef05a6a4d772631514a6d6793660d4911fa7745",
+      "files": [
+        {
+          "path": "models/edsr/README.md",
+          "size": 642,
+          "sha256": "9186aaf5bf94b0adb71532ad70368320e8134815fa026827c8f0e4920dc6886c"
+        },
+        {
+          "path": "models/edsr/config.json",
+          "size": 772,
+          "sha256": "11179bdfd48394977f7fe6177b3a87d9c2c6fa2a67a4b3a7376229ca407f0376"
+        },
+        {
+          "path": "models/edsr/inventory.json",
+          "size": 854,
+          "sha256": "ae0dcae4ab9dff834ebc399eadc5e54b950f9ecd2730ad835499744cec833d56"
+        },
+        {
+          "path": "models/edsr/model.safetensors",
+          "size": 48460660,
+          "sha256": "a515955815ab6dba3a9331d8c75db13a5166a5ffbcebf1a95ab676a5656ac4fb"
+        },
+        {
+          "path": "models/edsr/preprocessor_config.json",
+          "size": 152,
+          "sha256": "cbc36266fcc93d5bc1e9ca69bcc648ae9d268918ad14cd3507216740f129cc4d"
+        },
+        {
+          "path": "models/edsr/release-metadata/SOURCE_NOTICE.md",
+          "size": 830,
+          "sha256": "69a408feb1ff7ba950f2ee9701e2d19b54b7531d149f7226dc6c45d98aab2ce9"
+        },
+        {
+          "path": "models/edsr/release-metadata/license-sources.json",
+          "size": 330,
+          "sha256": "cc0a66fc51f6459ba93f0d36d4be452946e34fb8fcb2e262d301339ee1c23fac"
+        },
+        {
+          "path": "models/edsr/release-metadata/licenses/swin2sr.txt",
+          "size": 11348,
+          "sha256": "d66ccc11682c7458b19b376e1335e8665cbe412ff71f554bfec25f1791cddfa0"
+        }
+      ]
+    },
+    {
+      "id": "swin-denoise",
+      "source": "https://github.com/swz30/Restormer",
+      "revision": "download revision locked in inventory.json",
+      "catalog_version": "Restormer official weights v1.0; configuration/source SHA256 in inventory",
+      "declared_license": "MIT",
+      "archive": "vision-lab-model-swin-denoise.tar.gz",
+      "size": 97339558,
+      "sha256": "f0ca7ca06b7f1300cb7c9eb867b91fe3bc00a66d9bed57f30943b8ad2c2410d8",
+      "files": [
+        {
+          "path": "models/swin-denoise/LICENSE",
+          "size": 1090,
+          "sha256": "2b93776512924bc095ec5d97a79d76cf1ab401ae641d1ae1f46e94f1c53a2e59"
+        },
+        {
+          "path": "models/swin-denoise/config.yml",
+          "size": 2941,
+          "sha256": "697bf6402c58d22e1f7314f1f87fbed2a5de6f5f912ae9dcc96bba203b3b5b32"
+        },
+        {
+          "path": "models/swin-denoise/inventory.json",
+          "size": 824,
+          "sha256": "daab4a7aff5f1cca434c346411d77dd3369e1c5eef464aea4a39eac7fa6c82c4"
+        },
+        {
+          "path": "models/swin-denoise/release-metadata/SOURCE_NOTICE.md",
+          "size": 842,
+          "sha256": "bd669d8bcd6657dc4c8c22221152ccc635afaf730175ef011b136ea9be050f78"
+        },
+        {
+          "path": "models/swin-denoise/release-metadata/license-sources.json",
+          "size": 332,
+          "sha256": "16e52eb9842ab79755c1eabb3a9d58036d20b71dbf2759309516e7c93c2f59fc"
+        },
+        {
+          "path": "models/swin-denoise/release-metadata/licenses/restormer.txt",
+          "size": 1090,
+          "sha256": "2b93776512924bc095ec5d97a79d76cf1ab401ae641d1ae1f46e94f1c53a2e59"
+        },
+        {
+          "path": "models/swin-denoise/restormer_arch.py",
+          "size": 11428,
+          "sha256": "3be243fa3c8e2cb2c9459eeac062b04d6084dbcc328292dae1c3e52ba6f7434a"
+        },
+        {
+          "path": "models/swin-denoise/weights.pth",
+          "size": 104611957,
+          "sha256": "4cae18bed8a291b9a5deeeab48756bbe6f61fcf7f31a4cca0969b24608601387"
+        }
+      ]
+    },
+    {
+      "id": "restormer",
+      "source": "https://github.com/swz30/Restormer",
+      "revision": "download revision locked in inventory.json",
+      "catalog_version": "Restormer official weights v1.0; configuration/source SHA256 in inventory",
+      "declared_license": "MIT",
+      "archive": "vision-lab-model-restormer.tar.gz",
+      "size": 97412235,
+      "sha256": "7e8d415b2aeddaf0b73fb447145fd36d19df9613c826595789a00912de787822",
+      "files": [
+        {
+          "path": "models/restormer/LICENSE",
+          "size": 1090,
+          "sha256": "2b93776512924bc095ec5d97a79d76cf1ab401ae641d1ae1f46e94f1c53a2e59"
+        },
+        {
+          "path": "models/restormer/config.yml",
+          "size": 2974,
+          "sha256": "8f4403ec761973f1c0677fae07841df3935075cea2f3871932d3cd26d1b16e73"
+        },
+        {
+          "path": "models/restormer/inventory.json",
+          "size": 824,
+          "sha256": "5d08a05822c9d6793168e8cdeff71bd2fcec8c54e4cbef1e350fd2111cd6d6fc"
+        },
+        {
+          "path": "models/restormer/release-metadata/SOURCE_NOTICE.md",
+          "size": 839,
+          "sha256": "a460bb185c7b642cb29f746b9357b1eba2fcae29a109bbc2d4cd61cdf572fc0d"
+        },
+        {
+          "path": "models/restormer/release-metadata/license-sources.json",
+          "size": 332,
+          "sha256": "16e52eb9842ab79755c1eabb3a9d58036d20b71dbf2759309516e7c93c2f59fc"
+        },
+        {
+          "path": "models/restormer/release-metadata/licenses/restormer.txt",
+          "size": 1090,
+          "sha256": "2b93776512924bc095ec5d97a79d76cf1ab401ae641d1ae1f46e94f1c53a2e59"
+        },
+        {
+          "path": "models/restormer/restormer_arch.py",
+          "size": 11428,
+          "sha256": "3be243fa3c8e2cb2c9459eeac062b04d6084dbcc328292dae1c3e52ba6f7434a"
+        },
+        {
+          "path": "models/restormer/weights.pth",
+          "size": 104700429,
+          "sha256": "194e38fb5b607c9dc5a5b3e08e65b2e79ee2bf0ef5048e0612f6b2ff2f79da31"
+        }
+      ]
+    },
+    {
+      "id": "rmbg",
+      "source": "https://github.com/danielgatis/rembg",
+      "revision": "U2NetP",
+      "catalog_version": "U2NetP",
+      "declared_license": "MIT (rembg); Apache-2.0 (U2-Net)",
+      "archive": "vision-lab-model-rmbg.tar.gz",
+      "size": 4258884,
+      "sha256": "5979b64e3367414a1c4e2a8e60f9131e25b454124dc1d4e6ebe819aa16d1eaf4",
+      "files": [
+        {
+          "path": "models/rmbg/inventory.json",
+          "size": 350,
+          "sha256": "c84ad6d7ac66aaececa95db0659da816693d9e3b3cc79ffe67db62592acf738e"
+        },
+        {
+          "path": "models/rmbg/release-metadata/SOURCE_NOTICE.md",
+          "size": 762,
+          "sha256": "c3dc72ebf1c014cd7beba137b4572193f1be480a3929e1a0411af1fed51e6e77"
+        },
+        {
+          "path": "models/rmbg/release-metadata/license-sources.json",
+          "size": 660,
+          "sha256": "09ba668750f2e87268b9be97e1a4e04089255abed7a876d16b96c7539c6e7c85"
+        },
+        {
+          "path": "models/rmbg/release-metadata/licenses/rembg.txt",
+          "size": 1069,
+          "sha256": "90a3215072968fd304669c5389f04f1274a587abdd0507d99dead0f5511f8999"
+        },
+        {
+          "path": "models/rmbg/release-metadata/licenses/u2net.txt",
+          "size": 11357,
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "path": "models/rmbg/u2netp.onnx",
+          "size": 4574861,
+          "sha256": "309c8469258dda742793dce0ebea8e6dd393174f89934733ecc8b14c76f4ddd8"
+        }
+      ]
+    },
+    {
+      "id": "face_landmarker",
+      "source": "https://ai.google.dev/edge/mediapipe/solutions/vision/face_landmarker",
+      "revision": "float16/1",
+      "catalog_version": "float16/1",
+      "declared_license": "Apache-2.0",
+      "archive": "vision-lab-model-face_landmarker.tar.gz",
+      "size": 3357790,
+      "sha256": "92844acf5bab8c4dff890e8ae5b6f64cbe40f11bb1261d559a76e32c1f06f624",
+      "files": [
+        {
+          "path": "models/face_landmarker/face_landmarker.task",
+          "size": 3758596,
+          "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff"
+        },
+        {
+          "path": "models/face_landmarker/inventory.json",
+          "size": 395,
+          "sha256": "3bb2440b331a15eea9e787c449f895fc5813d36ff8c0a50b5d495244a2d6fc8e"
+        },
+        {
+          "path": "models/face_landmarker/release-metadata/SOURCE_NOTICE.md",
+          "size": 790,
+          "sha256": "017f187e49366284547b9c9869b932c7f289b9a10ce971f5b5351d1ae9684880"
+        },
+        {
+          "path": "models/face_landmarker/release-metadata/license-sources.json",
+          "size": 356,
+          "sha256": "306820c5fd2d799e84f8371ae7c0eec050d7a4b645f881cdadcff0ef311d8161"
+        },
+        {
+          "path": "models/face_landmarker/release-metadata/licenses/mediapipe.txt",
+          "size": 12331,
+          "sha256": "8707eef0533987efc5b155d64761eeb6e20793f50b9bd1a68dad1cf4719d0ed8"
+        }
+      ]
+    },
+    {
+      "id": "hand_landmarker",
+      "source": "https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker",
+      "revision": "float16/1",
+      "catalog_version": "float16/1",
+      "declared_license": "Apache-2.0",
+      "archive": "vision-lab-model-hand_landmarker.tar.gz",
+      "size": 6047047,
+      "sha256": "49e040616c9209304246f2d5794549f76a13377ae77527d53afabdf8b02b8e11",
+      "files": [
+        {
+          "path": "models/hand_landmarker/hand_landmarker.task",
+          "size": 7819105,
+          "sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1"
+        },
+        {
+          "path": "models/hand_landmarker/inventory.json",
+          "size": 395,
+          "sha256": "33da4dd1a931b53c47e3ef9d133438074ebfb37b6dcbf40e99462554dfb5c430"
+        },
+        {
+          "path": "models/hand_landmarker/release-metadata/SOURCE_NOTICE.md",
+          "size": 790,
+          "sha256": "716f7b4e3b56282ec733c4e929a1b5e697ee67033ba341cee7cc3560cb8504ca"
+        },
+        {
+          "path": "models/hand_landmarker/release-metadata/license-sources.json",
+          "size": 356,
+          "sha256": "306820c5fd2d799e84f8371ae7c0eec050d7a4b645f881cdadcff0ef311d8161"
+        },
+        {
+          "path": "models/hand_landmarker/release-metadata/licenses/mediapipe.txt",
+          "size": 12331,
+          "sha256": "8707eef0533987efc5b155d64761eeb6e20793f50b9bd1a68dad1cf4719d0ed8"
+        }
+      ]
+    }
+  ]
+}
