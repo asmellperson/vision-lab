@@ -1,6 +1,8 @@
 # 本地模型清单
 
-清单由 `python scripts/export_catalog.py` 从注册表和本地 inventory 导出。完整文件哈希不是准确率或上游签名；前端模型页支持重新校验。模型运行效果见 [model-validation.json](model-validation.json)。
+平台支持以下 22 套预训练模型。权重、配置与词表需单独下载，安装方式见 [模型下载与安装](MODEL_RELEASE.md)。设备列表示适配器支持的推理设备，实际可用性取决于运行环境。
+
+下方版本、文件大小与 SHA256 对应 `models-2026-09-29` 模型发布版本，用于核对文件完整性。安装后的清单位于各模型目录的 `inventory.json`，模型管理页面支持重新校验；许可详情见 [第三方来源](../THIRD_PARTY.md)。
 
 | 名称 / ID | 任务 | 版本 | 支持设备 | 许可 |
 | --- | --- | --- | --- | --- |
@@ -13,16 +15,16 @@
 | [yolov8n-obb](https://docs.ultralytics.com/models/yolov8/) / `yolov8n-obb` | obb | YOLOv8 / assets v8.3.0 | cpu, cuda | AGPL-3.0 / Ultralytics Enterprise |
 | [sam2](https://github.com/facebookresearch/sam2) / `sam2` | sam, video_segment | SAM2 Hiera tiny / Ultralytics packaged | cpu, cuda | Apache-2.0 (Meta); Ultralytics adapter AGPL-3.0 |
 | [PP-OCRv4 / RapidOCR](https://github.com/RapidAI/RapidOCR) / `rapidocr` | ocr, char_check | rapidocr-onnxruntime 1.4.4 | cpu | Apache-2.0 |
-| [depth-anything](https://huggingface.co/depth-anything/Depth-Anything-V2-Small-hf) / `depth-anything` | depth | download revision locked in inventory.json | cpu, cuda | Apache-2.0 |
-| [clip](https://huggingface.co/openai/clip-vit-base-patch32) / `clip` | similarity, text_retrieval | download revision locked in inventory.json | cpu, cuda | MIT |
-| [owlvit](https://huggingface.co/google/owlvit-base-patch32) / `owlvit` | grounding | download revision locked in inventory.json | cpu, cuda | Apache-2.0 |
-| [blip](https://huggingface.co/Salesforce/blip-image-captioning-base) / `blip` | caption | download revision locked in inventory.json | cpu, cuda | BSD-3-Clause |
-| [blip-vqa](https://huggingface.co/Salesforce/blip-vqa-base) / `blip-vqa` | vqa | download revision locked in inventory.json | cpu, cuda | BSD-3-Clause |
-| [detr-panoptic](https://huggingface.co/facebook/detr-resnet-50-panoptic) / `detr-panoptic` | panoptic | download revision locked in inventory.json | cpu, cuda | Apache-2.0 |
+| [depth-anything](https://huggingface.co/depth-anything/Depth-Anything-V2-Small-hf) / `depth-anything` | depth | 具体版本见下方文件清单 | cpu, cuda | Apache-2.0 |
+| [clip](https://huggingface.co/openai/clip-vit-base-patch32) / `clip` | similarity, text_retrieval | 具体版本见下方文件清单 | cpu, cuda | MIT |
+| [owlvit](https://huggingface.co/google/owlvit-base-patch32) / `owlvit` | grounding | 具体版本见下方文件清单 | cpu, cuda | Apache-2.0 |
+| [blip](https://huggingface.co/Salesforce/blip-image-captioning-base) / `blip` | caption | 具体版本见下方文件清单 | cpu, cuda | BSD-3-Clause |
+| [blip-vqa](https://huggingface.co/Salesforce/blip-vqa-base) / `blip-vqa` | vqa | 具体版本见下方文件清单 | cpu, cuda | BSD-3-Clause |
+| [detr-panoptic](https://huggingface.co/facebook/detr-resnet-50-panoptic) / `detr-panoptic` | panoptic | 具体版本见下方文件清单 | cpu, cuda | Apache-2.0 |
 | [DocLayout-YOLO](https://github.com/opendatalab/DocLayout-YOLO) / `layout` | layout | DocStructBench imgsz1024 / DocLayout-YOLO 0.0.4 | cpu, cuda | AGPL-3.0 |
-| [Swin2SR ×2](https://huggingface.co/caidas/swin2SR-classical-sr-x2-64) / `edsr` | superres | download revision locked in inventory.json | cpu, cuda | Apache-2.0 |
-| [Restormer 真实去噪](https://github.com/swz30/Restormer) / `swin-denoise` | denoise_dl | Restormer official weights v1.0; configuration/source SHA256 in inventory | cpu, cuda | MIT |
-| [restormer](https://github.com/swz30/Restormer) / `restormer` | deblur | Restormer official weights v1.0; configuration/source SHA256 in inventory | cpu, cuda | MIT |
+| [Swin2SR ×2](https://huggingface.co/caidas/swin2SR-classical-sr-x2-64) / `edsr` | superres | 具体版本见下方文件清单 | cpu, cuda | Apache-2.0 |
+| [Restormer 真实去噪](https://github.com/swz30/Restormer) / `swin-denoise` | denoise_dl | 官方权重 v1.0；配置与源码 SHA256 见下方 | cpu, cuda | MIT |
+| [restormer](https://github.com/swz30/Restormer) / `restormer` | deblur | 官方权重 v1.0；配置与源码 SHA256 见下方 | cpu, cuda | MIT |
 | [U2NetP 前景提取](https://github.com/danielgatis/rembg) / `rmbg` | matting | U2NetP | cpu | MIT (rembg); Apache-2.0 (U2-Net) |
 | [face_landmarker](https://ai.google.dev/edge/mediapipe/solutions/vision/face_landmarker) / `face_landmarker` | face | float16/1 | cpu | Apache-2.0 |
 | [hand_landmarker](https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker) / `hand_landmarker` | hand | float16/1 | cpu | Apache-2.0 |
@@ -32,11 +34,10 @@
 ## resnet18 (`resnet18`)
 
 - 来源：https://pytorch.org/vision/stable/models/resnet.html
-- 状态：ready
 - 固定版本 / revision：`IMAGENET1K_V1`
 - 类别/范围：ImageNet-1K
 - 本地路径：`models/resnet18/`
-- 原始清单：[`inventory.json`](../models/resnet18/inventory.json)
+- 文件清单：`models/resnet18/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
@@ -45,11 +46,10 @@
 ## deeplab (`deeplab`)
 
 - 来源：https://pytorch.org/vision/stable/models/deeplabv3.html
-- 状态：ready
 - 固定版本 / revision：`COCO_WITH_VOC_LABELS_V1`
 - 类别/范围：VOC: background, aeroplane, bicycle, bird, boat, bottle, bus, car, cat, chair, cow, diningtable, dog, horse, motorbike, person, pottedplant, sheep, sofa, train, tvmonitor
 - 本地路径：`models/deeplab/`
-- 原始清单：[`inventory.json`](../models/deeplab/inventory.json)
+- 文件清单：`models/deeplab/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
@@ -58,11 +58,10 @@
 ## r3d (`r3d`)
 
 - 来源：https://pytorch.org/vision/stable/models/video.html
-- 状态：ready
 - 固定版本 / revision：`KINETICS400_V1`
 - 类别/范围：Kinetics-400，运行时导出全部类别
 - 本地路径：`models/r3d/`
-- 原始清单：[`inventory.json`](../models/r3d/inventory.json)
+- 文件清单：`models/r3d/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
@@ -71,11 +70,10 @@
 ## yolov8n (`yolov8n`)
 
 - 来源：https://docs.ultralytics.com/models/yolov8/
-- 状态：ready
 - 固定版本 / revision：`YOLOv8 / assets v8.3.0`
 - 类别/范围：COCO 80 类
 - 本地路径：`models/yolov8n/`
-- 原始清单：[`inventory.json`](../models/yolov8n/inventory.json)
+- 文件清单：`models/yolov8n/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
@@ -84,11 +82,10 @@
 ## yolov8n-seg (`yolov8n-seg`)
 
 - 来源：https://docs.ultralytics.com/models/yolov8/
-- 状态：ready
 - 固定版本 / revision：`YOLOv8 / assets v8.3.0`
 - 类别/范围：COCO 80 类
 - 本地路径：`models/yolov8n-seg/`
-- 原始清单：[`inventory.json`](../models/yolov8n-seg/inventory.json)
+- 文件清单：`models/yolov8n-seg/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
@@ -97,11 +94,10 @@
 ## yolov8n-pose (`yolov8n-pose`)
 
 - 来源：https://docs.ultralytics.com/models/yolov8/
-- 状态：ready
 - 固定版本 / revision：`YOLOv8 / assets v8.3.0`
 - 类别/范围：person / COCO 17 关键点
 - 本地路径：`models/yolov8n-pose/`
-- 原始清单：[`inventory.json`](../models/yolov8n-pose/inventory.json)
+- 文件清单：`models/yolov8n-pose/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
@@ -110,11 +106,10 @@
 ## yolov8n-obb (`yolov8n-obb`)
 
 - 来源：https://docs.ultralytics.com/models/yolov8/
-- 状态：ready
 - 固定版本 / revision：`YOLOv8 / assets v8.3.0`
 - 类别/范围：DOTA 15 类：plane, ship, storage tank, baseball diamond, tennis court, basketball court, ground track field, harbor, bridge, large vehicle, small vehicle, helicopter, roundabout, soccer ball field, swimming pool
 - 本地路径：`models/yolov8n-obb/`
-- 原始清单：[`inventory.json`](../models/yolov8n-obb/inventory.json)
+- 文件清单：`models/yolov8n-obb/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
@@ -123,11 +118,10 @@
 ## sam2 (`sam2`)
 
 - 来源：https://github.com/facebookresearch/sam2
-- 状态：ready
 - 固定版本 / revision：`SAM2 Hiera tiny / Ultralytics packaged`
 - 类别/范围：类别无关
 - 本地路径：`models/sam2/`
-- 原始清单：[`inventory.json`](../models/sam2/inventory.json)
+- 文件清单：`models/sam2/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
@@ -136,11 +130,10 @@
 ## PP-OCRv4 / RapidOCR (`rapidocr`)
 
 - 来源：https://github.com/RapidAI/RapidOCR
-- 状态：ready
 - 固定版本 / revision：`rapidocr-onnxruntime 1.4.4`
 - 类别/范围：PP-OCRv4 中文英文；ONNX 内嵌词表
 - 本地路径：`models/rapidocr/`
-- 原始清单：[`inventory.json`](../models/rapidocr/inventory.json)
+- 文件清单：`models/rapidocr/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
@@ -152,11 +145,10 @@
 ## depth-anything (`depth-anything`)
 
 - 来源：https://huggingface.co/depth-anything/Depth-Anything-V2-Small-hf
-- 状态：ready
 - 固定版本 / revision：`5426e4f0f36572d16453bbda7a8389317b1bef99`
 - 类别/范围：相对逆深度
 - 本地路径：`models/depth-anything/`
-- 原始清单：[`inventory.json`](../models/depth-anything/inventory.json)
+- 文件清单：`models/depth-anything/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
@@ -168,11 +160,10 @@
 ## clip (`clip`)
 
 - 来源：https://huggingface.co/openai/clip-vit-base-patch32
-- 状态：ready
 - 固定版本 / revision：`3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268`
 - 类别/范围：开放词汇英文图文相似度
 - 本地路径：`models/clip/`
-- 原始清单：[`inventory.json`](../models/clip/inventory.json)
+- 文件清单：`models/clip/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
@@ -189,11 +180,10 @@
 ## owlvit (`owlvit`)
 
 - 来源：https://huggingface.co/google/owlvit-base-patch32
-- 状态：ready
 - 固定版本 / revision：`cbc355fb364588351c5d51c7f74465e8e7ec6f72`
 - 类别/范围：开放词汇英文检测
 - 本地路径：`models/owlvit/`
-- 原始清单：[`inventory.json`](../models/owlvit/inventory.json)
+- 文件清单：`models/owlvit/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
@@ -209,11 +199,10 @@
 ## blip (`blip`)
 
 - 来源：https://huggingface.co/Salesforce/blip-image-captioning-base
-- 状态：ready
 - 固定版本 / revision：`82a37760796d32b1411fe092ab5d4e227313294b`
 - 类别/范围：英文图像描述
 - 本地路径：`models/blip/`
-- 原始清单：[`inventory.json`](../models/blip/inventory.json)
+- 文件清单：`models/blip/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
@@ -229,11 +218,10 @@
 ## blip-vqa (`blip-vqa`)
 
 - 来源：https://huggingface.co/Salesforce/blip-vqa-base
-- 状态：ready
 - 固定版本 / revision：`787b3d35d57e49572baabd22884b3d5a05acf072`
 - 类别/范围：英文视觉问答
 - 本地路径：`models/blip-vqa/`
-- 原始清单：[`inventory.json`](../models/blip-vqa/inventory.json)
+- 文件清单：`models/blip-vqa/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
@@ -249,11 +237,10 @@
 ## detr-panoptic (`detr-panoptic`)
 
 - 来源：https://huggingface.co/facebook/detr-resnet-50-panoptic
-- 状态：ready
 - 固定版本 / revision：`d53b52a799403a8867920f82c869e40732b47037`
 - 类别/范围：COCO thing/stuff 类别由模型配置导出
 - 本地路径：`models/detr-panoptic/`
-- 原始清单：[`inventory.json`](../models/detr-panoptic/inventory.json)
+- 文件清单：`models/detr-panoptic/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
@@ -265,11 +252,10 @@
 ## DocLayout-YOLO (`layout`)
 
 - 来源：https://github.com/opendatalab/DocLayout-YOLO
-- 状态：ready
 - 固定版本 / revision：`DocStructBench imgsz1024 / DocLayout-YOLO 0.0.4`
 - 类别/范围：title, plain text, abandon, figure, figure_caption, table, table_caption, table_footnote, isolate_formula, formula_caption
 - 本地路径：`models/layout/`
-- 原始清单：[`inventory.json`](../models/layout/inventory.json)
+- 文件清单：`models/layout/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
@@ -278,11 +264,10 @@
 ## Swin2SR ×2 (`edsr`)
 
 - 来源：https://huggingface.co/caidas/swin2SR-classical-sr-x2-64
-- 状态：ready
 - 固定版本 / revision：`cee1c923c6a37361c6e5650b65dcf4be821e5d52`
 - 类别/范围：Swin2SR x2，非 EDSR
 - 本地路径：`models/edsr/`
-- 原始清单：[`inventory.json`](../models/edsr/inventory.json)
+- 文件清单：`models/edsr/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
@@ -294,11 +279,10 @@
 ## Restormer 真实去噪 (`swin-denoise`)
 
 - 来源：https://github.com/swz30/Restormer
-- 状态：ready
-- 固定版本 / revision：`download revision locked in inventory.json`
+- 版本：Restormer 官方权重 v1.0；配置与源码按下方 SHA256 核对
 - 类别/范围：真实图像去噪，SIDD
 - 本地路径：`models/swin-denoise/`
-- 原始清单：[`inventory.json`](../models/swin-denoise/inventory.json)
+- 文件清单：`models/swin-denoise/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
@@ -310,11 +294,10 @@
 ## restormer (`restormer`)
 
 - 来源：https://github.com/swz30/Restormer
-- 状态：ready
-- 固定版本 / revision：`download revision locked in inventory.json`
+- 版本：Restormer 官方权重 v1.0；配置与源码按下方 SHA256 核对
 - 类别/范围：单图运动去模糊
 - 本地路径：`models/restormer/`
-- 原始清单：[`inventory.json`](../models/restormer/inventory.json)
+- 文件清单：`models/restormer/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
@@ -326,11 +309,10 @@
 ## U2NetP 前景提取 (`rmbg`)
 
 - 来源：https://github.com/danielgatis/rembg
-- 状态：ready
 - 固定版本 / revision：`U2NetP`
 - 类别/范围：显著前景；非精细发丝抠图
 - 本地路径：`models/rmbg/`
-- 原始清单：[`inventory.json`](../models/rmbg/inventory.json)
+- 文件清单：`models/rmbg/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
@@ -339,11 +321,10 @@
 ## face_landmarker (`face_landmarker`)
 
 - 来源：https://ai.google.dev/edge/mediapipe/solutions/vision/face_landmarker
-- 状态：ready
 - 固定版本 / revision：`float16/1`
 - 类别/范围：478 面部点
 - 本地路径：`models/face_landmarker/`
-- 原始清单：[`inventory.json`](../models/face_landmarker/inventory.json)
+- 文件清单：`models/face_landmarker/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
@@ -352,11 +333,10 @@
 ## hand_landmarker (`hand_landmarker`)
 
 - 来源：https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker
-- 状态：ready
 - 固定版本 / revision：`float16/1`
 - 类别/范围：每手 21 点
 - 本地路径：`models/hand_landmarker/`
-- 原始清单：[`inventory.json`](../models/hand_landmarker/inventory.json)
+- 文件清单：`models/hand_landmarker/inventory.json`（安装后可查看）
 
 | 文件 | 字节数 | SHA256 |
 | --- | ---: | --- |
