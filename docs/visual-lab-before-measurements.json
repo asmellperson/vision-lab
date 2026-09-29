@@ -1,0 +1,132 @@
+{
+  "phase": "before",
+  "measurements": [
+    {
+      "name": "home-1920",
+      "width": 1920,
+      "height": 1080,
+      "documentWidth": 1920,
+      "main": {
+        "x": 232,
+        "y": 56,
+        "width": 1688,
+        "height": 1319.03125
+      },
+      "viewer": null,
+      "viewport": null,
+      "parameters": null,
+      "borderedElements": 17
+    },
+    {
+      "name": "home-2560",
+      "width": 2560,
+      "height": 1440,
+      "documentWidth": 2560,
+      "main": {
+        "x": 496,
+        "y": 56,
+        "width": 1800,
+        "height": 1319.03125
+      },
+      "viewer": null,
+      "viewport": null,
+      "parameters": null,
+      "borderedElements": 17
+    },
+    {
+      "name": "canny-1920",
+      "width": 1920,
+      "height": 1080,
+      "documentWidth": 1920,
+      "main": {
+        "x": 232,
+        "y": 56,
+        "width": 1688,
+        "height": 1290.6875
+      },
+      "viewer": {
+        "x": 256,
+        "y": 248.375,
+        "width": 1328,
+        "height": 550.1875
+      },
+      "viewport": {
+        "x": 257,
+        "y": 345.171875,
+        "width": 662.5,
+        "height": 410.390625
+      },
+      "parameters": {
+        "x": 1608,
+        "y": 200.375,
+        "width": 288,
+        "height": 630.21875
+      },
+      "borderedElements": 74
+    },
+    {
+      "name": "canny-2560",
+      "width": 2560,
+      "height": 1440,
+      "documentWidth": 2560,
+      "main": {
+        "x": 436,
+        "y": 56,
+        "width": 1920,
+        "height": 1360.296875
+      },
+      "viewer": {
+        "x": 460,
+        "y": 248.375,
+        "width": 1560,
+        "height": 619.796875
+      },
+      "viewport": {
+        "x": 461,
+        "y": 345.171875,
+        "width": 778.5,
+        "height": 480
+      },
+      "parameters": {
+        "x": 2044,
+        "y": 200.375,
+        "width": 288,
+        "height": 630.21875
+      },
+      "borderedElements": 74
+    },
+    {
+      "name": "gray-scope-control",
+      "width": 1440,
+      "height": 1000,
+      "documentWidth": 1440,
+      "main": {
+        "x": 232,
+        "y": 56,
+        "width": 1208,
+        "height": 1201.078125
+      },
+      "viewer": {
+        "x": 264,
+        "y": 271.921875,
+        "width": 802,
+        "height": 470.1875
+      },
+      "viewport": {
+        "x": 265,
+        "y": 333.015625,
+        "width": 399.5,
+        "height": 365
+      },
+      "parameters": {
+        "x": 1088,
+        "y": 216.828125,
+        "width": 320,
+        "height": 460.5
+      },
+      "borderedElements": 63
+    }
+  ],
+  "checks": [],
+  "errors": []
+}

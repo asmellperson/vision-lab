@@ -1,19 +1,88 @@
 import {useEffect,useState} from 'react'
-import {ArrowRight,Download,CheckCircle2,AlertCircle,Database,RefreshCw,Plus,ArrowUp,ArrowDown,X,Play,Save,LoaderCircle} from 'lucide-react'
+import {ArrowRight,Download,CheckCircle2,AlertCircle,Database,RefreshCw,Plus,ArrowUp,ArrowDown,X,Play,Save,LoaderCircle,Search,ChevronDown,ChevronRight} from 'lucide-react'
 import {api,errorMessage} from './api'
 import type {Algorithm,Asset,Job,Model,Preset,Step} from './types'
 import {defaults} from './types'
 import {AssetPicker,ParameterControl,UploadBox,Notice} from './Controls'
 
+// These groups organize the homepage only; all entries come from the existing registry.
+const HOME_DOMAINS = [
+  {id: 'traditional', name: '传统视觉', description: '从像素、边缘到形状与特征', categories: ['图像基础', '滤波与增强', '阈值与形态学', '边缘与形状', '几何与传统分割', '特征与匹配'], featured: ['gray', 'gaussian', 'threshold', 'canny', 'contours', 'template']},
+  {id: 'deep', name: '深度学习', description: '识别、分割与图文理解', categories: ['深度学习识别', '文字与图文理解', '图像恢复', '模型学习与评估'], featured: ['classify', 'detect', 'instance', 'sam', 'pose', 'ocr']},
+  {id: 'industrial', name: '工业视觉', description: '测量、比对与外观检测', categories: ['工业视觉'], featured: ['count', 'measure', 'industrial_template', 'difference', 'anomaly', 'char_check']},
+  {id: 'spatial', name: '视频与三维', description: '运动、时序与空间几何', categories: ['视频与时序', '标定与三维'], featured: ['frame_diff', 'multi_track', 'events', 'calibrate', 'depth', 'pointcloud']},
+]
+
 export function Home({algorithms,assets,models,onSelect}:{algorithms:Algorithm[];assets:Asset[];models:Model[];onSelect:(id:string,asset?:Asset)=>void}){
-  const categories=[...new Set(algorithms.map(a=>a.category))];const bus=assets.find(x=>x.id==='example-bus');const parts=assets.find(x=>x.id==='example-parts');const fruit=assets.find(x=>x.id==='example-fruits');
-  return <><div className="home-intro"><h1>计算机视觉实验平台</h1><p>选择算法，上传图片或视频，调整参数并查看处理结果。</p><div className="hero-actions"><button className="primary" onClick={()=>onSelect('canny',fruit)}>开始第一个实验 <ArrowRight size={17}/></button><a href="#pipeline">处理流水线 <ArrowRight size={15}/></a></div></div>
-    <div className="hero-visual">{bus?<img src={bus.url} alt="街景示例图片"/>:<div className="visual-placeholder"/>}</div>
-    <div className="stats-row"><div><strong>{algorithms.length}</strong><span>独立实验入口</span></div><div><strong>{categories.length}</strong><span>视觉学习模块</span></div><div><strong>{models.filter(m=>m.state==='ready').length}<em> / {models.length}</em></strong><span>模型文件已就绪</span></div><div><strong>本地</strong><span>离线推理与实验记录</span></div></div>
-    <section className="home-section"><div className="section-heading"><h2>学习路径</h2></div><div className="path-grid">{[
-      ['01','认识图像','像素、颜色与直方图','gray','初识视觉','◈'],['02','提取信息','滤波、边缘与形态学','canny','传统方法','⌁'],['03','理解场景','检测、分割与关键点','detect','深度学习','⌘'],['04','走进产线','测量、异常与事件分析','measure','工业实践','▦']
-    ].map(([n,title,sub,id,tag,icon])=><button className="path-card" key={n} onClick={()=>onSelect(id,id==='detect'?bus:id==='measure'?parts:fruit)}><div><span>{n}</span><b>{icon}</b></div><h3>{title}</h3><p>{sub}</p><footer><span>{tag}</span><ArrowRight size={17}/></footer></button>)}</div></section>
-    <section className="home-section"><div className="section-heading"><h2>常用实验</h2><a href="#algorithm/gray">浏览全部实验 →</a></div><div className="featured-grid">{[['canny','Canny 边缘检测','调整双阈值，查看边缘与噪声的变化。',fruit,'传统视觉'],['detect','目标检测','使用本地 YOLO 查看目标框、类别和置信度。',bus,'模型实验'],['measure','零件尺寸测量','提取轮廓并测量像素尺寸，可设置实际尺度。',parts,'工业视觉']].map(([id,title,description,asset,tag])=><button className="featured-card" key={String(id)} onClick={()=>onSelect(String(id),asset as Asset|undefined)}><div className="feature-image">{asset&&<img src={(asset as Asset).url} alt={String(title)}/>}<span>{String(tag)}</span></div><div><h3>{String(title)}</h3><p>{String(description)}</p><span className="text-link">打开实验 <ArrowRight size={14}/></span></div></button>)}</div></section></>
+  const [query, setQuery] = useState('')
+  const [expanded, setExpanded] = useState<string[]>([])
+  const keyword = query.trim().toLowerCase()
+  const matches = algorithms.filter(a => [a.name, a.english, a.category, a.summary, a.uses, a.id].join(' ').toLowerCase().includes(keyword))
+  const domainOf = (a: Algorithm) => HOME_DOMAINS.find(domain => domain.categories.includes(a.category))?.id || 'traditional'
+  function exampleFor(a: Algorithm) {
+    if (a.inputs[0] === 'video' || a.inputs[0] === 'pointcloud') return assets.find(asset => asset.kind === a.inputs[0] && asset.metadata.example)
+    const id = a.category === '工业视觉' ? 'example-parts' : a.model ? 'example-bus' : 'example-fruits'
+    return assets.find(asset => asset.id === id)
+  }
+  function launch(a: Algorithm) { onSelect(a.id, exampleFor(a)) }
+  const common = [
+    {id: 'canny', title: 'Canny 边缘检测', detail: '调节双阈值，观察轮廓与细节。'},
+    {id: 'detect', title: '目标检测', detail: '定位物体，查看类别与置信度。'},
+    {id: 'measure', title: '尺寸、角度与间隙', detail: '从零件轮廓读取几何测量结果。'},
+  ]
+  return <div className="lab-home">
+    <header className="lab-home-header">
+      <div><h1>实验入口</h1><p>选择算法，带着一张图开始探索。</p></div>
+      <div className="lab-home-search" role="search" aria-label="首页算法搜索">
+        <Search size={20}/><input type="search" aria-label="查找实验" placeholder="搜索算法、任务或关键词，例如 Canny、分割、测量" value={query}
+          onChange={e => setQuery(e.target.value)} onKeyDown={e => {
+            if (e.key === 'Enter' && !e.nativeEvent.isComposing && keyword && matches[0]) {e.preventDefault(); launch(matches[0])}
+            if (e.key === 'Escape') setQuery('')
+          }}/>
+        {query && <button className="icon-button" aria-label="清空实验搜索" onClick={() => setQuery('')}><X size={17}/></button>}
+      </div>
+    </header>
+    {keyword ? <section className="lab-search-results" aria-labelledby="home-search-title">
+      <div className="lab-section-heading"><h2 id="home-search-title">搜索结果</h2><span role="status">找到 {matches.length} 个实验</span></div>
+      {matches.length ? <div className="lab-result-list">{matches.map(a => <button key={a.id} className="lab-result" onClick={() => launch(a)}>
+        <span><strong>{a.name}</strong><small>{a.category}</small><p>{a.summary}</p></span><ChevronRight size={17}/>
+      </button>)}</div> : <div className="lab-search-empty"><h3>没有找到匹配的实验</h3><p>试试“边缘”“目标检测”或算法英文名，也可以清空搜索按方向浏览。</p><button onClick={() => setQuery('')}>查看全部方向</button></div>}
+    </section> : <>
+      <section className="lab-common" aria-labelledby="home-common-title">
+        <div className="lab-section-heading"><h2 id="home-common-title">常用实验</h2><a href="#history">实验记录 <ChevronRight size={14}/></a></div>
+        <div className="lab-common-list">{common.map(item => {
+          const a = algorithms.find(a => a.id === item.id)
+          if (!a) return null
+          const example = exampleFor(a)
+          const model = models.find(model => model.id === a.model)
+          return <button className="lab-quick-experiment" key={a.id} onClick={() => launch(a)} aria-label={'打开' + item.title}>
+            <div className="lab-thumbnail">{example ? <img src={example.url} alt={example.name}/> : <span>{a.english}</span>}</div>
+            <div className="lab-quick-copy"><span>{a.category}</span><h3>{item.title}</h3><p>{item.detail}</p><small>{a.model && model?.state !== 'ready' ? '需先准备本地模型' : '使用示例开始'}<ArrowRight size={14}/></small></div>
+          </button>
+        })}</div>
+      </section>
+      <section className="lab-directory" aria-labelledby="home-directory-title">
+        <div className="lab-section-heading"><h2 id="home-directory-title">按方向探索</h2><span>从基础处理到完整视觉任务</span></div>
+        <div className="lab-domains">{HOME_DOMAINS.map(domain => {
+          const items = algorithms.filter(a => domainOf(a) === domain.id)
+          const isExpanded = expanded.includes(domain.id)
+          const favorites = domain.featured.map(id => items.find(a => a.id === id)).filter((a): a is Algorithm => !!a)
+          return <section className="lab-domain" key={domain.id} aria-labelledby={'domain-' + domain.id}>
+            <h3 id={'domain-' + domain.id}>{domain.name}</h3><p>{domain.description}</p>
+            <div className="lab-domain-links" id={'domain-links-' + domain.id}>
+              {isExpanded ? [...new Set(items.map(a => a.category))].map(category => <div className="lab-domain-category" key={category}>
+                <h4>{category}</h4>{items.filter(a => a.category === category).map(a => <button key={a.id} onClick={() => launch(a)}>{a.name}<ChevronRight size={14}/></button>)}
+              </div>) : favorites.map(a => <button key={a.id} onClick={() => launch(a)}>{a.name}<ChevronRight size={14}/></button>)}
+            </div>
+            <button className="lab-domain-expand" aria-controls={'domain-links-' + domain.id} aria-expanded={isExpanded} onClick={() => setExpanded(isExpanded ? expanded.filter(id => id !== domain.id) : [...expanded, domain.id])}>
+              {isExpanded ? '收起目录' : '查看全部 ' + items.length + ' 个实验'}<ChevronDown size={14}/>
+            </button>
+          </section>
+        })}</div>
+      </section>
+      <footer className="lab-home-footer"><p>想把多个算法组合起来？</p><a href="#pipeline">打开处理流水线 <ArrowRight size={14}/></a></footer>
+    </>}
+  </div>
 }
 
 export function ModelsPage({models,refresh}:{models:Model[];refresh:()=>void}){

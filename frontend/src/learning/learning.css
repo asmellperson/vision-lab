@@ -1,0 +1,22 @@
+.learning-content.algorithm-guide { gap: 32px; }
+.learning-content.algorithm-guide > div { min-width: 0; }
+.learning-content.algorithm-guide h3 { color: var(--ink); font-size: 15px; line-height: 1.6; margin: 0 0 10px; }
+.learning-content.algorithm-guide p { color: #526176; font-size: 14px; line-height: 1.95; margin: 0 0 22px; overflow-wrap: anywhere; }
+.learning-content.algorithm-guide p:last-child { margin-bottom: 0; }
+.python-example { padding: 20px 24px 24px; min-width: 0; }
+.python-options { display: flex; gap: 6px; margin-bottom: 12px; }
+.python-options button { font-size: 13px; padding: 7px 14px; }
+.python-options button[aria-pressed="true"] { color: var(--teal); background: var(--teal-light); border-color: var(--teal); }
+.python-help { font-size: 13px; line-height: 1.8; color: #526176; margin: 0 0 8px; overflow-wrap: anywhere; }
+.python-example .code-panel.algorithm-code { margin-top: 16px; border: 1px solid var(--border); border-radius: 6px; background: #f3f5f8; }
+.python-example .code-panel.algorithm-code > div { color: #526176; border-bottom: 1px solid var(--border); gap: 12px; padding: 10px 14px; flex-wrap: wrap; }
+.python-example .code-panel.algorithm-code > div > span { overflow-wrap: anywhere; min-width: 0; font-size: 12px; }
+.python-example .code-panel.algorithm-code button { font-size: 12px; white-space: nowrap; color: var(--ink); background: #fff; border-color: var(--border); }
+.python-example .algorithm-code pre { color: #253649; font-size: 13px; line-height: 1.8; white-space: pre; overflow-wrap: normal; tab-size: 4; max-height: 560px; padding: 18px; }
+.python-error { padding: 12px 16px; color: #b42318; font-size: 13px; overflow-wrap: anywhere; }
+.workbench-page .python-example { padding: 20px 0; }
+@media (max-width: 700px) {
+  .learning-content.algorithm-guide { grid-template-columns: 1fr; gap: 24px; }
+  .python-example { padding: 16px; }
+  .python-example .algorithm-code pre { max-height: 480px; padding: 12px; }
+}

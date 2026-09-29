@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "base": "http://127.0.0.1:5178",
+  "checks": [
+    "真实示例加载；无素材时禁止运行，未运行时不伪装处理结果",
+    "算法搜索、无匹配提示、清空与当前路由高亮",
+    "真实参数修改、低分辨率预览与恢复默认值",
+    "真实 Canny 运行成功，原图与结果并排显示，结果图片可下载",
+    "折叠扩展图像空间且保留参数；滑动、单结果、同步缩放与重置正常",
+    "当前参数代码、结果数据、历史对比与键盘标签切换；修改参数后提示旧结果",
+    "1920 / 1280 / 1024 / 768 / 390 / 320 px 无页面横向溢出；移动端搜索与导航可用",
+    "浏览器模拟慢任务和 503：加载状态、防重复运行、折叠后取消、错误提示与重试入口正常",
+    "真实竖图和宽图等比适配，不拉伸、不裁切；模拟长文件名在桌面省略、手机换行且无横向溢出",
+    "学习概览、处理流水线、模型管理、实验记录、灰度化原路由仍可打开"
+  ],
+  "runtimeErrors": [],
+  "screenshots": [
+    "empty.png",
+    "ready.png",
+    "desktop.png",
+    "focused-result.png",
+    "python.png",
+    "tablet.png",
+    "mobile.png",
+    "running-simulated.png",
+    "error-simulated.png",
+    "portrait-long-name.png",
+    "mobile-long-name.png",
+    "landscape.png"
+  ]
+}

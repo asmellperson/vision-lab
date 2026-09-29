@@ -1,0 +1,465 @@
+{
+  "phase": "after",
+  "measurements": [
+    {
+      "name": "home-1920",
+      "width": 1920,
+      "height": 1080,
+      "documentWidth": 1920,
+      "main": {
+        "x": 224,
+        "y": 52,
+        "width": 1696,
+        "height": 913.515625
+      },
+      "viewer": null,
+      "viewport": null,
+      "parameters": null,
+      "borderedElements": 2
+    },
+    {
+      "name": "home-2560",
+      "width": 2560,
+      "height": 1440,
+      "documentWidth": 2560,
+      "main": {
+        "x": 224,
+        "y": 52,
+        "width": 2336,
+        "height": 990.953125
+      },
+      "viewer": null,
+      "viewport": null,
+      "parameters": null,
+      "borderedElements": 2
+    },
+    {
+      "name": "canny-1920",
+      "width": 1920,
+      "height": 1080,
+      "documentWidth": 1920,
+      "main": {
+        "x": 224,
+        "y": 52,
+        "width": 1696,
+        "height": 1482.875
+      },
+      "viewer": {
+        "x": 248,
+        "y": 219.890625,
+        "width": 1336,
+        "height": 772.421875
+      },
+      "viewport": {
+        "x": 248,
+        "y": 301.6875,
+        "width": 667.5,
+        "height": 654.625
+      },
+      "parameters": {
+        "x": 1608,
+        "y": 175.890625,
+        "width": 288,
+        "height": 663.9375
+      },
+      "borderedElements": 51
+    },
+    {
+      "name": "canny-2560",
+      "width": 2560,
+      "height": 1440,
+      "documentWidth": 2560,
+      "main": {
+        "x": 224,
+        "y": 52,
+        "width": 2336,
+        "height": 1778.84375
+      },
+      "viewer": {
+        "x": 256,
+        "y": 219.890625,
+        "width": 1940,
+        "height": 1068.390625
+      },
+      "viewport": {
+        "x": 256,
+        "y": 301.6875,
+        "width": 969.5,
+        "height": 950.59375
+      },
+      "parameters": {
+        "x": 2224,
+        "y": 175.890625,
+        "width": 304,
+        "height": 663.9375
+      },
+      "borderedElements": 51
+    },
+    {
+      "name": "canny-slide-2560",
+      "width": 2560,
+      "height": 1440,
+      "documentWidth": 2560,
+      "main": {
+        "x": 224,
+        "y": 52,
+        "width": 2336,
+        "height": 1981.25
+      },
+      "viewer": {
+        "x": 256,
+        "y": 219.890625,
+        "width": 1940,
+        "height": 1270.796875
+      },
+      "viewport": {
+        "x": 256,
+        "y": 301.6875,
+        "width": 1940,
+        "height": 1110
+      },
+      "parameters": {
+        "x": 2224,
+        "y": 175.890625,
+        "width": 304,
+        "height": 663.9375
+      },
+      "borderedElements": 51
+    },
+    {
+      "name": "canny-focus-2560",
+      "width": 2560,
+      "height": 1440,
+      "documentWidth": 2560,
+      "main": {
+        "x": 224,
+        "y": 52,
+        "width": 2336,
+        "height": 1938.25
+      },
+      "viewer": {
+        "x": 256,
+        "y": 219.890625,
+        "width": 2272,
+        "height": 1227.796875
+      },
+      "viewport": {
+        "x": 256,
+        "y": 301.6875,
+        "width": 2272,
+        "height": 1110
+      },
+      "parameters": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "borderedElements": 47
+    },
+    {
+      "name": "canny-1440",
+      "width": 1440,
+      "height": 1000,
+      "documentWidth": 1440,
+      "main": {
+        "x": 224,
+        "y": 52,
+        "width": 1216,
+        "height": 1247.6875
+      },
+      "viewer": {
+        "x": 248,
+        "y": 219.890625,
+        "width": 856,
+        "height": 537.234375
+      },
+      "viewport": {
+        "x": 248,
+        "y": 301.6875,
+        "width": 427.5,
+        "height": 419.4375
+      },
+      "parameters": {
+        "x": 1128,
+        "y": 175.890625,
+        "width": 288,
+        "height": 663.9375
+      },
+      "borderedElements": 51
+    },
+    {
+      "name": "canny-1024",
+      "width": 1024,
+      "height": 900,
+      "documentWidth": 1024,
+      "main": {
+        "x": 224,
+        "y": 52,
+        "width": 800,
+        "height": 1687.609375
+      },
+      "viewer": {
+        "x": 244,
+        "y": 219.890625,
+        "width": 496,
+        "height": 774.59375
+      },
+      "viewport": {
+        "x": 244,
+        "y": 301.6875,
+        "width": 496,
+        "height": 310
+      },
+      "parameters": {
+        "x": 756,
+        "y": 175.890625,
+        "width": 248,
+        "height": 663.9375
+      },
+      "borderedElements": 51
+    },
+    {
+      "name": "canny-390",
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "main": {
+        "x": 0,
+        "y": 52,
+        "width": 390,
+        "height": 1870.765625
+      },
+      "viewer": {
+        "x": 16,
+        "y": 294.3125,
+        "width": 358,
+        "height": 790.59375
+      },
+      "viewport": {
+        "x": 16,
+        "y": 412.109375,
+        "width": 358,
+        "height": 300
+      },
+      "parameters": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "borderedElements": 48
+    },
+    {
+      "name": "canny-mobile-parameters",
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "main": {
+        "x": 0,
+        "y": 52,
+        "width": 390,
+        "height": 2497.453125
+      },
+      "viewer": {
+        "x": 16,
+        "y": 842.21875,
+        "width": 358,
+        "height": 790.59375
+      },
+      "viewport": {
+        "x": 16,
+        "y": 960.015625,
+        "width": 358,
+        "height": 300
+      },
+      "parameters": {
+        "x": 16,
+        "y": 215.078125,
+        "width": 358,
+        "height": 529.703125
+      },
+      "borderedElements": 52
+    },
+    {
+      "name": "canny-mobile-python",
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "main": {
+        "x": 0,
+        "y": 52,
+        "width": 390,
+        "height": 2075.671875
+      },
+      "viewer": {
+        "x": 16,
+        "y": 294.3125,
+        "width": 358,
+        "height": 790.59375
+      },
+      "viewport": {
+        "x": 16,
+        "y": 412.109375,
+        "width": 358,
+        "height": 300
+      },
+      "parameters": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "borderedElements": 52
+    },
+    {
+      "name": "canny-320",
+      "width": 320,
+      "height": 844,
+      "documentWidth": 320,
+      "main": {
+        "x": 0,
+        "y": 52,
+        "width": 320,
+        "height": 1976.140625
+      },
+      "viewer": {
+        "x": 16,
+        "y": 294.3125,
+        "width": 288,
+        "height": 790.59375
+      },
+      "viewport": {
+        "x": 16,
+        "y": 412.109375,
+        "width": 288,
+        "height": 300
+      },
+      "parameters": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "borderedElements": 47
+    },
+    {
+      "name": "home-1440",
+      "width": 1440,
+      "height": 1000,
+      "documentWidth": 1440,
+      "main": {
+        "x": 224,
+        "y": 52,
+        "width": 1216,
+        "height": 913.515625
+      },
+      "viewer": null,
+      "viewport": null,
+      "parameters": null,
+      "borderedElements": 2
+    },
+    {
+      "name": "home-1024",
+      "width": 1024,
+      "height": 1000,
+      "documentWidth": 1024,
+      "main": {
+        "x": 224,
+        "y": 52,
+        "width": 800,
+        "height": 1454.484375
+      },
+      "viewer": null,
+      "viewport": null,
+      "parameters": null,
+      "borderedElements": 2
+    },
+    {
+      "name": "home-390",
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "main": {
+        "x": 0,
+        "y": 52,
+        "width": 390,
+        "height": 1630.296875
+      },
+      "viewer": null,
+      "viewport": null,
+      "parameters": null,
+      "borderedElements": 2
+    },
+    {
+      "name": "home-mobile-search",
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "main": {
+        "x": 0,
+        "y": 52,
+        "width": 390,
+        "height": 2719.03125
+      },
+      "viewer": null,
+      "viewport": null,
+      "parameters": null,
+      "borderedElements": 21
+    },
+    {
+      "name": "home-320",
+      "width": 320,
+      "height": 844,
+      "documentWidth": 320,
+      "main": {
+        "x": 0,
+        "y": 52,
+        "width": 320,
+        "height": 1765.546875
+      },
+      "viewer": null,
+      "viewport": null,
+      "parameters": null,
+      "borderedElements": 2
+    },
+    {
+      "name": "gray-scope-control",
+      "width": 1440,
+      "height": 1000,
+      "documentWidth": 1440,
+      "main": {
+        "x": 232,
+        "y": 56,
+        "width": 1208,
+        "height": 1201.078125
+      },
+      "viewer": {
+        "x": 264,
+        "y": 271.921875,
+        "width": 802,
+        "height": 470.1875
+      },
+      "viewport": {
+        "x": 265,
+        "y": 333.015625,
+        "width": 399.5,
+        "height": 365
+      },
+      "parameters": {
+        "x": 1088,
+        "y": 216.828125,
+        "width": 320,
+        "height": 460.5
+      },
+      "borderedElements": 63
+    }
+  ],
+  "checks": [
+    "首页关键词搜索、空结果、清空、140 个动态入口展开、Enter 进入算法并加载素材",
+    "真实 Canny 运行，画布对比模式、参数折叠、独立选中标记、手机调参与代码仍可用",
+    "1440 / 1024 / 390 / 320 px 两页无横向溢出，手机搜索与侧栏导航正常",
+    "两种大屏画布高度增长超过 40%，带边框元素减少超过 30%；灰度页布局测量与改版前完全一致"
+  ],
+  "errors": []
+}

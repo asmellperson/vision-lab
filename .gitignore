@@ -10,3 +10,4 @@ models/*
 *.log
 *.tsbuildinfo
 .env
+/frontend-design/
