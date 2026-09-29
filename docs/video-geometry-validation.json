@@ -1,0 +1,104 @@
+{
+  "frame_diff": {
+    "status": "passed",
+    "seconds": 0.21,
+    "fps": 10.0,
+    "duration": 2.0,
+    "events": 0,
+    "offline": true
+  },
+  "mog2": {
+    "status": "passed",
+    "seconds": 0.27,
+    "fps": 10.0,
+    "duration": 2.0,
+    "events": 0,
+    "offline": true
+  },
+  "flow_sparse": {
+    "status": "passed",
+    "seconds": 0.22,
+    "fps": 10.0,
+    "duration": 2.0,
+    "events": 0,
+    "offline": true
+  },
+  "flow_dense": {
+    "status": "passed",
+    "seconds": 0.55,
+    "fps": 10.0,
+    "duration": 2.0,
+    "events": 0,
+    "offline": true
+  },
+  "single_track": {
+    "status": "passed",
+    "seconds": 0.54,
+    "fps": 10.0,
+    "duration": 2.0,
+    "events": 0,
+    "offline": true
+  },
+  "multi_track": {
+    "status": "passed",
+    "seconds": 1.34,
+    "fps": 10.0,
+    "duration": 2.0,
+    "events": 0,
+    "offline": true
+  },
+  "events": {
+    "status": "passed",
+    "seconds": 0.75,
+    "fps": 10.0,
+    "duration": 2.0,
+    "events": 1,
+    "offline": true
+  },
+  "sequence": {
+    "status": "passed",
+    "seconds": 0.75,
+    "fps": 10.0,
+    "duration": 2.0,
+    "events": 1,
+    "offline": true
+  },
+  "action": {
+    "status": "passed",
+    "seconds": 0.8,
+    "fps": 10.0,
+    "duration": 2.0,
+    "events": 1,
+    "offline": true
+  },
+  "video_segment": {
+    "status": "passed",
+    "seconds": 6.1,
+    "fps": 10.0,
+    "duration": 2.0,
+    "events": 0,
+    "offline": true
+  },
+  "canny": {
+    "status": "passed",
+    "seconds": 0.22,
+    "fps": 10.0,
+    "duration": 2.0,
+    "events": 0,
+    "offline": true
+  },
+  "calibrate": {
+    "status": "passed",
+    "rms_reprojection_px": 0.24800373489789726,
+    "images": 11
+  },
+  "stitch": {
+    "status": "passed",
+    "inliers": 1667,
+    "output_shape": [
+      491,
+      532,
+      3
+    ]
+  }
+}

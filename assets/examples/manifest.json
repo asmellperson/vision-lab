@@ -1,0 +1,360 @@
+[
+  {
+    "file": "bus.jpg",
+    "name": "街景公交 · 真实照片",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/ultralytics/ultralytics/main/ultralytics/assets/bus.jpg",
+    "license": "Ultralytics AGPL-3.0"
+  },
+  {
+    "file": "zidane.jpg",
+    "name": "人物姿态 · 真实照片",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/ultralytics/ultralytics/main/ultralytics/assets/zidane.jpg",
+    "license": "Ultralytics AGPL-3.0"
+  },
+  {
+    "file": "sudoku.png",
+    "name": "数独与透视 · 真实照片",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/sudoku.png",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "fruits.jpg",
+    "name": "水果与颜色 · 真实照片",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/fruits.jpg",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "parts.png",
+    "name": "零件轮廓 · 合成教学图",
+    "kind": "image",
+    "source": "本项目程序生成",
+    "license": "CC0"
+  },
+  {
+    "file": "normal-0.png",
+    "name": "正常样本 1 · 合成教学图",
+    "kind": "image",
+    "role": "normal_samples",
+    "source": "本项目程序生成",
+    "license": "CC0"
+  },
+  {
+    "file": "normal-1.png",
+    "name": "正常样本 2 · 合成教学图",
+    "kind": "image",
+    "role": "normal_samples",
+    "source": "本项目程序生成",
+    "license": "CC0"
+  },
+  {
+    "file": "normal-2.png",
+    "name": "正常样本 3 · 合成教学图",
+    "kind": "image",
+    "role": "normal_samples",
+    "source": "本项目程序生成",
+    "license": "CC0"
+  },
+  {
+    "file": "normal-3.png",
+    "name": "正常样本 4 · 合成教学图",
+    "kind": "image",
+    "role": "normal_samples",
+    "source": "本项目程序生成",
+    "license": "CC0"
+  },
+  {
+    "file": "defect.png",
+    "name": "缺件与划痕 · 合成教学图",
+    "kind": "image",
+    "source": "本项目程序生成",
+    "license": "CC0"
+  },
+  {
+    "file": "text.png",
+    "name": "英文标签 · 合成教学图",
+    "kind": "image",
+    "source": "本项目程序生成",
+    "license": "CC0"
+  },
+  {
+    "file": "chessboard.png",
+    "name": "9×6 内角点棋盘 · 需打印后拍摄多视角",
+    "kind": "image",
+    "source": "本项目程序生成",
+    "license": "CC0"
+  },
+  {
+    "file": "fruits-shift.png",
+    "name": "水果平移参考 · 配准与匹配",
+    "kind": "image",
+    "source": "OpenCV fruits 派生"
+  },
+  {
+    "file": "template.png",
+    "name": "水果局部模板",
+    "kind": "image",
+    "role": "template",
+    "source": "OpenCV fruits 派生"
+  },
+  {
+    "file": "plane.xyz",
+    "name": "平面与离群点 · 合成点云",
+    "kind": "pointcloud",
+    "source": "本项目程序生成",
+    "license": "CC0"
+  },
+  {
+    "file": "pedestrians.mp4",
+    "name": "行人运动 · 真实视频 5 秒",
+    "kind": "video",
+    "source": "https://github.com/opencv/opencv/blob/4.x/samples/data/vtest.avi",
+    "license": "OpenCV sample / original source PETS",
+    "width": 768,
+    "height": 576,
+    "duration": 5,
+    "fps": 10
+  },
+  {
+    "file": "calibration-left01.jpg",
+    "name": "真实标定左图 01 · 9×6 内角点",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/left01.jpg",
+    "role": "calibration_images",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-left02.jpg",
+    "name": "真实标定左图 02 · 9×6 内角点",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/left02.jpg",
+    "role": "calibration_images",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-right02.jpg",
+    "name": "真实标定右图 02",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/right02.jpg",
+    "role": "stereo_calibration",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-left03.jpg",
+    "name": "真实标定左图 03 · 9×6 内角点",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/left03.jpg",
+    "role": "calibration_images",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-right03.jpg",
+    "name": "真实标定右图 03",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/right03.jpg",
+    "role": "stereo_calibration",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-left04.jpg",
+    "name": "真实标定左图 04 · 9×6 内角点",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/left04.jpg",
+    "role": "calibration_images",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-right04.jpg",
+    "name": "真实标定右图 04",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/right04.jpg",
+    "role": "stereo_calibration",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-left05.jpg",
+    "name": "真实标定左图 05 · 9×6 内角点",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/left05.jpg",
+    "role": "calibration_images",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-right05.jpg",
+    "name": "真实标定右图 05",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/right05.jpg",
+    "role": "stereo_calibration",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-left06.jpg",
+    "name": "真实标定左图 06 · 9×6 内角点",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/left06.jpg",
+    "role": "calibration_images",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-right06.jpg",
+    "name": "真实标定右图 06",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/right06.jpg",
+    "role": "stereo_calibration",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-left07.jpg",
+    "name": "真实标定左图 07 · 9×6 内角点",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/left07.jpg",
+    "role": "calibration_images",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-right07.jpg",
+    "name": "真实标定右图 07",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/right07.jpg",
+    "role": "stereo_calibration",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-left08.jpg",
+    "name": "真实标定左图 08 · 9×6 内角点",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/left08.jpg",
+    "role": "calibration_images",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-right08.jpg",
+    "name": "真实标定右图 08",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/right08.jpg",
+    "role": "stereo_calibration",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-left09.jpg",
+    "name": "真实标定左图 09 · 9×6 内角点",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/left09.jpg",
+    "role": "calibration_images",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-right09.jpg",
+    "name": "真实标定右图 09",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/right09.jpg",
+    "role": "stereo_calibration",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-left11.jpg",
+    "name": "真实标定左图 11 · 9×6 内角点",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/left11.jpg",
+    "role": "calibration_images",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-right11.jpg",
+    "name": "真实标定右图 11",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/right11.jpg",
+    "role": "stereo_calibration",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-left12.jpg",
+    "name": "真实标定左图 12 · 9×6 内角点",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/left12.jpg",
+    "role": "calibration_images",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-right12.jpg",
+    "name": "真实标定右图 12",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/right12.jpg",
+    "role": "stereo_calibration",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-left13.jpg",
+    "name": "真实标定左图 13 · 9×6 内角点",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/left13.jpg",
+    "role": "calibration_images",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-right13.jpg",
+    "name": "真实标定右图 13",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/right13.jpg",
+    "role": "stereo_calibration",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-left14.jpg",
+    "name": "真实标定左图 14 · 9×6 内角点",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/left14.jpg",
+    "role": "calibration_images",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-right14.jpg",
+    "name": "真实标定右图 14",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/right14.jpg",
+    "role": "stereo_calibration",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "calibration-right01.jpg",
+    "name": "真实标定右图 01",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opencv/opencv/4.x/samples/data/right01.jpg"
+  },
+  {
+    "file": "document.jpg",
+    "name": "中英文文档 · 真实版面",
+    "kind": "image",
+    "source": "https://raw.githubusercontent.com/opendatalab/DocLayout-YOLO/main/assets/example/exam_paper.jpg"
+  },
+  {
+    "file": "hands.jpg",
+    "name": "手部关键点 · MediaPipe 官方示例",
+    "kind": "image",
+    "source": "https://storage.googleapis.com/mediapipe-assets/right_hands.jpg"
+  },
+  {
+    "file": "aerial.png",
+    "name": "航拍旋转目标 · DOTA8",
+    "kind": "image",
+    "source": "https://github.com/ultralytics/assets/releases/download/v0.0.0/dota8.zip",
+    "license": "DOTA research dataset; see upstream terms"
+  },
+  {
+    "file": "stereo-left.png",
+    "name": "已极线校正双目 left",
+    "kind": "image",
+    "source": "OpenCV calibration sample + stereoRectify",
+    "license": "OpenCV Apache-2.0"
+  },
+  {
+    "file": "stereo-right.png",
+    "name": "已极线校正双目 right",
+    "kind": "image",
+    "source": "OpenCV calibration sample + stereoRectify",
+    "license": "OpenCV Apache-2.0"
+  }
+]

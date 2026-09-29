@@ -1,0 +1,562 @@
+{
+  "anomaly": {
+    "status": "passed",
+    "elapsed_seconds": 0.242,
+    "model": "resnet18",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [
+      "异常热力图"
+    ],
+    "output_keys": [
+      "anomaly_score",
+      "mean_score",
+      "reference_vectors",
+      "normal_samples",
+      "method",
+      "note",
+      "bank_artifact",
+      "model",
+      "device"
+    ],
+    "offline": true
+  },
+  "char_check": {
+    "status": "passed",
+    "elapsed_seconds": 0.459,
+    "model": "rapidocr",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [
+      "文字位置"
+    ],
+    "output_keys": [
+      "texts",
+      "text",
+      "timing",
+      "model",
+      "device"
+    ],
+    "offline": true,
+    "texts": [
+      "VISION LAB 2026",
+      "PARTAB12345",
+      "PASS"
+    ]
+  },
+  "classify": {
+    "status": "passed",
+    "elapsed_seconds": 0.208,
+    "model": "resnet18",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [],
+    "output_keys": [
+      "classes",
+      "top5",
+      "preprocess",
+      "model",
+      "device"
+    ],
+    "offline": true
+  },
+  "detect": {
+    "status": "passed",
+    "elapsed_seconds": 1.45,
+    "model": "yolov8n",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [
+      "目标框",
+      "类别文字"
+    ],
+    "output_keys": [
+      "classes",
+      "objects",
+      "count",
+      "model",
+      "device"
+    ],
+    "offline": true,
+    "count": 5,
+    "empty_image_count": 0
+  },
+  "obb": {
+    "status": "passed",
+    "elapsed_seconds": 0.203,
+    "model": "yolov8n-obb",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [
+      "目标框",
+      "类别文字"
+    ],
+    "output_keys": [
+      "classes",
+      "objects",
+      "count",
+      "model",
+      "device"
+    ],
+    "offline": true,
+    "count": 1
+  },
+  "instance": {
+    "status": "passed",
+    "elapsed_seconds": 1.425,
+    "model": "yolov8n-seg",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [
+      "掩膜",
+      "目标框",
+      "类别文字"
+    ],
+    "output_keys": [
+      "classes",
+      "objects",
+      "count",
+      "model",
+      "device"
+    ],
+    "offline": true,
+    "count": 4
+  },
+  "pose": {
+    "status": "passed",
+    "elapsed_seconds": 0.133,
+    "model": "yolov8n-pose",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [
+      "关键点",
+      "目标框",
+      "类别文字"
+    ],
+    "output_keys": [
+      "classes",
+      "objects",
+      "keypoints",
+      "keypoint_confidence",
+      "count",
+      "model",
+      "device"
+    ],
+    "offline": true,
+    "count": 3
+  },
+  "semantic": {
+    "status": "passed",
+    "elapsed_seconds": 0.37,
+    "model": "deeplab",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [
+      "语义标签"
+    ],
+    "output_keys": [
+      "segments",
+      "model",
+      "device"
+    ],
+    "offline": true
+  },
+  "panoptic": {
+    "status": "passed",
+    "elapsed_seconds": 4.574,
+    "model": "detr-panoptic",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [
+      "全景分割"
+    ],
+    "output_keys": [
+      "segments",
+      "classes",
+      "model",
+      "device"
+    ],
+    "offline": true
+  },
+  "sam": {
+    "status": "passed",
+    "elapsed_seconds": 1.085,
+    "model": "sam2",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [
+      "掩膜",
+      "目标框",
+      "类别文字"
+    ],
+    "output_keys": [
+      "classes",
+      "objects",
+      "count",
+      "model",
+      "device"
+    ],
+    "offline": true,
+    "count": 1
+  },
+  "face": {
+    "status": "passed",
+    "elapsed_seconds": 0.918,
+    "model": "face_landmarker",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [
+      "关键点"
+    ],
+    "output_keys": [
+      "landmarks",
+      "coordinate_space",
+      "model",
+      "device"
+    ],
+    "offline": true
+  },
+  "hand": {
+    "status": "passed",
+    "elapsed_seconds": 0.89,
+    "model": "hand_landmarker",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [
+      "关键点"
+    ],
+    "output_keys": [
+      "landmarks",
+      "coordinate_space",
+      "model",
+      "device"
+    ],
+    "offline": true
+  },
+  "ocr": {
+    "status": "passed",
+    "elapsed_seconds": 0.409,
+    "model": "rapidocr",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [
+      "文字位置"
+    ],
+    "output_keys": [
+      "texts",
+      "text",
+      "timing",
+      "model",
+      "device"
+    ],
+    "offline": true,
+    "texts": [
+      "VISION LAB 2026",
+      "PARTAB12345",
+      "PASS"
+    ]
+  },
+  "layout": {
+    "status": "passed",
+    "elapsed_seconds": 2.528,
+    "model": "layout",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [
+      "目标框",
+      "类别文字"
+    ],
+    "output_keys": [
+      "classes",
+      "objects",
+      "count",
+      "model",
+      "device"
+    ],
+    "offline": true,
+    "count": 32
+  },
+  "similarity": {
+    "status": "passed",
+    "elapsed_seconds": 0.474,
+    "model": "clip",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [],
+    "output_keys": [
+      "ranking",
+      "model",
+      "device"
+    ],
+    "offline": true
+  },
+  "text_retrieval": {
+    "status": "passed",
+    "elapsed_seconds": 2.715,
+    "model": "clip",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [],
+    "output_keys": [
+      "ranking",
+      "image_text_candidates",
+      "queries",
+      "query",
+      "model",
+      "device"
+    ],
+    "offline": true
+  },
+  "grounding": {
+    "status": "passed",
+    "elapsed_seconds": 0.737,
+    "model": "owlvit",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [
+      "文本目标框"
+    ],
+    "output_keys": [
+      "objects",
+      "model",
+      "device"
+    ],
+    "offline": true
+  },
+  "caption": {
+    "status": "passed",
+    "elapsed_seconds": 1.068,
+    "model": "blip",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [],
+    "output_keys": [
+      "text",
+      "model",
+      "device"
+    ],
+    "offline": true
+  },
+  "vqa": {
+    "status": "passed",
+    "elapsed_seconds": 1.029,
+    "model": "blip-vqa",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [],
+    "output_keys": [
+      "text",
+      "model",
+      "device"
+    ],
+    "offline": true
+  },
+  "depth": {
+    "status": "passed",
+    "elapsed_seconds": 0.466,
+    "model": "depth-anything",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [],
+    "output_keys": [
+      "scale",
+      "model",
+      "device"
+    ],
+    "offline": true
+  },
+  "superres": {
+    "status": "passed",
+    "elapsed_seconds": 18.628,
+    "model": "edsr",
+    "image_shape": [
+      480,
+      640,
+      3
+    ],
+    "layers": [],
+    "output_keys": [
+      "scale",
+      "model",
+      "device"
+    ],
+    "offline": true
+  },
+  "denoise_dl": {
+    "status": "passed",
+    "elapsed_seconds": 6.648,
+    "model": "swin-denoise",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [],
+    "output_keys": [
+      "model",
+      "device"
+    ],
+    "offline": true
+  },
+  "deblur": {
+    "status": "passed",
+    "elapsed_seconds": 5.265,
+    "model": "restormer",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [],
+    "output_keys": [
+      "model",
+      "device"
+    ],
+    "offline": true
+  },
+  "matting": {
+    "status": "passed",
+    "elapsed_seconds": 0.362,
+    "model": "rmbg",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [],
+    "output_keys": [
+      "note",
+      "model",
+      "device"
+    ],
+    "offline": true
+  },
+  "gradcam": {
+    "status": "passed",
+    "elapsed_seconds": 0.226,
+    "model": "resnet18",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [
+      "Grad-CAM"
+    ],
+    "output_keys": [
+      "class",
+      "class_id",
+      "preprocess",
+      "model",
+      "device"
+    ],
+    "offline": true
+  },
+  "feature_maps": {
+    "status": "passed",
+    "elapsed_seconds": 0.214,
+    "model": "resnet18",
+    "image_shape": [
+      512,
+      512,
+      3
+    ],
+    "layers": [],
+    "output_keys": [
+      "layer",
+      "channels_shown",
+      "total_channels",
+      "model",
+      "device"
+    ],
+    "offline": true
+  },
+  "benchmark": {
+    "status": "passed",
+    "elapsed_seconds": 0.581,
+    "model": "resnet18",
+    "image_shape": [
+      240,
+      320,
+      3
+    ],
+    "layers": [],
+    "output_keys": [
+      "pytorch_median_ms",
+      "device",
+      "TensorRT",
+      "onnxruntime_cpu_median_ms",
+      "max_abs_error",
+      "model"
+    ],
+    "offline": true,
+    "benchmark": {
+      "pytorch_median_ms": 14.985071495175362,
+      "device": "cpu",
+      "TensorRT": "未安装 TensorRT 或无 NVIDIA GPU，未运行",
+      "onnxruntime_cpu_median_ms": 7.397305220365524,
+      "max_abs_error": 8.165836334228516e-06,
+      "model": "resnet18"
+    }
+  }
+}

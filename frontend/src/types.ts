@@ -1,0 +1,10 @@
+export type Parameter={key:string;label:string;default:unknown;help:string;type:'number'|'select'|'text'|'json';min:number;max:number;step:number;options:string[]}
+export type Algorithm={id:string;name:string;english:string;category:string;summary:string;principle:string;uses:string;failures:string;params:Parameter[];inputs:string[];interaction:string;model:string;preview:boolean;temporal:boolean;pipeline_compatible:boolean;output_kind:string;status:string;reason:string}
+export type Asset={id:string;name:string;kind:string;url:string;poster?:string;metadata:{width?:number;height?:number;duration?:number;fps?:number;example?:boolean;[key:string]:unknown}}
+export type Layer={name:string;url:string}
+export type JobResult={image_url?:string;composite_url?:string;video_url?:string;width?:number;height?:number;layers:Layer[];data?:Record<string,unknown>;elapsed_ms:number;downloads:{name:string;url:string}[];steps?:{algorithm:string;image_url:string;step:number}[];events?:{time:number;kind:string;track_id?:number;frame_url?:string;evidence?:unknown;top5?:unknown}[];duration?:number;fps?:number;frame_count?:number;sampling?:string}
+export type Job={id:string;algorithm:string;asset_id:string;status:string;progress:number;message:string;created:number;request:{algorithm:string;asset_id:string;params:Record<string,unknown>;extra:Record<string,string[]>;steps?:Step[]};result?:JobResult}
+export type Model={id:string;name?:string;state:string;reason:string;classes:string;license:string;source:string;local_path:string;loaded:boolean;version:string;revision:string;devices:string[];device:string;tasks:string[];missing:string[];files:{path:string;size:number;sha256:string}[];download?:{state:string;progress:number;message:string}}
+export type Step={algorithm:string;params:Record<string,unknown>;enabled:boolean}
+export type Preset={id:string;name:string;algorithm:string;content:{params?:Record<string,unknown>;steps?:Step[]}}
+export const defaults=(a:Algorithm)=>Object.fromEntries(a.params.map(p=>[p.key,p.default]))

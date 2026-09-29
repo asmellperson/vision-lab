@@ -1,0 +1,45 @@
+{
+  "camera": [
+    [
+      532.6439414444488,
+      0.0,
+      341.9469724895082
+    ],
+    [
+      0.0,
+      532.635547026275,
+      232.03085595298666
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "distortion": [
+    -0.31362787775204365,
+    0.18672959490896196,
+    0.0006081964776709597,
+    0.0005352428188546874,
+    -0.07366826550095806
+  ],
+  "rms_reprojection_px": 0.24800373489789726,
+  "image_size": [
+    640,
+    480
+  ],
+  "used": [
+    "calibration-left01.jpg",
+    "calibration-left02.jpg",
+    "calibration-left03.jpg",
+    "calibration-left06.jpg",
+    "calibration-left07.jpg",
+    "calibration-left08.jpg",
+    "calibration-left09.jpg",
+    "calibration-left11.jpg",
+    "calibration-left12.jpg",
+    "calibration-left13.jpg",
+    "calibration-left14.jpg"
+  ],
+  "square_mm": 25
+}

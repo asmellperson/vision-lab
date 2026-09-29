@@ -1,0 +1,917 @@
+[
+  {
+    "id": "resnet18",
+    "tasks": [
+      "classify",
+      "anomaly",
+      "gradcam",
+      "feature_maps",
+      "benchmark"
+    ],
+    "kind": "torchvision",
+    "source": "https://pytorch.org/vision/stable/models/resnet.html",
+    "license": "BSD-3-Clause (torchvision)",
+    "classes": "ImageNet-1K",
+    "devices": [
+      "cpu",
+      "cuda"
+    ],
+    "version": "IMAGENET1K_V1",
+    "files": [
+      {
+        "path": "resnet18.pth",
+        "size": 46830571,
+        "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec"
+      }
+    ],
+    "revision": "IMAGENET1K_V1",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/resnet18",
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  },
+  {
+    "id": "deeplab",
+    "tasks": [
+      "semantic"
+    ],
+    "kind": "torchvision",
+    "source": "https://pytorch.org/vision/stable/models/deeplabv3.html",
+    "license": "BSD-3-Clause (torchvision)",
+    "classes": "VOC: background, aeroplane, bicycle, bird, boat, bottle, bus, car, cat, chair, cow, diningtable, dog, horse, motorbike, person, pottedplant, sheep, sofa, train, tvmonitor",
+    "devices": [
+      "cpu",
+      "cuda"
+    ],
+    "version": "COCO_WITH_VOC_LABELS_V1",
+    "files": [
+      {
+        "path": "deeplab.pth",
+        "size": 44356159,
+        "sha256": "fc3c493d68e89cc31ef488c803d5d7dd2f3190fb570598faa49fef69be8e5e70"
+      }
+    ],
+    "revision": "COCO_WITH_VOC_LABELS_V1",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/deeplab",
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  },
+  {
+    "id": "r3d",
+    "tasks": [
+      "action"
+    ],
+    "kind": "torchvision",
+    "source": "https://pytorch.org/vision/stable/models/video.html",
+    "license": "BSD-3-Clause (torchvision)",
+    "classes": "Kinetics-400，运行时导出全部类别",
+    "devices": [
+      "cpu",
+      "cuda"
+    ],
+    "version": "KINETICS400_V1",
+    "files": [
+      {
+        "path": "r3d.pth",
+        "size": 133546016,
+        "sha256": "b3b3357ead25631ec9c57362ff2128a92d0427e01e2cd184951a44380c3f2e9d"
+      }
+    ],
+    "revision": "KINETICS400_V1",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/r3d",
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  },
+  {
+    "id": "yolov8n",
+    "tasks": [
+      "detect",
+      "multi_track",
+      "events",
+      "sequence"
+    ],
+    "kind": "ultralytics",
+    "source": "https://docs.ultralytics.com/models/yolov8/",
+    "license": "AGPL-3.0 / Ultralytics Enterprise",
+    "classes": "COCO 80 类",
+    "devices": [
+      "cpu",
+      "cuda"
+    ],
+    "version": "YOLOv8 / assets v8.3.0",
+    "files": [
+      {
+        "path": "yolov8n.pt",
+        "size": 6549796,
+        "sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36"
+      }
+    ],
+    "revision": "YOLOv8 / assets v8.3.0",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/yolov8n",
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  },
+  {
+    "id": "yolov8n-seg",
+    "tasks": [
+      "instance"
+    ],
+    "kind": "ultralytics",
+    "source": "https://docs.ultralytics.com/models/yolov8/",
+    "license": "AGPL-3.0 / Ultralytics Enterprise",
+    "classes": "COCO 80 类",
+    "devices": [
+      "cpu",
+      "cuda"
+    ],
+    "version": "YOLOv8 / assets v8.3.0",
+    "files": [
+      {
+        "path": "yolov8n-seg.pt",
+        "size": 7071756,
+        "sha256": "a7cd8f929e1903d78a12a48efecab430209f18dc46cb96c3599a5980c63c423c"
+      }
+    ],
+    "revision": "YOLOv8 / assets v8.3.0",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/yolov8n-seg",
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  },
+  {
+    "id": "yolov8n-pose",
+    "tasks": [
+      "pose"
+    ],
+    "kind": "ultralytics",
+    "source": "https://docs.ultralytics.com/models/yolov8/",
+    "license": "AGPL-3.0 / Ultralytics Enterprise",
+    "classes": "person / COCO 17 关键点",
+    "devices": [
+      "cpu",
+      "cuda"
+    ],
+    "version": "YOLOv8 / assets v8.3.0",
+    "files": [
+      {
+        "path": "yolov8n-pose.pt",
+        "size": 6832633,
+        "sha256": "c6fa93dd1ee4a2c18c900a45c1d864a1c6f7aba75d84f91648a30b7fb641d212"
+      }
+    ],
+    "revision": "YOLOv8 / assets v8.3.0",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/yolov8n-pose",
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  },
+  {
+    "id": "yolov8n-obb",
+    "tasks": [
+      "obb"
+    ],
+    "kind": "ultralytics",
+    "source": "https://docs.ultralytics.com/models/yolov8/",
+    "license": "AGPL-3.0 / Ultralytics Enterprise",
+    "classes": "DOTA 15 类：plane, ship, storage tank, baseball diamond, tennis court, basketball court, ground track field, harbor, bridge, large vehicle, small vehicle, helicopter, roundabout, soccer ball field, swimming pool",
+    "devices": [
+      "cpu",
+      "cuda"
+    ],
+    "version": "YOLOv8 / assets v8.3.0",
+    "files": [
+      {
+        "path": "yolov8n-obb.pt",
+        "size": 6567590,
+        "sha256": "fa6e4cd2691f132875c143135affaa66b5d89394ebb1d07d19770a9b6382c1b8"
+      }
+    ],
+    "revision": "YOLOv8 / assets v8.3.0",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/yolov8n-obb",
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  },
+  {
+    "id": "sam2",
+    "tasks": [
+      "sam",
+      "video_segment"
+    ],
+    "kind": "sam",
+    "source": "https://github.com/facebookresearch/sam2",
+    "license": "Apache-2.0 (Meta); Ultralytics adapter AGPL-3.0",
+    "classes": "类别无关",
+    "devices": [
+      "cpu",
+      "cuda"
+    ],
+    "version": "SAM2 Hiera tiny / Ultralytics packaged",
+    "files": [
+      {
+        "path": "sam2_t.pt",
+        "size": 78064050,
+        "sha256": "94375f988270836169320bd901960c67b5770e8bef3867d70102f01a8b5ca501"
+      }
+    ],
+    "revision": "SAM2 Hiera tiny / Ultralytics packaged",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/sam2",
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  },
+  {
+    "id": "rapidocr",
+    "tasks": [
+      "ocr",
+      "char_check"
+    ],
+    "kind": "rapidocr",
+    "source": "https://github.com/RapidAI/RapidOCR",
+    "license": "Apache-2.0",
+    "classes": "PP-OCRv4 中文英文；ONNX 内嵌词表",
+    "devices": [
+      "cpu"
+    ],
+    "version": "rapidocr-onnxruntime 1.4.4",
+    "name": "PP-OCRv4 / RapidOCR",
+    "revision": "rapidocr-onnxruntime 1.4.4",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/rapidocr",
+    "files": [
+      {
+        "path": "config.yaml",
+        "size": 1221,
+        "sha256": "bf94a1da4cba828e67b1d61e27cee14d9e7da27c9f272e04048a17e41ae97332"
+      },
+      {
+        "path": "models/ch_PP-OCRv4_det_infer.onnx",
+        "size": 4745517,
+        "sha256": "d2a7720d45a54257208b1e13e36a8479894cb74155a5efe29462512d42f49da9"
+      },
+      {
+        "path": "models/ch_PP-OCRv4_rec_infer.onnx",
+        "size": 10857958,
+        "sha256": "48fc40f24f6d2a207a2b1091d3437eb3cc3eb6b676dc3ef9c37384005483683b"
+      },
+      {
+        "path": "models/ch_ppocr_mobile_v2.0_cls_infer.onnx",
+        "size": 585532,
+        "sha256": "e47acedf663230f8863ff1ab0e64dd2d82b838fceb5957146dab185a89d6215c"
+      }
+    ],
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  },
+  {
+    "id": "depth-anything",
+    "tasks": [
+      "depth"
+    ],
+    "kind": "hf",
+    "source": "https://huggingface.co/depth-anything/Depth-Anything-V2-Small-hf",
+    "license": "Apache-2.0",
+    "classes": "相对逆深度",
+    "devices": [
+      "cpu",
+      "cuda"
+    ],
+    "version": "download revision locked in inventory.json",
+    "repo": "depth-anything/Depth-Anything-V2-Small-hf",
+    "revision": "5426e4f0f36572d16453bbda7a8389317b1bef99",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/depth-anything",
+    "files": [
+      {
+        "path": "README.md",
+        "size": 4400,
+        "sha256": "319566441daaac0c5ed83e75a8fd19bae0863f3275e23f147c06fe0906edf6fb"
+      },
+      {
+        "path": "config.json",
+        "size": 950,
+        "sha256": "c56698d3643dde1f83ea2212759e6b31a22b8f827246a36dd007ee8a22b3ff75"
+      },
+      {
+        "path": "model.safetensors",
+        "size": 99173660,
+        "sha256": "3152477ce0d8d6978d76b995120de97cb5b928701fd0f817769f59e249a16b70"
+      },
+      {
+        "path": "preprocessor_config.json",
+        "size": 775,
+        "sha256": "d41175c0d889477ca8fc67191e540faef14baf6275157b3fdecf78469e6bbf84"
+      }
+    ],
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  },
+  {
+    "id": "clip",
+    "tasks": [
+      "similarity",
+      "text_retrieval"
+    ],
+    "kind": "hf",
+    "source": "https://huggingface.co/openai/clip-vit-base-patch32",
+    "license": "MIT",
+    "classes": "开放词汇英文图文相似度",
+    "devices": [
+      "cpu",
+      "cuda"
+    ],
+    "version": "download revision locked in inventory.json",
+    "repo": "openai/clip-vit-base-patch32",
+    "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/clip",
+    "files": [
+      {
+        "path": "README.md",
+        "size": 7942,
+        "sha256": "8f0e8c678e0afe5f384f3bf8a6694c1cb53c41e52f86277967b6c5354cb0f9f4"
+      },
+      {
+        "path": "config.json",
+        "size": 4186,
+        "sha256": "b575ef3c36f2a057fa19e221650105052d61cc9c1a972ec15019c6261ec98770"
+      },
+      {
+        "path": "merges.txt",
+        "size": 524657,
+        "sha256": "f526393189112391ce6f9795d4695f704121ce452c3aad1f5335cc41337eba85"
+      },
+      {
+        "path": "preprocessor_config.json",
+        "size": 316,
+        "sha256": "910e70b3956ac9879ebc90b22fb3bc8a75b6a0677814500101a4c072bd7857bd"
+      },
+      {
+        "path": "pytorch_model.bin",
+        "size": 605247071,
+        "sha256": "a63082132ba4f97a80bea76823f544493bffa8082296d62d71581a4feff1576f"
+      },
+      {
+        "path": "special_tokens_map.json",
+        "size": 389,
+        "sha256": "f8c0d6c39aee3f8431078ef6646567b0aba7f2246e9c54b8b99d55c22b707cbf"
+      },
+      {
+        "path": "tokenizer.json",
+        "size": 2224041,
+        "sha256": "b556ac8c99757ffb677208af34bc8c6721572114111a6e0aaf5fa69ff0b8d842"
+      },
+      {
+        "path": "tokenizer_config.json",
+        "size": 592,
+        "sha256": "34b7336e4bee12e0a9730eaf5189f582ef3c3eea5027f65730e5717256755aad"
+      },
+      {
+        "path": "vocab.json",
+        "size": 862328,
+        "sha256": "5047b556ce86ccaf6aa22b3ffccfc52d391ea4accdab9c2f2407da5b742d4363"
+      }
+    ],
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  },
+  {
+    "id": "owlvit",
+    "tasks": [
+      "grounding"
+    ],
+    "kind": "hf",
+    "source": "https://huggingface.co/google/owlvit-base-patch32",
+    "license": "Apache-2.0",
+    "classes": "开放词汇英文检测",
+    "devices": [
+      "cpu",
+      "cuda"
+    ],
+    "version": "download revision locked in inventory.json",
+    "repo": "google/owlvit-base-patch32",
+    "revision": "cbc355fb364588351c5d51c7f74465e8e7ec6f72",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/owlvit",
+    "files": [
+      {
+        "path": "README.md",
+        "size": 5146,
+        "sha256": "a16c707494da894773e85c1be976ae605a7b3a3ce92cf9ed277623dd25f236bf"
+      },
+      {
+        "path": "config.json",
+        "size": 4418,
+        "sha256": "b5934e0d2933194b8a85f93674e577feaa1a1ba2dc1d143b2d5e5305ff7a9d7c"
+      },
+      {
+        "path": "merges.txt",
+        "size": 524619,
+        "sha256": "9fd691f7c8039210e0fced15865466c65820d09b63988b0174bfe25de299051a"
+      },
+      {
+        "path": "model.safetensors",
+        "size": 612983940,
+        "sha256": "4dbe0399f0b7d7c8dddf1535a98769cc30743bebc877aea681998c8d984ce52b"
+      },
+      {
+        "path": "preprocessor_config.json",
+        "size": 392,
+        "sha256": "2010d320cd2c68a8bb1de69aaa8f89daf173ef17cc22a30e4baf44b2f0e9bb6e"
+      },
+      {
+        "path": "special_tokens_map.json",
+        "size": 460,
+        "sha256": "f118ab3a983206e4f32583448de6bd6aae4ee21869135cef1f5848a753cdaab6"
+      },
+      {
+        "path": "tokenizer_config.json",
+        "size": 775,
+        "sha256": "da35aceebeda2adf44094a5867940b09379323b9390fa9197b57044e106bfb6e"
+      },
+      {
+        "path": "vocab.json",
+        "size": 1059962,
+        "sha256": "e089ad92ba36837a0d31433e555c8f45fe601ab5c221d4f607ded32d9f7a4349"
+      }
+    ],
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  },
+  {
+    "id": "blip",
+    "tasks": [
+      "caption"
+    ],
+    "kind": "hf",
+    "source": "https://huggingface.co/Salesforce/blip-image-captioning-base",
+    "license": "BSD-3-Clause",
+    "classes": "英文图像描述",
+    "devices": [
+      "cpu",
+      "cuda"
+    ],
+    "version": "download revision locked in inventory.json",
+    "repo": "Salesforce/blip-image-captioning-base",
+    "revision": "82a37760796d32b1411fe092ab5d4e227313294b",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/blip",
+    "files": [
+      {
+        "path": "README.md",
+        "size": 6359,
+        "sha256": "eae8c14a066e611a51a803cccb35c892bbd78d1ca7db45fbb06f5fb79bff7ad1"
+      },
+      {
+        "path": "config.json",
+        "size": 4563,
+        "sha256": "f7846f82f4e2c4a2ccbab9ae8b0e44873540a271a76a1288effd078180c13a82"
+      },
+      {
+        "path": "preprocessor_config.json",
+        "size": 287,
+        "sha256": "065c10ec97edc5081fbd9655b3d9d25e2647ea6d5dab873325e88eed12d80a7d"
+      },
+      {
+        "path": "pytorch_model.bin",
+        "size": 989820849,
+        "sha256": "d6638651a5526cc2ede56f2b5104d6851b0755816d220e5e046870430180c767"
+      },
+      {
+        "path": "special_tokens_map.json",
+        "size": 125,
+        "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3"
+      },
+      {
+        "path": "tokenizer.json",
+        "size": 711396,
+        "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+      },
+      {
+        "path": "tokenizer_config.json",
+        "size": 506,
+        "sha256": "5c7f96096284c55e539eff95f4451c19efc34258ddb975a4400d052b77301e5e"
+      },
+      {
+        "path": "vocab.txt",
+        "size": 231508,
+        "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+      }
+    ],
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  },
+  {
+    "id": "blip-vqa",
+    "tasks": [
+      "vqa"
+    ],
+    "kind": "hf",
+    "source": "https://huggingface.co/Salesforce/blip-vqa-base",
+    "license": "BSD-3-Clause",
+    "classes": "英文视觉问答",
+    "devices": [
+      "cpu",
+      "cuda"
+    ],
+    "version": "download revision locked in inventory.json",
+    "repo": "Salesforce/blip-vqa-base",
+    "revision": "787b3d35d57e49572baabd22884b3d5a05acf072",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/blip-vqa",
+    "files": [
+      {
+        "path": "README.md",
+        "size": 5459,
+        "sha256": "03e051ff0a0461a06892f90ac0e10bd2eebc2dd47c3ffa65092b31576aa37e4c"
+      },
+      {
+        "path": "config.json",
+        "size": 4559,
+        "sha256": "689a09e2a9980b7fcad329271c032254fde23b1ee7a90c67b003e1867dc9c098"
+      },
+      {
+        "path": "model.safetensors",
+        "size": 1538800584,
+        "sha256": "33786eed34def0c95fa948128cb4386be9b9219aa2c2e25f1c9c744692121bb7"
+      },
+      {
+        "path": "preprocessor_config.json",
+        "size": 445,
+        "sha256": "0aa66e2e9ac3ea3b5cd4388c35072e22db4e1cc1f96c7872bed07749c712ade1"
+      },
+      {
+        "path": "special_tokens_map.json",
+        "size": 125,
+        "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3"
+      },
+      {
+        "path": "tokenizer.json",
+        "size": 711396,
+        "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+      },
+      {
+        "path": "tokenizer_config.json",
+        "size": 592,
+        "sha256": "48d1c9120fe61c9741286050189b030e936f23797a65fd0a179078661e1c43bb"
+      },
+      {
+        "path": "vocab.txt",
+        "size": 231508,
+        "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+      }
+    ],
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  },
+  {
+    "id": "detr-panoptic",
+    "tasks": [
+      "panoptic"
+    ],
+    "kind": "hf",
+    "source": "https://huggingface.co/facebook/detr-resnet-50-panoptic",
+    "license": "Apache-2.0",
+    "classes": "COCO thing/stuff 类别由模型配置导出",
+    "devices": [
+      "cpu",
+      "cuda"
+    ],
+    "version": "download revision locked in inventory.json",
+    "repo": "facebook/detr-resnet-50-panoptic",
+    "revision": "d53b52a799403a8867920f82c869e40732b47037",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/detr-panoptic",
+    "files": [
+      {
+        "path": "README.md",
+        "size": 5851,
+        "sha256": "85e8d1dfa657c91be3f6a446d7baac0b786f0806aa6b086ee22236072c8e22f5"
+      },
+      {
+        "path": "config.json",
+        "size": 11607,
+        "sha256": "626a96c954c61d36157216f8d757d27f1d277bc7e4e8edcbe388acaf43fe443f"
+      },
+      {
+        "path": "preprocessor_config.json",
+        "size": 289,
+        "sha256": "5cfff969435e7a277dd20a91a8d5b61eed1902d68dbf545a3d7d627e19b354af"
+      },
+      {
+        "path": "pytorch_model.bin",
+        "size": 172245279,
+        "sha256": "3f8024c4744402adf5ebba3be495c91e5af388d73fb32f1e0a93c053767abeca"
+      }
+    ],
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  },
+  {
+    "id": "layout",
+    "tasks": [
+      "layout"
+    ],
+    "kind": "doclayout",
+    "source": "https://github.com/opendatalab/DocLayout-YOLO",
+    "license": "AGPL-3.0",
+    "classes": "title, plain text, abandon, figure, figure_caption, table, table_caption, table_footnote, isolate_formula, formula_caption",
+    "devices": [
+      "cpu",
+      "cuda"
+    ],
+    "version": "DocStructBench imgsz1024 / DocLayout-YOLO 0.0.4",
+    "files": [
+      {
+        "path": "doclayout.pt",
+        "size": 40709302,
+        "sha256": "9a2ee0220fe3d9ad31b47e1d9f1282f46959a54e4618fce9cffcc9715b8286e2"
+      }
+    ],
+    "name": "DocLayout-YOLO",
+    "revision": "DocStructBench imgsz1024 / DocLayout-YOLO 0.0.4",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/layout",
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  },
+  {
+    "id": "edsr",
+    "tasks": [
+      "superres"
+    ],
+    "kind": "hf",
+    "source": "https://huggingface.co/caidas/swin2SR-classical-sr-x2-64",
+    "license": "Apache-2.0",
+    "classes": "Swin2SR x2，非 EDSR",
+    "devices": [
+      "cpu",
+      "cuda"
+    ],
+    "version": "download revision locked in inventory.json",
+    "repo": "caidas/swin2SR-classical-sr-x2-64",
+    "name": "Swin2SR ×2",
+    "revision": "cee1c923c6a37361c6e5650b65dcf4be821e5d52",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/edsr",
+    "files": [
+      {
+        "path": "README.md",
+        "size": 642,
+        "sha256": "9186aaf5bf94b0adb71532ad70368320e8134815fa026827c8f0e4920dc6886c"
+      },
+      {
+        "path": "config.json",
+        "size": 772,
+        "sha256": "11179bdfd48394977f7fe6177b3a87d9c2c6fa2a67a4b3a7376229ca407f0376"
+      },
+      {
+        "path": "model.safetensors",
+        "size": 48460660,
+        "sha256": "a515955815ab6dba3a9331d8c75db13a5166a5ffbcebf1a95ab676a5656ac4fb"
+      },
+      {
+        "path": "preprocessor_config.json",
+        "size": 152,
+        "sha256": "cbc36266fcc93d5bc1e9ca69bcc648ae9d268918ad14cd3507216740f129cc4d"
+      }
+    ],
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  },
+  {
+    "id": "swin-denoise",
+    "tasks": [
+      "denoise_dl"
+    ],
+    "kind": "restormer",
+    "source": "https://github.com/swz30/Restormer",
+    "license": "MIT",
+    "classes": "真实图像去噪，SIDD",
+    "devices": [
+      "cpu",
+      "cuda"
+    ],
+    "version": "Restormer official weights v1.0; configuration/source SHA256 in inventory",
+    "files": [
+      {
+        "path": "LICENSE",
+        "size": 1090,
+        "sha256": "2b93776512924bc095ec5d97a79d76cf1ab401ae641d1ae1f46e94f1c53a2e59"
+      },
+      {
+        "path": "config.yml",
+        "size": 2941,
+        "sha256": "697bf6402c58d22e1f7314f1f87fbed2a5de6f5f912ae9dcc96bba203b3b5b32"
+      },
+      {
+        "path": "restormer_arch.py",
+        "size": 11428,
+        "sha256": "3be243fa3c8e2cb2c9459eeac062b04d6084dbcc328292dae1c3e52ba6f7434a"
+      },
+      {
+        "path": "weights.pth",
+        "size": 104611957,
+        "sha256": "4cae18bed8a291b9a5deeeab48756bbe6f61fcf7f31a4cca0969b24608601387"
+      }
+    ],
+    "name": "Restormer 真实去噪",
+    "revision": "download revision locked in inventory.json",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/swin-denoise",
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  },
+  {
+    "id": "restormer",
+    "tasks": [
+      "deblur"
+    ],
+    "kind": "restormer",
+    "source": "https://github.com/swz30/Restormer",
+    "license": "MIT",
+    "classes": "单图运动去模糊",
+    "devices": [
+      "cpu",
+      "cuda"
+    ],
+    "version": "Restormer official weights v1.0; configuration/source SHA256 in inventory",
+    "files": [
+      {
+        "path": "LICENSE",
+        "size": 1090,
+        "sha256": "2b93776512924bc095ec5d97a79d76cf1ab401ae641d1ae1f46e94f1c53a2e59"
+      },
+      {
+        "path": "config.yml",
+        "size": 2974,
+        "sha256": "8f4403ec761973f1c0677fae07841df3935075cea2f3871932d3cd26d1b16e73"
+      },
+      {
+        "path": "restormer_arch.py",
+        "size": 11428,
+        "sha256": "3be243fa3c8e2cb2c9459eeac062b04d6084dbcc328292dae1c3e52ba6f7434a"
+      },
+      {
+        "path": "weights.pth",
+        "size": 104700429,
+        "sha256": "194e38fb5b607c9dc5a5b3e08e65b2e79ee2bf0ef5048e0612f6b2ff2f79da31"
+      }
+    ],
+    "revision": "download revision locked in inventory.json",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/restormer",
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  },
+  {
+    "id": "rmbg",
+    "tasks": [
+      "matting"
+    ],
+    "kind": "onnx",
+    "source": "https://github.com/danielgatis/rembg",
+    "license": "MIT (rembg); Apache-2.0 (U2-Net)",
+    "classes": "显著前景；非精细发丝抠图",
+    "devices": [
+      "cpu"
+    ],
+    "version": "U2NetP",
+    "files": [
+      {
+        "path": "u2netp.onnx",
+        "size": 4574861,
+        "sha256": "309c8469258dda742793dce0ebea8e6dd393174f89934733ecc8b14c76f4ddd8"
+      }
+    ],
+    "name": "U2NetP 前景提取",
+    "revision": "U2NetP",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/rmbg",
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  },
+  {
+    "id": "face_landmarker",
+    "tasks": [
+      "face"
+    ],
+    "kind": "mediapipe",
+    "source": "https://ai.google.dev/edge/mediapipe/solutions/vision/face_landmarker",
+    "license": "Apache-2.0",
+    "classes": "478 面部点",
+    "devices": [
+      "cpu"
+    ],
+    "version": "float16/1",
+    "files": [
+      {
+        "path": "face_landmarker.task",
+        "size": 3758596,
+        "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff"
+      }
+    ],
+    "devices_note": "独立 MediaPipe CPU 工作进程",
+    "revision": "float16/1",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/face_landmarker",
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  },
+  {
+    "id": "hand_landmarker",
+    "tasks": [
+      "hand"
+    ],
+    "kind": "mediapipe",
+    "source": "https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker",
+    "license": "Apache-2.0",
+    "classes": "每手 21 点",
+    "devices": [
+      "cpu"
+    ],
+    "version": "float16/1",
+    "files": [
+      {
+        "path": "hand_landmarker.task",
+        "size": 7819105,
+        "sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1"
+      }
+    ],
+    "devices_note": "独立 MediaPipe CPU 工作进程",
+    "revision": "float16/1",
+    "state": "ready",
+    "reason": "",
+    "missing": [],
+    "local_path": "/usr/zyy/vision-lab/models/hand_landmarker",
+    "loaded": false,
+    "download": null,
+    "device": "cpu"
+  }
+]

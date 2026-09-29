@@ -1,0 +1,5309 @@
+[
+  {
+    "id": "pixels",
+    "name": "像素与取色",
+    "english": "Pixel inspector",
+    "category": "图像基础",
+    "summary": "读取指定位置的颜色和邻域。",
+    "principle": "图像是 H×W×C 的数组，像素坐标以左上角为原点。",
+    "uses": "取色、曝光检查、定位数据错误。",
+    "failures": "越界坐标无效；显示缩放不改变原图坐标。",
+    "params": [
+      {
+        "key": "x",
+        "label": "横坐标",
+        "default": 0,
+        "help": "原图坐标 x。",
+        "type": "number",
+        "min": 0,
+        "max": 10000,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "y",
+        "label": "纵坐标",
+        "default": 0,
+        "help": "原图坐标 y。",
+        "type": "number",
+        "min": 0,
+        "max": 10000,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "points",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "gray",
+    "name": "灰度化",
+    "english": "Grayscale",
+    "category": "图像基础",
+    "summary": "把彩色图像转为亮度图。",
+    "principle": "对 RGB 通道做加权和，OpenCV 内部采用 BGR 顺序。",
+    "uses": "边缘、阈值和形状分析的前处理。",
+    "failures": "颜色差异但亮度相同的目标会合并。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "gray",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "color",
+    "name": "颜色空间转换",
+    "english": "RGB HSV Lab YCrCb",
+    "category": "图像基础",
+    "summary": "观察不同颜色空间的编码。",
+    "principle": "通过非线性或线性变换分离色相、亮度与色度；结果显示编码通道而非自然色。",
+    "uses": "颜色分割、白平衡、光照分析。",
+    "failures": "HSV 的 H 范围为 0–179，不能按 RGB 解释。",
+    "params": [
+      {
+        "key": "space",
+        "label": "目标空间",
+        "default": "HSV",
+        "help": "输出三个编码通道，数据记录通道范围。",
+        "type": "select",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": [
+          "RGB",
+          "HSV",
+          "Lab",
+          "YCrCb"
+        ]
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "channel",
+    "name": "通道分离",
+    "english": "Split channels",
+    "category": "图像基础",
+    "summary": "单独查看一个颜色通道。",
+    "principle": "从多维数组提取一个平面。",
+    "uses": "颜色缺陷分析和单波段检测。",
+    "failures": "BGR 通道顺序与 RGB 不同。",
+    "params": [
+      {
+        "key": "channel",
+        "label": "通道",
+        "default": "R",
+        "help": "选择希望单独显示的通道。",
+        "type": "select",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": [
+          "R",
+          "G",
+          "B"
+        ]
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "gray",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "merge",
+    "name": "通道合并",
+    "english": "Merge channels",
+    "category": "图像基础",
+    "summary": "按权重重新合并 RGB 通道。",
+    "principle": "每个原通道乘以增益后截断到 0–255。",
+    "uses": "白平衡、颜色一致性调整。",
+    "failures": "过大增益造成饱和并丢失细节。",
+    "params": [
+      {
+        "key": "R",
+        "label": "R 通道增益",
+        "default": 1,
+        "help": "线性通道增益。",
+        "type": "number",
+        "min": 0,
+        "max": 3,
+        "step": 0.05,
+        "options": []
+      },
+      {
+        "key": "G",
+        "label": "G 通道增益",
+        "default": 1,
+        "help": "线性通道增益。",
+        "type": "number",
+        "min": 0,
+        "max": 3,
+        "step": 0.05,
+        "options": []
+      },
+      {
+        "key": "B",
+        "label": "B 通道增益",
+        "default": 1,
+        "help": "线性通道增益。",
+        "type": "number",
+        "min": 0,
+        "max": 3,
+        "step": 0.05,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "add",
+    "name": "加法",
+    "english": "Image add",
+    "category": "图像基础",
+    "summary": "组合两张同尺寸图片。",
+    "principle": "饱和加法；第二张图片必须与第一张同尺寸。",
+    "uses": "参考差异、合成和掩膜运算。",
+    "failures": "不同尺寸不自动拉伸，避免错误对应。",
+    "params": [],
+    "inputs": [
+      "image",
+      "reference"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "subtract",
+    "name": "减法",
+    "english": "Image subtract",
+    "category": "图像基础",
+    "summary": "组合两张同尺寸图片。",
+    "principle": "饱和减法；第二张图片必须与第一张同尺寸。",
+    "uses": "参考差异、合成和掩膜运算。",
+    "failures": "不同尺寸不自动拉伸，避免错误对应。",
+    "params": [],
+    "inputs": [
+      "image",
+      "reference"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "blend",
+    "name": "加权融合",
+    "english": "Image blend",
+    "category": "图像基础",
+    "summary": "组合两张同尺寸图片。",
+    "principle": "线性加权；第二张图片必须与第一张同尺寸。",
+    "uses": "参考差异、合成和掩膜运算。",
+    "failures": "不同尺寸不自动拉伸，避免错误对应。",
+    "params": [
+      {
+        "key": "alpha",
+        "label": "第一张权重",
+        "default": 0.5,
+        "help": "仅融合时生效，第二张权重为 1−α。",
+        "type": "number",
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image",
+      "reference"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "bit_and",
+    "name": "按位与",
+    "english": "Image bit_and",
+    "category": "图像基础",
+    "summary": "组合两张同尺寸图片。",
+    "principle": "逐位 AND；第二张图片必须与第一张同尺寸。",
+    "uses": "参考差异、合成和掩膜运算。",
+    "failures": "不同尺寸不自动拉伸，避免错误对应。",
+    "params": [],
+    "inputs": [
+      "image",
+      "reference"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "bit_or",
+    "name": "按位或",
+    "english": "Image bit_or",
+    "category": "图像基础",
+    "summary": "组合两张同尺寸图片。",
+    "principle": "逐位 OR；第二张图片必须与第一张同尺寸。",
+    "uses": "参考差异、合成和掩膜运算。",
+    "failures": "不同尺寸不自动拉伸，避免错误对应。",
+    "params": [],
+    "inputs": [
+      "image",
+      "reference"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "bit_xor",
+    "name": "按位异或",
+    "english": "Image bit_xor",
+    "category": "图像基础",
+    "summary": "组合两张同尺寸图片。",
+    "principle": "逐位 XOR；第二张图片必须与第一张同尺寸。",
+    "uses": "参考差异、合成和掩膜运算。",
+    "failures": "不同尺寸不自动拉伸，避免错误对应。",
+    "params": [],
+    "inputs": [
+      "image",
+      "reference"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "bit_not",
+    "name": "按位非",
+    "english": "Bitwise NOT",
+    "category": "图像基础",
+    "summary": "反转图像的所有位。",
+    "principle": "8 位像素取反等价于 255−I。",
+    "uses": "掩膜反选和负片观察。",
+    "failures": "不能当作亮度归一化。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "histogram",
+    "name": "直方图",
+    "english": "Histogram",
+    "category": "图像基础",
+    "summary": "展示各通道像素值分布。",
+    "principle": "统计每一个灰度级出现的次数。",
+    "uses": "判断曝光、对比度和阈值。",
+    "failures": "直方图不保留像素空间位置。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "brightness",
+    "name": "亮度与对比度",
+    "english": "Brightness contrast",
+    "category": "图像基础",
+    "summary": "线性调整明暗及动态范围。",
+    "principle": "结果为 clip(αI+β)。",
+    "uses": "光照补偿、预处理。",
+    "failures": "截断造成高光或暗部细节损失。",
+    "params": [
+      {
+        "key": "alpha",
+        "label": "对比度",
+        "default": 1,
+        "help": "大于 1 扩大像素差异。",
+        "type": "number",
+        "min": 0.1,
+        "max": 3,
+        "step": 0.05,
+        "options": []
+      },
+      {
+        "key": "beta",
+        "label": "亮度偏移",
+        "default": 0,
+        "help": "对每个像素增加的亮度值。",
+        "type": "number",
+        "min": -100,
+        "max": 100,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "gamma",
+    "name": "伽马校正",
+    "english": "Gamma correction",
+    "category": "图像基础",
+    "summary": "非线性调整中间调。",
+    "principle": "输出 255×(I/255)^γ；γ 小于 1 提亮。",
+    "uses": "低照度显示、曝光调整。",
+    "failures": "不能恢复完全欠曝或饱和信息。",
+    "params": [
+      {
+        "key": "gamma",
+        "label": "伽马",
+        "default": 0.7,
+        "help": "小于 1 提亮，大于 1 压暗。",
+        "type": "number",
+        "min": 0.1,
+        "max": 4,
+        "step": 0.05,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "equalize",
+    "name": "直方图均衡",
+    "english": "EQUALIZE",
+    "category": "图像基础",
+    "summary": "增强亮度对比。",
+    "principle": "对亮度通道进行累计分布映射。CLAHE 在局部网格限制对比度。",
+    "uses": "雾化、低对比度表面增强。",
+    "failures": "均衡可能增强噪声并改变外观。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "clahe",
+    "name": "CLAHE 局部均衡",
+    "english": "CLAHE",
+    "category": "图像基础",
+    "summary": "增强亮度对比。",
+    "principle": "对亮度通道进行累计分布映射。CLAHE 在局部网格限制对比度。",
+    "uses": "雾化、低对比度表面增强。",
+    "failures": "均衡可能增强噪声并改变外观。",
+    "params": [
+      {
+        "key": "clip",
+        "label": "对比度上限",
+        "default": 2,
+        "help": "越大局部对比度越强。",
+        "type": "number",
+        "min": 0.1,
+        "max": 10,
+        "step": 0.1,
+        "options": []
+      },
+      {
+        "key": "grid",
+        "label": "网格数",
+        "default": 8,
+        "help": "每个方向的局部网格数量。",
+        "type": "number",
+        "min": 2,
+        "max": 32,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "mean",
+    "name": "均值滤波",
+    "english": "Mean blur",
+    "category": "滤波与增强",
+    "summary": "平滑噪声并观察边缘变化。",
+    "principle": "邻域均值抑制高频。",
+    "uses": "相机噪声预处理。",
+    "failures": "核或强度过大会抹掉小缺陷。",
+    "params": [
+      {
+        "key": "kernel",
+        "label": "核尺寸",
+        "default": 5,
+        "help": "邻域边长；自动取相邻奇数。越大平滑或形态变化越强。",
+        "type": "number",
+        "min": 1,
+        "max": 51,
+        "step": 2,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "gaussian",
+    "name": "高斯滤波",
+    "english": "Gaussian blur",
+    "category": "滤波与增强",
+    "summary": "平滑噪声并观察边缘变化。",
+    "principle": "按高斯权重平均邻域。",
+    "uses": "相机噪声预处理。",
+    "failures": "核或强度过大会抹掉小缺陷。",
+    "params": [
+      {
+        "key": "kernel",
+        "label": "核尺寸",
+        "default": 5,
+        "help": "邻域边长；自动取相邻奇数。越大平滑或形态变化越强。",
+        "type": "number",
+        "min": 1,
+        "max": 51,
+        "step": 2,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "median",
+    "name": "中值滤波",
+    "english": "Median blur",
+    "category": "滤波与增强",
+    "summary": "平滑噪声并观察边缘变化。",
+    "principle": "用邻域中位数替代像素。",
+    "uses": "相机噪声预处理。",
+    "failures": "核或强度过大会抹掉小缺陷。",
+    "params": [
+      {
+        "key": "kernel",
+        "label": "核尺寸",
+        "default": 5,
+        "help": "邻域边长；自动取相邻奇数。越大平滑或形态变化越强。",
+        "type": "number",
+        "min": 1,
+        "max": 51,
+        "step": 2,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "bilateral",
+    "name": "双边滤波",
+    "english": "Bilateral filter",
+    "category": "滤波与增强",
+    "summary": "平滑噪声并观察边缘变化。",
+    "principle": "同时考虑空间与颜色距离。",
+    "uses": "相机噪声预处理。",
+    "failures": "核或强度过大会抹掉小缺陷。",
+    "params": [
+      {
+        "key": "kernel",
+        "label": "核尺寸",
+        "default": 5,
+        "help": "邻域边长；自动取相邻奇数。越大平滑或形态变化越强。",
+        "type": "number",
+        "min": 1,
+        "max": 51,
+        "step": 2,
+        "options": []
+      },
+      {
+        "key": "sigma",
+        "label": "颜色尺度",
+        "default": 50,
+        "help": "允许参与平滑的颜色差异。",
+        "type": "number",
+        "min": 1,
+        "max": 150,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "nlm",
+    "name": "非局部均值去噪",
+    "english": "Non-local means",
+    "category": "滤波与增强",
+    "summary": "平滑噪声并观察边缘变化。",
+    "principle": "搜索相似图块并加权平均。",
+    "uses": "相机噪声预处理。",
+    "failures": "核或强度过大会抹掉小缺陷。",
+    "params": [
+      {
+        "key": "strength",
+        "label": "滤波强度",
+        "default": 10,
+        "help": "数值越大去噪越强、细节越少。",
+        "type": "number",
+        "min": 1,
+        "max": 40,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "convolution",
+    "name": "自定义卷积核",
+    "english": "Convolution",
+    "category": "滤波与增强",
+    "summary": "输入矩阵执行二维滤波。",
+    "principle": "局部邻域与核逐元素相乘并求和。",
+    "uses": "设计边缘、模糊和锐化算子。",
+    "failures": "核总和过大使图像过曝；限制为奇数方阵 1–15。",
+    "params": [
+      {
+        "key": "matrix",
+        "label": "卷积核",
+        "default": [
+          [
+            0,
+            -1,
+            0
+          ],
+          [
+            -1,
+            5,
+            -1
+          ],
+          [
+            0,
+            -1,
+            0
+          ]
+        ],
+        "help": "输入二维 JSON 数组。",
+        "type": "json",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "sharpen",
+    "name": "锐化",
+    "english": "Unsharp mask",
+    "category": "滤波与增强",
+    "summary": "增强高频细节。",
+    "principle": "原图加上原图减模糊图的加权差。",
+    "uses": "纹理、文字增强。",
+    "failures": "也会放大噪声与光晕。",
+    "params": [
+      {
+        "key": "amount",
+        "label": "锐化量",
+        "default": 1,
+        "help": "高频残差的放大比例。",
+        "type": "number",
+        "min": 0,
+        "max": 4,
+        "step": 0.1,
+        "options": []
+      },
+      {
+        "key": "kernel",
+        "label": "核尺寸",
+        "default": 5,
+        "help": "邻域边长；自动取相邻奇数。越大平滑或形态变化越强。",
+        "type": "number",
+        "min": 1,
+        "max": 51,
+        "step": 2,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "fft",
+    "name": "傅里叶频谱",
+    "english": "Fourier fft",
+    "category": "滤波与增强",
+    "summary": "观察或筛选图像空间频率。",
+    "principle": "FFT 将空间信号分解为频率；中心是低频，外缘是高频。",
+    "uses": "周期噪声分析、纹理和边缘提取。",
+    "failures": "硬截止会产生振铃；频谱显示采用对数幅度。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "gray",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "lowpass",
+    "name": "频域低通",
+    "english": "Fourier lowpass",
+    "category": "滤波与增强",
+    "summary": "观察或筛选图像空间频率。",
+    "principle": "FFT 将空间信号分解为频率；中心是低频，外缘是高频。",
+    "uses": "周期噪声分析、纹理和边缘提取。",
+    "failures": "硬截止会产生振铃；频谱显示采用对数幅度。",
+    "params": [
+      {
+        "key": "radius",
+        "label": "截止半径比例",
+        "default": 0.1,
+        "help": "相对较短边长度的频率半径。",
+        "type": "number",
+        "min": 0.01,
+        "max": 0.5,
+        "step": 0.01,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "gray",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "highpass",
+    "name": "频域高通",
+    "english": "Fourier highpass",
+    "category": "滤波与增强",
+    "summary": "观察或筛选图像空间频率。",
+    "principle": "FFT 将空间信号分解为频率；中心是低频，外缘是高频。",
+    "uses": "周期噪声分析、纹理和边缘提取。",
+    "failures": "硬截止会产生振铃；频谱显示采用对数幅度。",
+    "params": [
+      {
+        "key": "radius",
+        "label": "截止半径比例",
+        "default": 0.1,
+        "help": "相对较短边长度的频率半径。",
+        "type": "number",
+        "min": 0.01,
+        "max": 0.5,
+        "step": 0.01,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "gray",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "threshold",
+    "name": "固定阈值",
+    "english": "threshold",
+    "category": "阈值与形态学",
+    "summary": "把灰度图分成前景与背景。",
+    "principle": "按固定亮度阈值二值化。",
+    "uses": "印刷字符、零件轮廓、掩膜生成。",
+    "failures": "背景不均匀或两类灰度重叠时失败。",
+    "params": [
+      {
+        "key": "threshold",
+        "label": "阈值",
+        "default": 127,
+        "help": "像素大于该亮度时进入前景；光照变化会影响分割。",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "mask",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "adaptive",
+    "name": "自适应阈值",
+    "english": "adaptive",
+    "category": "阈值与形态学",
+    "summary": "把灰度图分成前景与背景。",
+    "principle": "每个邻域独立计算高斯加权阈值。",
+    "uses": "印刷字符、零件轮廓、掩膜生成。",
+    "failures": "背景不均匀或两类灰度重叠时失败。",
+    "params": [
+      {
+        "key": "block",
+        "label": "邻域尺寸",
+        "default": 21,
+        "help": "自动取奇数，大于局部目标宽度。",
+        "type": "number",
+        "min": 3,
+        "max": 101,
+        "step": 2,
+        "options": []
+      },
+      {
+        "key": "constant",
+        "label": "阈值偏移",
+        "default": 5,
+        "help": "从局部均值减去的值。",
+        "type": "number",
+        "min": -30,
+        "max": 30,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "mask",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "otsu",
+    "name": "Otsu 自动阈值",
+    "english": "otsu",
+    "category": "阈值与形态学",
+    "summary": "把灰度图分成前景与背景。",
+    "principle": "最大化前景与背景的类间方差。",
+    "uses": "印刷字符、零件轮廓、掩膜生成。",
+    "failures": "背景不均匀或两类灰度重叠时失败。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "mask",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "erode",
+    "name": "腐蚀",
+    "english": "erode",
+    "category": "阈值与形态学",
+    "summary": "用结构元素改变局部形状。",
+    "principle": "腐蚀取局部最小值，膨胀取最大值；开闭及差分组合这些操作。",
+    "uses": "连接断点、去除小噪点、提取局部亮暗缺陷。",
+    "failures": "结构元素过大可能合并零件或删除细线。",
+    "params": [
+      {
+        "key": "kernel",
+        "label": "核尺寸",
+        "default": 5,
+        "help": "邻域边长；自动取相邻奇数。越大平滑或形态变化越强。",
+        "type": "number",
+        "min": 1,
+        "max": 51,
+        "step": 2,
+        "options": []
+      },
+      {
+        "key": "iterations",
+        "label": "迭代次数",
+        "default": 1,
+        "help": "重复应用结构元素。",
+        "type": "number",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "shape",
+        "label": "结构元素",
+        "default": "ellipse",
+        "help": "椭圆适合圆形目标，矩形适合规则边缘。",
+        "type": "select",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": [
+          "ellipse",
+          "rect",
+          "cross"
+        ]
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "dilate",
+    "name": "膨胀",
+    "english": "dilate",
+    "category": "阈值与形态学",
+    "summary": "用结构元素改变局部形状。",
+    "principle": "腐蚀取局部最小值，膨胀取最大值；开闭及差分组合这些操作。",
+    "uses": "连接断点、去除小噪点、提取局部亮暗缺陷。",
+    "failures": "结构元素过大可能合并零件或删除细线。",
+    "params": [
+      {
+        "key": "kernel",
+        "label": "核尺寸",
+        "default": 5,
+        "help": "邻域边长；自动取相邻奇数。越大平滑或形态变化越强。",
+        "type": "number",
+        "min": 1,
+        "max": 51,
+        "step": 2,
+        "options": []
+      },
+      {
+        "key": "iterations",
+        "label": "迭代次数",
+        "default": 1,
+        "help": "重复应用结构元素。",
+        "type": "number",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "shape",
+        "label": "结构元素",
+        "default": "ellipse",
+        "help": "椭圆适合圆形目标，矩形适合规则边缘。",
+        "type": "select",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": [
+          "ellipse",
+          "rect",
+          "cross"
+        ]
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "open",
+    "name": "开运算",
+    "english": "open",
+    "category": "阈值与形态学",
+    "summary": "用结构元素改变局部形状。",
+    "principle": "腐蚀取局部最小值，膨胀取最大值；开闭及差分组合这些操作。",
+    "uses": "连接断点、去除小噪点、提取局部亮暗缺陷。",
+    "failures": "结构元素过大可能合并零件或删除细线。",
+    "params": [
+      {
+        "key": "kernel",
+        "label": "核尺寸",
+        "default": 5,
+        "help": "邻域边长；自动取相邻奇数。越大平滑或形态变化越强。",
+        "type": "number",
+        "min": 1,
+        "max": 51,
+        "step": 2,
+        "options": []
+      },
+      {
+        "key": "iterations",
+        "label": "迭代次数",
+        "default": 1,
+        "help": "重复应用结构元素。",
+        "type": "number",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "shape",
+        "label": "结构元素",
+        "default": "ellipse",
+        "help": "椭圆适合圆形目标，矩形适合规则边缘。",
+        "type": "select",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": [
+          "ellipse",
+          "rect",
+          "cross"
+        ]
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "close",
+    "name": "闭运算",
+    "english": "close",
+    "category": "阈值与形态学",
+    "summary": "用结构元素改变局部形状。",
+    "principle": "腐蚀取局部最小值，膨胀取最大值；开闭及差分组合这些操作。",
+    "uses": "连接断点、去除小噪点、提取局部亮暗缺陷。",
+    "failures": "结构元素过大可能合并零件或删除细线。",
+    "params": [
+      {
+        "key": "kernel",
+        "label": "核尺寸",
+        "default": 5,
+        "help": "邻域边长；自动取相邻奇数。越大平滑或形态变化越强。",
+        "type": "number",
+        "min": 1,
+        "max": 51,
+        "step": 2,
+        "options": []
+      },
+      {
+        "key": "iterations",
+        "label": "迭代次数",
+        "default": 1,
+        "help": "重复应用结构元素。",
+        "type": "number",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "shape",
+        "label": "结构元素",
+        "default": "ellipse",
+        "help": "椭圆适合圆形目标，矩形适合规则边缘。",
+        "type": "select",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": [
+          "ellipse",
+          "rect",
+          "cross"
+        ]
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "morph_gradient",
+    "name": "形态学梯度",
+    "english": "morph_gradient",
+    "category": "阈值与形态学",
+    "summary": "用结构元素改变局部形状。",
+    "principle": "腐蚀取局部最小值，膨胀取最大值；开闭及差分组合这些操作。",
+    "uses": "连接断点、去除小噪点、提取局部亮暗缺陷。",
+    "failures": "结构元素过大可能合并零件或删除细线。",
+    "params": [
+      {
+        "key": "kernel",
+        "label": "核尺寸",
+        "default": 5,
+        "help": "邻域边长；自动取相邻奇数。越大平滑或形态变化越强。",
+        "type": "number",
+        "min": 1,
+        "max": 51,
+        "step": 2,
+        "options": []
+      },
+      {
+        "key": "iterations",
+        "label": "迭代次数",
+        "default": 1,
+        "help": "重复应用结构元素。",
+        "type": "number",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "shape",
+        "label": "结构元素",
+        "default": "ellipse",
+        "help": "椭圆适合圆形目标，矩形适合规则边缘。",
+        "type": "select",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": [
+          "ellipse",
+          "rect",
+          "cross"
+        ]
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "tophat",
+    "name": "顶帽",
+    "english": "tophat",
+    "category": "阈值与形态学",
+    "summary": "用结构元素改变局部形状。",
+    "principle": "腐蚀取局部最小值，膨胀取最大值；开闭及差分组合这些操作。",
+    "uses": "连接断点、去除小噪点、提取局部亮暗缺陷。",
+    "failures": "结构元素过大可能合并零件或删除细线。",
+    "params": [
+      {
+        "key": "kernel",
+        "label": "核尺寸",
+        "default": 5,
+        "help": "邻域边长；自动取相邻奇数。越大平滑或形态变化越强。",
+        "type": "number",
+        "min": 1,
+        "max": 51,
+        "step": 2,
+        "options": []
+      },
+      {
+        "key": "iterations",
+        "label": "迭代次数",
+        "default": 1,
+        "help": "重复应用结构元素。",
+        "type": "number",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "shape",
+        "label": "结构元素",
+        "default": "ellipse",
+        "help": "椭圆适合圆形目标，矩形适合规则边缘。",
+        "type": "select",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": [
+          "ellipse",
+          "rect",
+          "cross"
+        ]
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "blackhat",
+    "name": "黑帽",
+    "english": "blackhat",
+    "category": "阈值与形态学",
+    "summary": "用结构元素改变局部形状。",
+    "principle": "腐蚀取局部最小值，膨胀取最大值；开闭及差分组合这些操作。",
+    "uses": "连接断点、去除小噪点、提取局部亮暗缺陷。",
+    "failures": "结构元素过大可能合并零件或删除细线。",
+    "params": [
+      {
+        "key": "kernel",
+        "label": "核尺寸",
+        "default": 5,
+        "help": "邻域边长；自动取相邻奇数。越大平滑或形态变化越强。",
+        "type": "number",
+        "min": 1,
+        "max": 51,
+        "step": 2,
+        "options": []
+      },
+      {
+        "key": "iterations",
+        "label": "迭代次数",
+        "default": 1,
+        "help": "重复应用结构元素。",
+        "type": "number",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "shape",
+        "label": "结构元素",
+        "default": "ellipse",
+        "help": "椭圆适合圆形目标，矩形适合规则边缘。",
+        "type": "select",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": [
+          "ellipse",
+          "rect",
+          "cross"
+        ]
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "skeleton",
+    "name": "骨架提取",
+    "english": "Skeleton thinning",
+    "category": "阈值与形态学",
+    "summary": "把二值前景收缩为中心线。",
+    "principle": "重复腐蚀并保留无法由开运算恢复的像素。",
+    "uses": "线宽、拓扑、裂纹路径分析。",
+    "failures": "噪声和毛刺会产生额外分支。",
+    "params": [
+      {
+        "key": "threshold",
+        "label": "阈值",
+        "default": 127,
+        "help": "像素大于该亮度时进入前景；光照变化会影响分割。",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "mask",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "distance",
+    "name": "距离变换",
+    "english": "Distance transform",
+    "category": "阈值与形态学",
+    "summary": "计算前景像素到背景的距离。",
+    "principle": "欧氏距离场在目标中心取局部峰值。",
+    "uses": "分水岭种子、厚度和间隙分析。",
+    "failures": "阈值质量直接影响距离；显示按最大距离归一化。",
+    "params": [
+      {
+        "key": "threshold",
+        "label": "阈值",
+        "default": 127,
+        "help": "像素大于该亮度时进入前景；光照变化会影响分割。",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "gray",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "sobel",
+    "name": "Sobel",
+    "english": "Sobel",
+    "category": "边缘与形状",
+    "summary": "检测亮度变化形成的边缘。",
+    "principle": "一阶差分估计 x/y 梯度。",
+    "uses": "尺寸测量、轮廓定位。",
+    "failures": "纹理和噪声也会形成边缘。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "gray",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "scharr",
+    "name": "Scharr",
+    "english": "Scharr",
+    "category": "边缘与形状",
+    "summary": "检测亮度变化形成的边缘。",
+    "principle": "更精确的三阶模板估计一阶梯度。",
+    "uses": "尺寸测量、轮廓定位。",
+    "failures": "纹理和噪声也会形成边缘。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "gray",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "laplacian",
+    "name": "Laplacian",
+    "english": "Laplacian",
+    "category": "边缘与形状",
+    "summary": "检测亮度变化形成的边缘。",
+    "principle": "二阶差分突出亮度急剧变化。",
+    "uses": "尺寸测量、轮廓定位。",
+    "failures": "纹理和噪声也会形成边缘。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "gray",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "canny",
+    "name": "Canny",
+    "english": "Canny",
+    "category": "边缘与形状",
+    "summary": "检测亮度变化形成的边缘。",
+    "principle": "平滑、梯度、非极大值抑制和双阈值连接。",
+    "uses": "尺寸测量、轮廓定位。",
+    "failures": "纹理和噪声也会形成边缘。",
+    "params": [
+      {
+        "key": "low",
+        "label": "低阈值",
+        "default": 60,
+        "help": "弱边缘连接阈值。",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "high",
+        "label": "高阈值",
+        "default": 160,
+        "help": "强边缘起始阈值，须不低于低阈值。",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "mask",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "contours",
+    "name": "轮廓、面积与周长",
+    "english": "contours",
+    "category": "边缘与形状",
+    "summary": "定位二值图中的独立对象并输出几何属性。",
+    "principle": "阈值分割后分析连接关系与边界；形状匹配比较 Hu 不变矩。",
+    "uses": "零件计数、轮廓检测和形状一致性。",
+    "failures": "相接物体可能连成一个；形状匹配需要同一阈值语义。",
+    "params": [
+      {
+        "key": "threshold",
+        "label": "阈值",
+        "default": 127,
+        "help": "像素大于该亮度时进入前景；光照变化会影响分割。",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "min_area",
+        "label": "最小面积",
+        "default": 100,
+        "help": "过滤面积过小的目标，单位为原图像素平方。",
+        "type": "number",
+        "min": 0,
+        "max": 100000,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "components",
+    "name": "连通域与质心",
+    "english": "components",
+    "category": "边缘与形状",
+    "summary": "定位二值图中的独立对象并输出几何属性。",
+    "principle": "阈值分割后分析连接关系与边界；形状匹配比较 Hu 不变矩。",
+    "uses": "零件计数、轮廓检测和形状一致性。",
+    "failures": "相接物体可能连成一个；形状匹配需要同一阈值语义。",
+    "params": [
+      {
+        "key": "threshold",
+        "label": "阈值",
+        "default": 127,
+        "help": "像素大于该亮度时进入前景；光照变化会影响分割。",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "min_area",
+        "label": "最小面积",
+        "default": 100,
+        "help": "过滤面积过小的目标，单位为原图像素平方。",
+        "type": "number",
+        "min": 0,
+        "max": 100000,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "hull",
+    "name": "凸包",
+    "english": "hull",
+    "category": "边缘与形状",
+    "summary": "定位二值图中的独立对象并输出几何属性。",
+    "principle": "阈值分割后分析连接关系与边界；形状匹配比较 Hu 不变矩。",
+    "uses": "零件计数、轮廓检测和形状一致性。",
+    "failures": "相接物体可能连成一个；形状匹配需要同一阈值语义。",
+    "params": [
+      {
+        "key": "threshold",
+        "label": "阈值",
+        "default": 127,
+        "help": "像素大于该亮度时进入前景；光照变化会影响分割。",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "min_area",
+        "label": "最小面积",
+        "default": 100,
+        "help": "过滤面积过小的目标，单位为原图像素平方。",
+        "type": "number",
+        "min": 0,
+        "max": 100000,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "shape_match",
+    "name": "形状匹配",
+    "english": "shape_match",
+    "category": "边缘与形状",
+    "summary": "定位二值图中的独立对象并输出几何属性。",
+    "principle": "阈值分割后分析连接关系与边界；形状匹配比较 Hu 不变矩。",
+    "uses": "零件计数、轮廓检测和形状一致性。",
+    "failures": "相接物体可能连成一个；形状匹配需要同一阈值语义。",
+    "params": [
+      {
+        "key": "threshold",
+        "label": "阈值",
+        "default": 127,
+        "help": "像素大于该亮度时进入前景；光照变化会影响分割。",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "min_area",
+        "label": "最小面积",
+        "default": 100,
+        "help": "过滤面积过小的目标，单位为原图像素平方。",
+        "type": "number",
+        "min": 0,
+        "max": 100000,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image",
+      "reference"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "hough_lines",
+    "name": "霍夫直线",
+    "english": "Hough lines",
+    "category": "边缘与形状",
+    "summary": "检测线段并输出端点。",
+    "principle": "边缘像素在参数空间投票。",
+    "uses": "直边、角度和车道定位。",
+    "failures": "杂乱纹理可能造成多条伪线。",
+    "params": [
+      {
+        "key": "votes",
+        "label": "投票阈值",
+        "default": 50,
+        "help": "最小投票数。",
+        "type": "number",
+        "min": 1,
+        "max": 300,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "length",
+        "label": "最短线长",
+        "default": 40,
+        "help": "单位为像素。",
+        "type": "number",
+        "min": 1,
+        "max": 500,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "gap",
+        "label": "最大间隙",
+        "default": 10,
+        "help": "允许连接的断点长度。",
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "hough_circles",
+    "name": "霍夫圆",
+    "english": "Hough circles",
+    "category": "边缘与形状",
+    "summary": "定位圆心与半径。",
+    "principle": "基于梯度的圆参数空间投票。",
+    "uses": "轴承、孔洞、瓶盖检测。",
+    "failures": "低对比、椭圆、遮挡可能漏检。",
+    "params": [
+      {
+        "key": "votes",
+        "label": "圆心阈值",
+        "default": 30,
+        "help": "越低越敏感。",
+        "type": "number",
+        "min": 5,
+        "max": 100,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "min_radius",
+        "label": "最小半径",
+        "default": 5,
+        "help": "像素。",
+        "type": "number",
+        "min": 1,
+        "max": 300,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "max_radius",
+        "label": "最大半径",
+        "default": 100,
+        "help": "像素，应大于最小半径。",
+        "type": "number",
+        "min": 2,
+        "max": 600,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "crop",
+    "name": "ROI 裁剪",
+    "english": "Crop",
+    "category": "几何与传统分割",
+    "summary": "保留矩形区域。",
+    "principle": "通过原图坐标切片裁剪。",
+    "uses": "只分析有效检测区域。",
+    "failures": "请先绘制矩形，宽高不能为零。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "rectangle",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "resize",
+    "name": "缩放与插值",
+    "english": "Resize interpolation",
+    "category": "几何与传统分割",
+    "summary": "比较不同采样方式。",
+    "principle": "对目标网格按指定插值估计像素。",
+    "uses": "模型输入、图像缩放。",
+    "failures": "放大不会恢复真实细节；标签应使用最近邻。",
+    "params": [
+      {
+        "key": "scale",
+        "label": "缩放比例",
+        "default": 0.5,
+        "help": "宽高同时缩放。",
+        "type": "number",
+        "min": 0.1,
+        "max": 3,
+        "step": 0.1,
+        "options": []
+      },
+      {
+        "key": "method",
+        "label": "插值",
+        "default": "linear",
+        "help": "缩小推荐 area，掩膜用 nearest。",
+        "type": "select",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": [
+          "nearest",
+          "linear",
+          "cubic",
+          "area",
+          "lanczos"
+        ]
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "rotate",
+    "name": "旋转",
+    "english": "Rotation",
+    "category": "几何与传统分割",
+    "summary": "围绕图像中心旋转。",
+    "principle": "二维旋转矩阵映射坐标；画布维持原尺寸。",
+    "uses": "方向校正。",
+    "failures": "超出原画布的部分会裁切。",
+    "params": [
+      {
+        "key": "angle",
+        "label": "角度",
+        "default": 15,
+        "help": "正值逆时针。",
+        "type": "number",
+        "min": -180,
+        "max": 180,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "affine",
+    "name": "仿射变换",
+    "english": "Affine transform",
+    "category": "几何与传统分割",
+    "summary": "应用 2×3 仿射矩阵。",
+    "principle": "保持直线和平行关系，允许平移缩放剪切。",
+    "uses": "平面图像对齐。",
+    "failures": "无法表示透视消失点。",
+    "params": [
+      {
+        "key": "matrix",
+        "label": "2×3 矩阵",
+        "default": [
+          [
+            1,
+            0,
+            20
+          ],
+          [
+            0,
+            1,
+            10
+          ]
+        ],
+        "help": "原图坐标到输出坐标的映射。",
+        "type": "json",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "perspective",
+    "name": "透视变换",
+    "english": "Perspective transform",
+    "category": "几何与传统分割",
+    "summary": "把选中的四边形展开为矩形。",
+    "principle": "四组对应点确定单应矩阵。",
+    "uses": "文档矫正、平面测量。",
+    "failures": "必须按左上、右上、右下、左下顺序选择四点。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "polygon",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "register",
+    "name": "图像配准",
+    "english": "Image registration",
+    "category": "几何与传统分割",
+    "summary": "把输入图对齐到参考图。",
+    "principle": "ORB 匹配结合 RANSAC 估计单应矩阵。",
+    "uses": "参考差异检测、平面定位。",
+    "failures": "纹理少、视差大或匹配不足时不能配准。",
+    "params": [],
+    "inputs": [
+      "image",
+      "reference"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "region_grow",
+    "name": "区域生长",
+    "english": "Region growing",
+    "category": "几何与传统分割",
+    "summary": "从点选种子扩张相似颜色区域。",
+    "principle": "在连通邻域内比较与种子的色差。",
+    "uses": "颜色相近区域分割。",
+    "failures": "边界弱或容差过大会泄漏。",
+    "params": [
+      {
+        "key": "tolerance",
+        "label": "颜色容差",
+        "default": 25,
+        "help": "相对于种子的每通道最大差异。",
+        "type": "number",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "points",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "mask",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "watershed",
+    "name": "分水岭",
+    "english": "Watershed",
+    "category": "几何与传统分割",
+    "summary": "分开相接的前景。",
+    "principle": "距离场构建内部种子，按梯度进行集水区划分。",
+    "uses": "相邻零件、细胞分割。",
+    "failures": "种子不充分会欠分割。",
+    "params": [
+      {
+        "key": "seed_ratio",
+        "label": "种子比例",
+        "default": 0.45,
+        "help": "距离大于最大距离乘该比例的像素作为种子。",
+        "type": "number",
+        "min": 0.1,
+        "max": 0.9,
+        "step": 0.05,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "grabcut",
+    "name": "GrabCut 前景分割",
+    "english": "GrabCut",
+    "category": "几何与传统分割",
+    "summary": "通过框选建立前景背景模型。",
+    "principle": "高斯混合模型与图割迭代优化能量。",
+    "uses": "前景提取和背景替换准备。",
+    "failures": "框须包含整个前景，且边界留有背景。",
+    "params": [
+      {
+        "key": "iterations",
+        "label": "迭代次数",
+        "default": 5,
+        "help": "更多迭代可能改善边界，但更慢。",
+        "type": "number",
+        "min": 1,
+        "max": 15,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "rectangle",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "mask",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "kmeans_segment",
+    "name": "颜色聚类分割",
+    "english": "K-means segmentation",
+    "category": "几何与传统分割",
+    "summary": "用少量聚类中心替代颜色。",
+    "principle": "最小化像素到颜色中心的平方距离。",
+    "uses": "颜色分类和区域简化。",
+    "failures": "颜色类别不等于语义类别。",
+    "params": [
+      {
+        "key": "clusters",
+        "label": "颜色数",
+        "default": 5,
+        "help": "聚类中心数量。",
+        "type": "number",
+        "min": 2,
+        "max": 16,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "harris",
+    "name": "Harris 角点",
+    "english": "Harris",
+    "category": "特征与匹配",
+    "summary": "检测局部可重复的特征点。",
+    "principle": "角点衡量邻域结构变化；SIFT/ORB 同时生成匹配描述子。",
+    "uses": "定位、匹配和运动估计。",
+    "failures": "模糊、纯色或重复纹理影响特征可靠性。",
+    "params": [
+      {
+        "key": "max_features",
+        "label": "最多特征点",
+        "default": 300,
+        "help": "上限越高，计算和显示越密集。",
+        "type": "number",
+        "min": 10,
+        "max": 2000,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "shi",
+    "name": "Shi-Tomasi 角点",
+    "english": "Shi-Tomasi",
+    "category": "特征与匹配",
+    "summary": "检测局部可重复的特征点。",
+    "principle": "角点衡量邻域结构变化；SIFT/ORB 同时生成匹配描述子。",
+    "uses": "定位、匹配和运动估计。",
+    "failures": "模糊、纯色或重复纹理影响特征可靠性。",
+    "params": [
+      {
+        "key": "max_features",
+        "label": "最多特征点",
+        "default": 300,
+        "help": "上限越高，计算和显示越密集。",
+        "type": "number",
+        "min": 10,
+        "max": 2000,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "sift",
+    "name": "SIFT 特征",
+    "english": "SIFT",
+    "category": "特征与匹配",
+    "summary": "检测局部可重复的特征点。",
+    "principle": "角点衡量邻域结构变化；SIFT/ORB 同时生成匹配描述子。",
+    "uses": "定位、匹配和运动估计。",
+    "failures": "模糊、纯色或重复纹理影响特征可靠性。",
+    "params": [
+      {
+        "key": "max_features",
+        "label": "最多特征点",
+        "default": 300,
+        "help": "上限越高，计算和显示越密集。",
+        "type": "number",
+        "min": 10,
+        "max": 2000,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "orb",
+    "name": "ORB 特征",
+    "english": "ORB",
+    "category": "特征与匹配",
+    "summary": "检测局部可重复的特征点。",
+    "principle": "角点衡量邻域结构变化；SIFT/ORB 同时生成匹配描述子。",
+    "uses": "定位、匹配和运动估计。",
+    "failures": "模糊、纯色或重复纹理影响特征可靠性。",
+    "params": [
+      {
+        "key": "max_features",
+        "label": "最多特征点",
+        "default": 300,
+        "help": "上限越高，计算和显示越密集。",
+        "type": "number",
+        "min": 10,
+        "max": 2000,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "hog",
+    "name": "HOG 方向梯度",
+    "english": "Histogram of oriented gradients",
+    "category": "特征与匹配",
+    "summary": "显示局部梯度方向分布。",
+    "principle": "将梯度按方向直方图编码。",
+    "uses": "传统行人识别、形状描述。",
+    "failures": "对旋转与尺度变化敏感。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "lbp",
+    "name": "LBP 局部纹理",
+    "english": "Local binary pattern",
+    "category": "特征与匹配",
+    "summary": "编码邻域相对中心的亮暗关系。",
+    "principle": "八邻域比较生成 8 位模式。",
+    "uses": "表面纹理分析。",
+    "failures": "噪声和尺度变化影响模式。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "gray",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "matching",
+    "name": "特征匹配",
+    "english": "matching",
+    "category": "特征与匹配",
+    "summary": "匹配两个视图中的对应位置。",
+    "principle": "ORB 描述子近邻匹配；RANSAC 剔除不符合单应矩阵的离群点。",
+    "uses": "平面配准、全景拼接。",
+    "failures": "需要重叠、足够纹理；明显视差或运动目标会失败。",
+    "params": [
+      {
+        "key": "ratio",
+        "label": "比率阈值",
+        "default": 0.75,
+        "help": "最佳匹配距离 / 次佳距离，越小越严格。",
+        "type": "number",
+        "min": 0.3,
+        "max": 0.95,
+        "step": 0.05,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image",
+      "reference"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "ransac",
+    "name": "RANSAC 鲁棒匹配",
+    "english": "ransac",
+    "category": "特征与匹配",
+    "summary": "匹配两个视图中的对应位置。",
+    "principle": "ORB 描述子近邻匹配；RANSAC 剔除不符合单应矩阵的离群点。",
+    "uses": "平面配准、全景拼接。",
+    "failures": "需要重叠、足够纹理；明显视差或运动目标会失败。",
+    "params": [
+      {
+        "key": "ratio",
+        "label": "比率阈值",
+        "default": 0.75,
+        "help": "最佳匹配距离 / 次佳距离，越小越严格。",
+        "type": "number",
+        "min": 0.3,
+        "max": 0.95,
+        "step": 0.05,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image",
+      "reference"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "stitch",
+    "name": "图像拼接",
+    "english": "stitch",
+    "category": "特征与匹配",
+    "summary": "匹配两个视图中的对应位置。",
+    "principle": "ORB 描述子近邻匹配；RANSAC 剔除不符合单应矩阵的离群点。",
+    "uses": "平面配准、全景拼接。",
+    "failures": "需要重叠、足够纹理；明显视差或运动目标会失败。",
+    "params": [
+      {
+        "key": "ratio",
+        "label": "比率阈值",
+        "default": 0.75,
+        "help": "最佳匹配距离 / 次佳距离，越小越严格。",
+        "type": "number",
+        "min": 0.3,
+        "max": 0.95,
+        "step": 0.05,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image",
+      "reference"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "template",
+    "name": "模板匹配",
+    "english": "Template matching",
+    "category": "特征与匹配",
+    "summary": "寻找局部模板的最佳位置。",
+    "principle": "滑动窗口计算归一化相关系数。",
+    "uses": "固定视角定位、工业模板搜索。",
+    "failures": "尺度或旋转变化会降低得分；模板必须小于原图。",
+    "params": [],
+    "inputs": [
+      "image",
+      "template"
+    ],
+    "interaction": "rectangle",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "knn",
+    "name": "KNN 小型学习",
+    "english": "knn",
+    "category": "特征与匹配",
+    "summary": "对图像的二维颜色样本学习决策区域。",
+    "principle": "使用 OpenCV ML 在 R/G 特征空间训练，绘制决策边界；标签按蓝通道强弱生成，仅作教学。",
+    "uses": "理解距离、间隔和聚类。",
+    "failures": "这是教学标签，不能作为实际任务准确率。",
+    "params": [
+      {
+        "key": "complexity",
+        "label": "邻居数 / C / 聚类数",
+        "default": 3,
+        "help": "KNN 的 k、SVM 的 C 或 K-means 的类别数。",
+        "type": "number",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "svm",
+    "name": "SVM 小型学习",
+    "english": "svm",
+    "category": "特征与匹配",
+    "summary": "对图像的二维颜色样本学习决策区域。",
+    "principle": "使用 OpenCV ML 在 R/G 特征空间训练，绘制决策边界；标签按蓝通道强弱生成，仅作教学。",
+    "uses": "理解距离、间隔和聚类。",
+    "failures": "这是教学标签，不能作为实际任务准确率。",
+    "params": [
+      {
+        "key": "complexity",
+        "label": "邻居数 / C / 聚类数",
+        "default": 3,
+        "help": "KNN 的 k、SVM 的 C 或 K-means 的类别数。",
+        "type": "number",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "kmeans_demo",
+    "name": "K-means 小型学习",
+    "english": "kmeans_demo",
+    "category": "特征与匹配",
+    "summary": "对图像的二维颜色样本学习决策区域。",
+    "principle": "使用 OpenCV ML 在 R/G 特征空间训练，绘制决策边界；标签按蓝通道强弱生成，仅作教学。",
+    "uses": "理解距离、间隔和聚类。",
+    "failures": "这是教学标签，不能作为实际任务准确率。",
+    "params": [
+      {
+        "key": "complexity",
+        "label": "邻居数 / C / 聚类数",
+        "default": 3,
+        "help": "KNN 的 k、SVM 的 C 或 K-means 的类别数。",
+        "type": "number",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "count",
+    "name": "零件计数",
+    "english": "count",
+    "category": "工业视觉",
+    "summary": "阈值与连通域统计零件数量。",
+    "principle": "规则算法按阈值、轮廓或参考差异分析；异常模型使用局部预训练特征的正常记忆库。",
+    "uses": "固定相机、稳定光照下的质量检测。",
+    "failures": "需要合适参考与正常样本；通用模型不具备专用缺陷类别。",
+    "params": [
+      {
+        "key": "threshold",
+        "label": "阈值",
+        "default": 127,
+        "help": "像素大于该亮度时进入前景；光照变化会影响分割。",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "min_area",
+        "label": "最小面积",
+        "default": 100,
+        "help": "过滤面积过小的目标，单位为原图像素平方。",
+        "type": "number",
+        "min": 0,
+        "max": 100000,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "measure",
+    "name": "尺寸、角度与间隙",
+    "english": "measure",
+    "category": "工业视觉",
+    "summary": "从轮廓最小外接矩形测量尺寸、角度和相邻间距。",
+    "principle": "规则算法按阈值、轮廓或参考差异分析；异常模型使用局部预训练特征的正常记忆库。",
+    "uses": "固定相机、稳定光照下的质量检测。",
+    "failures": "需要合适参考与正常样本；通用模型不具备专用缺陷类别。",
+    "params": [
+      {
+        "key": "threshold",
+        "label": "阈值",
+        "default": 127,
+        "help": "像素大于该亮度时进入前景；光照变化会影响分割。",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "min_area",
+        "label": "最小面积",
+        "default": 100,
+        "help": "过滤面积过小的目标，单位为原图像素平方。",
+        "type": "number",
+        "min": 0,
+        "max": 100000,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "pixels_per_mm",
+        "label": "每毫米像素数",
+        "default": 0,
+        "help": "0 表示未标定，只输出 px；必须提供同一平面的尺度。",
+        "type": "number",
+        "min": 0,
+        "max": 10000,
+        "step": 0.1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "color_check",
+    "name": "颜色一致性",
+    "english": "color_check",
+    "category": "工业视觉",
+    "summary": "比较两图 Lab 颜色均值与差异。",
+    "principle": "规则算法按阈值、轮廓或参考差异分析；异常模型使用局部预训练特征的正常记忆库。",
+    "uses": "固定相机、稳定光照下的质量检测。",
+    "failures": "需要合适参考与正常样本；通用模型不具备专用缺陷类别。",
+    "params": [
+      {
+        "key": "sensitivity",
+        "label": "敏感度",
+        "default": 25,
+        "help": "差异或残差阈值，越低越敏感。",
+        "type": "number",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image",
+      "reference"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "difference",
+    "name": "参考图差异",
+    "english": "difference",
+    "category": "工业视觉",
+    "summary": "比较已经对齐的两张图像。",
+    "principle": "规则算法按阈值、轮廓或参考差异分析；异常模型使用局部预训练特征的正常记忆库。",
+    "uses": "固定相机、稳定光照下的质量检测。",
+    "failures": "需要合适参考与正常样本；通用模型不具备专用缺陷类别。",
+    "params": [
+      {
+        "key": "sensitivity",
+        "label": "敏感度",
+        "default": 25,
+        "help": "差异或残差阈值，越低越敏感。",
+        "type": "number",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image",
+      "reference"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "defects",
+    "name": "表面缺陷规则",
+    "english": "defects",
+    "category": "工业视觉",
+    "summary": "用局部残差定位亮暗缺陷。",
+    "principle": "规则算法按阈值、轮廓或参考差异分析；异常模型使用局部预训练特征的正常记忆库。",
+    "uses": "固定相机、稳定光照下的质量检测。",
+    "failures": "需要合适参考与正常样本；通用模型不具备专用缺陷类别。",
+    "params": [
+      {
+        "key": "sensitivity",
+        "label": "敏感度",
+        "default": 25,
+        "help": "差异或残差阈值，越低越敏感。",
+        "type": "number",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "assembly",
+    "name": "缺件与错装规则",
+    "english": "assembly",
+    "category": "工业视觉",
+    "summary": "比较参考图中各 ROI 的相似性。",
+    "principle": "规则算法按阈值、轮廓或参考差异分析；异常模型使用局部预训练特征的正常记忆库。",
+    "uses": "固定相机、稳定光照下的质量检测。",
+    "failures": "需要合适参考与正常样本；通用模型不具备专用缺陷类别。",
+    "params": [
+      {
+        "key": "sensitivity",
+        "label": "敏感度",
+        "default": 25,
+        "help": "差异或残差阈值，越低越敏感。",
+        "type": "number",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "regions",
+        "label": "检测区域",
+        "default": [],
+        "help": "原图矩形列表 [[x,y,w,h], ...]；未配置时使用画出的 ROI。",
+        "type": "json",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image",
+      "reference"
+    ],
+    "interaction": "rectangle",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "anomaly",
+    "name": "工业异常热力图",
+    "english": "anomaly",
+    "category": "工业视觉",
+    "summary": "使用预训练骨干建立正常样本特征库并比较最近邻距离。",
+    "principle": "ResNet18 的 layer2/layer3 局部特征组成正常记忆库。待检每个图块计算到正常库的最近邻距离，插值并平滑为异常热力图；使用可重复随机子采样，不声称复现论文贪心 coreset。",
+    "uses": "少量正常样本、固定视角下的外观异常探索；参考库可下载复用。",
+    "failures": "正常样本必须覆盖正常变化。光照、位置或背景变化也会产生高分；分数不是概率，阈值需要独立验证。",
+    "params": [
+      {
+        "key": "score_threshold",
+        "label": "异常距离阈值",
+        "default": 0,
+        "help": "0 仅展示分数；非零时将最近邻特征距离超过阈值的区域标出。请用验证样本选择阈值。",
+        "type": "number",
+        "min": 0,
+        "max": 100,
+        "step": 0.1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image",
+      "normal_samples"
+    ],
+    "interaction": "",
+    "model": "resnet18",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "char_check",
+    "name": "字符校验",
+    "english": "OCR validation",
+    "category": "工业视觉",
+    "summary": "识别字符后按正则规则校验。",
+    "principle": "OCR 检测与识别后对文本执行正则 fullmatch。",
+    "uses": "批号、标签、编码检查。",
+    "failures": "字体和反光影响识别，规则须匹配业务格式。",
+    "params": [
+      {
+        "key": "pattern",
+        "label": "正则表达式",
+        "default": "[A-Z0-9]+",
+        "help": "每一段识别文本都独立执行 fullmatch。",
+        "type": "text",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "rapidocr",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "qr",
+    "name": "二维码识别",
+    "english": "QR decode",
+    "category": "文字与图文理解",
+    "summary": "检测并解码二维码。",
+    "principle": "OpenCV 二维码定位、透视矫正与解码。",
+    "uses": "物料追溯。",
+    "failures": "模糊、反光和小尺寸可能无法解码。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "barcode",
+    "name": "条码识别",
+    "english": "Barcode decode",
+    "category": "文字与图文理解",
+    "summary": "检测 EAN/UPC 条码。",
+    "principle": "OpenCV barcode 模块识别平行线结构并解码。",
+    "uses": "商品条码。",
+    "failures": "该接口不支持所有码制；无结果会明确返回空列表。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "classify",
+    "name": "图像分类",
+    "english": "classify",
+    "category": "深度学习识别",
+    "summary": "本地预训练模型推理。支持范围：ImageNet 1000 类",
+    "principle": "ResNet18 用残差连接训练卷积特征，最后经全局平均池化和线性层输出 ImageNet 1000 类 logits；softmax 转成类别分布。",
+    "uses": "成品粗分类、材料外观归类；工业专用品类通常需要另行训练。",
+    "failures": "中心裁剪可能截去边缘目标；单标签分类不能描述一张图的全部对象，概率也不是工业可靠性证明。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "resnet18",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "detect",
+    "name": "目标检测",
+    "english": "detect",
+    "category": "深度学习识别",
+    "summary": "本地预训练模型推理。支持范围：COCO 80 类",
+    "principle": "YOLOv8n 一次前向计算多尺度特征、边界框与类别分数，再经非极大值抑制移除重复候选。输入 letterbox 保持比例，框反变换到原图。",
+    "uses": "通用人、车和常见物品定位；可作为视频轨迹与事件检测的输入。",
+    "failures": "小目标、重叠遮挡与领域差异可能漏检；COCO 权重不会识别未训练的工业零件或专用缺陷。",
+    "params": [
+      {
+        "key": "confidence",
+        "label": "置信度阈值",
+        "default": 0.25,
+        "help": "低于此值的候选不显示。",
+        "type": "number",
+        "min": 0.01,
+        "max": 0.95,
+        "step": 0.01,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "yolov8n",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "obb",
+    "name": "旋转框检测",
+    "english": "obb",
+    "category": "深度学习识别",
+    "summary": "本地预训练模型推理。支持范围：DOTA 15 类，航拍领域",
+    "principle": "旋转框模型回归位置、长宽与方向，可用四个顶点表达目标的定向范围。当前权重在航拍 DOTA 类别上训练。",
+    "uses": "航拍船舶、飞机、车辆等密集定向目标的定位。",
+    "failures": "该权重不是工业零件检测器；对称目标的方向可能不稳定，类别超出 DOTA 时通常没有可靠结果。",
+    "params": [
+      {
+        "key": "confidence",
+        "label": "置信度阈值",
+        "default": 0.25,
+        "help": "低于此值的候选不显示。",
+        "type": "number",
+        "min": 0.01,
+        "max": 0.95,
+        "step": 0.01,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "yolov8n-obb",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "instance",
+    "name": "实例分割",
+    "english": "instance",
+    "category": "深度学习识别",
+    "summary": "本地预训练模型推理。支持范围：COCO 80 类",
+    "principle": "YOLO 分割头为检测实例组合掩膜原型，输出每个实例的像素归属。平台先去掉 letterbox 填充再恢复原图掩膜。",
+    "uses": "独立物体面积、重叠关系与实例级计数。",
+    "failures": "遮挡和细线会影响边界；掩膜只覆盖 COCO 训练类别。实例标签图的 0 表示背景，正整数表示实例。",
+    "params": [
+      {
+        "key": "confidence",
+        "label": "置信度阈值",
+        "default": 0.25,
+        "help": "低于此值的候选不显示。",
+        "type": "number",
+        "min": 0.01,
+        "max": 0.95,
+        "step": 0.01,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "yolov8n-seg",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "pose",
+    "name": "人体姿态",
+    "english": "pose",
+    "category": "深度学习识别",
+    "summary": "本地预训练模型推理。支持范围：人体 17 关键点",
+    "principle": "YOLOv8 姿态头对每个人输出 17 个关键点坐标及可见性置信度；平台按 COCO 骨架连接高置信度点。",
+    "uses": "人体姿态理解、动作前处理与人机交互教学。",
+    "failures": "严重遮挡、非人体和异常视角会失败；单帧姿态本身不是动作识别。",
+    "params": [
+      {
+        "key": "confidence",
+        "label": "置信度阈值",
+        "default": 0.25,
+        "help": "低于此值的候选不显示。",
+        "type": "number",
+        "min": 0.01,
+        "max": 0.95,
+        "step": 0.01,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "yolov8n-pose",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "semantic",
+    "name": "语义分割",
+    "english": "semantic",
+    "category": "深度学习识别",
+    "summary": "本地预训练模型推理。支持范围：VOC 20 类 + 背景",
+    "principle": "DeepLabV3 的空洞卷积在保留分辨率时扩大感受野；多尺度空间金字塔汇集上下文，逐像素输出 VOC 类别。",
+    "uses": "像素面积统计、场景区域划分和下游规则的掩膜输入。",
+    "failures": "同类相邻实例不会被区分；细小边界及 VOC 以外类别不可靠。标签 NPZ/PNG 与彩色图层分别保存。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "deeplab",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "panoptic",
+    "name": "全景分割",
+    "english": "panoptic",
+    "category": "深度学习识别",
+    "summary": "本地预训练模型推理。支持范围：COCO stuff/thing",
+    "principle": "DETR 用卷积骨干和 Transformer 查询预测分割实例，同时处理可数对象与背景材质区域；同类 stuff 区域融合。",
+    "uses": "同时理解物体与场景区域，学习 thing/stuff 的差异。",
+    "failures": "低置信度区域可能未标注；全景分割不能直接替代专用瑕疵分割。输出 segment id 需结合 segments 数据读取。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "detr-panoptic",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "sam",
+    "name": "交互式分割",
+    "english": "sam",
+    "category": "深度学习识别",
+    "summary": "本地预训练模型推理。支持范围：类别无关，点选/框选提示",
+    "principle": "SAM2 先编码图像，再将前景点、背景点或矩形框编码为提示，由掩膜解码器提取目标。提示改变分割对象，不提供语义类别。",
+    "uses": "人工辅助标注、交互提取前景和零件轮廓。",
+    "failures": "提示落在纹理相似处可能选错；负点用于排除背景。类别无关掩膜不能直接判定零件名称或缺陷类别。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "prompts",
+    "model": "sam2",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "face",
+    "name": "人脸关键点",
+    "english": "face",
+    "category": "深度学习识别",
+    "summary": "本地预训练模型推理。支持范围：478 个脸部点",
+    "principle": "MediaPipe 先定位人脸，再由关键点网络回归面部网格与虹膜点；模型在独立 CPU 进程中运行。",
+    "uses": "面部几何分析、表情与头部姿态前处理；不做人脸身份识别。",
+    "failures": "小脸、侧脸和遮挡会影响稳定性；z 是模型相对坐标，不能视为真实毫米深度。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "face_landmarker",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "hand",
+    "name": "手部关键点",
+    "english": "hand",
+    "category": "深度学习识别",
+    "summary": "本地预训练模型推理。支持范围：每手 21 个点",
+    "principle": "MediaPipe 通过手掌定位和手部关键点网络回归每只手的 21 个三维归一化点。二维显示坐标由原图宽高转换。",
+    "uses": "手势交互、抓取姿态的教学分析。",
+    "failures": "高速模糊、互相遮挡和出画会造成漏检；当前图片接口不利用视频跟踪状态。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "hand_landmarker",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "ocr",
+    "name": "文字检测与识别",
+    "english": "ocr",
+    "category": "文字与图文理解",
+    "summary": "本地预训练模型推理。支持范围：中文与英文印刷体",
+    "principle": "PP-OCR 的检测网络先定位文字行，方向分类器校正文字方向，再由序列识别网络和词表解码字符；本地 ONNX Runtime 执行。",
+    "uses": "标签、批号和印刷文字读取；识别数据可下载为 JSON。",
+    "failures": "反光、弯曲、极小字体或手写体会降低质量；检测框不等于版面中的表格或标题类别。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "rapidocr",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "layout",
+    "name": "版面分析",
+    "english": "layout",
+    "category": "文字与图文理解",
+    "summary": "本地预训练模型推理。支持范围：DocStructBench 10 类文档元素",
+    "principle": "DocLayout-YOLO 以文档领域数据训练目标检测器，对标题、正文、表格、图片、公式及其说明等版面元素定位。",
+    "uses": "文档结构整理、OCR 分区前处理。",
+    "failures": "只输出元素类别和框，不直接还原完整表格单元格或阅读顺序；当前输入是图片而非 PDF 文件。",
+    "params": [
+      {
+        "key": "confidence",
+        "label": "置信度阈值",
+        "default": 0.25,
+        "help": "低于此值的候选不显示。",
+        "type": "number",
+        "min": 0.01,
+        "max": 0.95,
+        "step": 0.01,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "layout",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "similarity",
+    "name": "图像相似度检索",
+    "english": "similarity",
+    "category": "文字与图文理解",
+    "summary": "本地预训练模型推理。支持范围：CLIP 特征余弦相似度",
+    "principle": "CLIP 的图像编码器将查询和图库映射为归一化特征向量，按余弦相似度排序；图库分批编码以控制内存。",
+    "uses": "相似图片检索、样例发现和特征空间学习。",
+    "failures": "语义相似不等于逐像素一致；小缺陷、文字细节和精密工业匹配应使用专用方法。",
+    "params": [],
+    "inputs": [
+      "image",
+      "gallery"
+    ],
+    "interaction": "",
+    "model": "clip",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "text_retrieval",
+    "name": "图文检索",
+    "english": "text_retrieval",
+    "category": "文字与图文理解",
+    "summary": "本地预训练模型推理。支持范围：英文提示较可靠",
+    "principle": "CLIP 通过图文对比学习对齐视觉与文本空间，计算图片特征与每个文本候选的余弦相似度；添加图库后，可按每个文本查询对图库图片排序。",
+    "uses": "观察语言描述如何影响图文匹配。",
+    "failures": "英文提示较稳定；相似度是相对匹配值，不是检测概率，也不会生成目标位置。",
+    "params": [
+      {
+        "key": "prompt",
+        "label": "文本提示",
+        "default": "a person",
+        "help": "输入英文类别；检索可用逗号分隔多个候选。",
+        "type": "text",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image",
+      "gallery"
+    ],
+    "interaction": "",
+    "model": "clip",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "grounding",
+    "name": "文字提示目标检测",
+    "english": "grounding",
+    "category": "文字与图文理解",
+    "summary": "本地预训练模型推理。支持范围：开放词汇英文目标",
+    "principle": "OWL-ViT 将语言嵌入与图像区域特征匹配，按文本候选输出边界框；无需重新训练固定分类头。",
+    "uses": "开放词汇目标定位和提示词对比。",
+    "failures": "抽象属性、中文提示与精细专业类别可能定位不准；阈值越低，假阳性通常越多。",
+    "params": [
+      {
+        "key": "confidence",
+        "label": "置信度阈值",
+        "default": 0.25,
+        "help": "低于此值的候选不显示。",
+        "type": "number",
+        "min": 0.01,
+        "max": 0.95,
+        "step": 0.01,
+        "options": []
+      },
+      {
+        "key": "prompt",
+        "label": "文本提示",
+        "default": "a person",
+        "help": "输入英文类别；检索可用逗号分隔多个候选。",
+        "type": "text",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "owlvit",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "caption",
+    "name": "图像描述",
+    "english": "caption",
+    "category": "文字与图文理解",
+    "summary": "本地预训练模型推理。支持范围：英文描述",
+    "principle": "BLIP 使用视觉编码器提取图像特征，再由自回归文本解码器逐词生成英文描述。",
+    "uses": "辅助概括图片内容，学习视觉到语言生成。",
+    "failures": "描述可能遗漏细节或生成图中不存在的信息；生成文本不作为计数、测量或质量判定依据。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "blip",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "vqa",
+    "name": "视觉问答",
+    "english": "vqa",
+    "category": "文字与图文理解",
+    "summary": "本地预训练模型推理。支持范围：英文问答",
+    "principle": "BLIP VQA 将图像与问题编码，通过跨模态注意力融合，生成短文本答案。",
+    "uses": "练习针对图像提问，观察模型对颜色、对象和关系的理解。",
+    "failures": "模型训练语言以英文为主；细小文字、数量和专业场景回答可能错误，应结合原图核对。",
+    "params": [
+      {
+        "key": "prompt",
+        "label": "文本提示",
+        "default": "What is in the picture?",
+        "help": "输入英文类别；检索可用逗号分隔多个候选。",
+        "type": "text",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "blip-vqa",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "depth",
+    "name": "单目相对深度",
+    "english": "depth",
+    "category": "标定与三维",
+    "summary": "本地预训练模型推理。支持范围：相对逆深度，无公制尺度",
+    "principle": "Depth Anything V2 从单目图像预测相对逆深度。空间顺序来自训练先验，缺少双目基线或已知尺度约束。",
+    "uses": "可视化远近关系、场景结构与深度先验。",
+    "failures": "数值没有米或毫米单位；镜面、透明物体与陌生场景可能失真。平台不会将其伪装为实际测距。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "depth-anything",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "superres",
+    "name": "深度学习超分辨率",
+    "english": "superres",
+    "category": "图像恢复",
+    "summary": "本地预训练模型推理。支持范围：Swin2SR x2",
+    "principle": "Swin2SR 在局部窗口和跨窗口注意力中建模纹理，通过重建头将输入放大两倍；分块重叠平均控制内存。",
+    "uses": "观察学习式纹理恢复与传统插值的差异。",
+    "failures": "细节可能是模型推测，不能当作测量依据；分块边缘可能出现轻微接缝。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "edsr",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "denoise_dl",
+    "name": "深度学习去噪",
+    "english": "denoise_dl",
+    "category": "图像恢复",
+    "summary": "本地预训练模型推理。支持范围：Restormer 真实图像去噪",
+    "principle": "Restormer 使用多尺度 Transformer 和通道注意力估计干净图像；该权重在真实相机噪声数据上训练，使用 BiasFree 归一化配置。",
+    "uses": "相机噪声恢复与传统去噪效果对比。",
+    "failures": "未知噪声分布或高强度噪声可能残留；细小缺陷可能被当作噪声抹掉。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "swin-denoise",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "deblur",
+    "name": "深度学习去模糊",
+    "english": "deblur",
+    "category": "图像恢复",
+    "summary": "本地预训练模型推理。支持范围：运动去模糊",
+    "principle": "Restormer 根据运动模糊训练样本恢复图像细节，当前使用官方运动去模糊权重及 WithBias 网络配置。",
+    "uses": "轻中度运动模糊恢复和失败案例学习。",
+    "failures": "极强模糊无法恢复已丢失的信息；散焦模糊与运动模糊是不同退化。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "restormer",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "matting",
+    "name": "前景抠图与背景替换",
+    "english": "matting",
+    "category": "图像恢复",
+    "summary": "本地预训练模型推理。支持范围：前景 alpha",
+    "principle": "U2NetP 通过嵌套 U 形网络估计显著前景掩膜，再按 alpha 混合输入与选择的背景颜色。",
+    "uses": "主体提取、背景替换和透明 PNG 输出。",
+    "failures": "这是显著前景模型，不是高精度发丝抠图；透明玻璃、孔洞和多主体选择可能不理想。",
+    "params": [
+      {
+        "key": "background",
+        "label": "背景颜色",
+        "default": "#e8eef5",
+        "help": "十六进制 RGB 颜色。",
+        "type": "text",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "rmbg",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "action",
+    "name": "视频动作识别",
+    "english": "action",
+    "category": "视频与时序",
+    "summary": "本地预训练模型推理。支持范围：Kinetics-400 动作类别",
+    "principle": "通过预训练网络提取特征并完成指定任务；模型结构、权重和预处理必须一致。",
+    "uses": "在支持类别与训练分布接近的图像上辅助学习和实验。",
+    "failures": "域偏移、遮挡或低分辨率会降低可靠性；缺少文件时不自动联网。",
+    "params": [],
+    "inputs": [
+      "video"
+    ],
+    "interaction": "",
+    "model": "r3d",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": true,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "gradcam",
+    "name": "Grad-CAM 类激活图",
+    "english": "gradcam",
+    "category": "模型学习与评估",
+    "summary": "本地预训练模型推理。支持范围：ImageNet 1000 类",
+    "principle": "选定预测类别，对最后卷积特征求梯度；空间平均梯度作为通道权重，正向加权响应上采样为类激活热图。",
+    "uses": "观察分类网络主要依赖哪些区域，发现背景偏差。",
+    "failures": "低分辨率热图不等于分割掩膜，也不能证明模型具有因果理解；此实验直接缩放原图以保持坐标映射明确。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "resnet18",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "feature_maps",
+    "name": "特征图可视化",
+    "english": "feature_maps",
+    "category": "模型学习与评估",
+    "summary": "本地预训练模型推理。支持范围：ResNet18 layer4 的 512 通道",
+    "principle": "提取 ResNet18 layer4 的中间激活，分别归一化前 16 个通道可视化，同时导出全部 512 通道数组。",
+    "uses": "理解卷积特征逐层抽象以及通道响应的差异。",
+    "failures": "通道独立归一化后的亮度不能直接跨通道比较；单个通道通常不对应可命名的语义。",
+    "params": [],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "resnet18",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "benchmark",
+    "name": "推理后端对比",
+    "english": "benchmark",
+    "category": "模型学习与评估",
+    "summary": "本地预训练模型推理。支持范围：PyTorch 指定设备 / ONNX Runtime CPU",
+    "principle": "固定同一 ResNet18 权重与输入，预热后多次运行，比较 PyTorch 与 ONNX Runtime 的中位延迟及 logits 最大绝对差。",
+    "uses": "观察后端执行差异和数值一致性。",
+    "failures": "CPU 与 GPU 延迟不可直接混为同一条件。TensorRT 需要额外 NVIDIA 环境；没有真值时不报告准确率。",
+    "params": [
+      {
+        "key": "repeats",
+        "label": "重复次数",
+        "default": 5,
+        "help": "预热后测量，输出中位延迟。",
+        "type": "number",
+        "min": 1,
+        "max": 30,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "resnet18",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "lowlight",
+    "name": "低光增强 Retinex",
+    "english": "Retinex",
+    "category": "图像恢复",
+    "summary": "估计并补偿光照。",
+    "principle": "用对数反射模型分离高斯平滑照明。",
+    "uses": "低照度图像预处理。",
+    "failures": "这是传统 Retinex；强噪声会被增强。",
+    "params": [
+      {
+        "key": "sigma",
+        "label": "光照尺度",
+        "default": 40,
+        "help": "高斯照明估计的尺度。",
+        "type": "number",
+        "min": 5,
+        "max": 150,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "inpaint",
+    "name": "图像修复",
+    "english": "Telea inpaint",
+    "category": "图像恢复",
+    "summary": "修复手绘掩膜覆盖区域。",
+    "principle": "沿边界传播邻域颜色。",
+    "uses": "去除小划痕、坏点和细小遮挡。",
+    "failures": "传统算法不能合理重建大面积语义内容。",
+    "params": [
+      {
+        "key": "radius",
+        "label": "修复半径",
+        "default": 3,
+        "help": "邻域半径，单位像素。",
+        "type": "number",
+        "min": 1,
+        "max": 20,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "brush",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "frame_diff",
+    "name": "帧差",
+    "english": "frame_diff",
+    "category": "视频与时序",
+    "summary": "流式处理连续视频并保留时间轴。",
+    "principle": "比较连续帧的绝对差异。",
+    "uses": "运动分析、轨迹、产线事件。",
+    "failures": "摄像机移动、遮挡和 ID 切换影响规则；事件必须结合场景验证。",
+    "params": [
+      {
+        "key": "sample_every",
+        "label": "推理间隔帧数",
+        "default": 1,
+        "help": "当前时序工作流固定逐帧运行，不抽帧；结果保留原时长和帧率。",
+        "type": "number",
+        "min": 1,
+        "max": 1,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "video"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": true,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "mog2",
+    "name": "背景建模 MOG2",
+    "english": "mog2",
+    "category": "视频与时序",
+    "summary": "流式处理连续视频并保留时间轴。",
+    "principle": "随时间更新混合高斯背景模型。",
+    "uses": "运动分析、轨迹、产线事件。",
+    "failures": "摄像机移动、遮挡和 ID 切换影响规则；事件必须结合场景验证。",
+    "params": [
+      {
+        "key": "sample_every",
+        "label": "推理间隔帧数",
+        "default": 1,
+        "help": "当前时序工作流固定逐帧运行，不抽帧；结果保留原时长和帧率。",
+        "type": "number",
+        "min": 1,
+        "max": 1,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "video"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": true,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "flow_sparse",
+    "name": "稀疏光流",
+    "english": "flow_sparse",
+    "category": "视频与时序",
+    "summary": "流式处理连续视频并保留时间轴。",
+    "principle": "Lucas–Kanade 跟踪前一帧角点。",
+    "uses": "运动分析、轨迹、产线事件。",
+    "failures": "摄像机移动、遮挡和 ID 切换影响规则；事件必须结合场景验证。",
+    "params": [
+      {
+        "key": "sample_every",
+        "label": "推理间隔帧数",
+        "default": 1,
+        "help": "当前时序工作流固定逐帧运行，不抽帧；结果保留原时长和帧率。",
+        "type": "number",
+        "min": 1,
+        "max": 1,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "video"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": true,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "flow_dense",
+    "name": "稠密光流",
+    "english": "flow_dense",
+    "category": "视频与时序",
+    "summary": "流式处理连续视频并保留时间轴。",
+    "principle": "Farneback 估计每个像素的位移。",
+    "uses": "运动分析、轨迹、产线事件。",
+    "failures": "摄像机移动、遮挡和 ID 切换影响规则；事件必须结合场景验证。",
+    "params": [
+      {
+        "key": "sample_every",
+        "label": "推理间隔帧数",
+        "default": 1,
+        "help": "当前时序工作流固定逐帧运行，不抽帧；结果保留原时长和帧率。",
+        "type": "number",
+        "min": 1,
+        "max": 1,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "video"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": true,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "single_track",
+    "name": "单目标跟踪",
+    "english": "single_track",
+    "category": "视频与时序",
+    "summary": "流式处理连续视频并保留时间轴。",
+    "principle": "CSRT 从首帧矩形 ROI 学习并更新目标。",
+    "uses": "运动分析、轨迹、产线事件。",
+    "failures": "摄像机移动、遮挡和 ID 切换影响规则；事件必须结合场景验证。",
+    "params": [
+      {
+        "key": "sample_every",
+        "label": "推理间隔帧数",
+        "default": 1,
+        "help": "当前时序工作流固定逐帧运行，不抽帧；结果保留原时长和帧率。",
+        "type": "number",
+        "min": 1,
+        "max": 1,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "video"
+    ],
+    "interaction": "rectangle",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": true,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "multi_track",
+    "name": "多目标跟踪与轨迹",
+    "english": "multi_track",
+    "category": "视频与时序",
+    "summary": "流式处理连续视频并保留时间轴。",
+    "principle": "YOLO 检测结合最近邻 IoU 关联维持目标 ID。",
+    "uses": "运动分析、轨迹、产线事件。",
+    "failures": "摄像机移动、遮挡和 ID 切换影响规则；事件必须结合场景验证。",
+    "params": [
+      {
+        "key": "sample_every",
+        "label": "推理间隔帧数",
+        "default": 1,
+        "help": "当前时序工作流固定逐帧运行，不抽帧；结果保留原时长和帧率。",
+        "type": "number",
+        "min": 1,
+        "max": 1,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "video"
+    ],
+    "interaction": "",
+    "model": "yolov8n",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": true,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "events",
+    "name": "计数、越线、区域与停留",
+    "english": "events",
+    "category": "视频与时序",
+    "summary": "流式处理连续视频并保留时间轴。",
+    "principle": "对跟踪 ID 的轨迹检查线交叉、区域进入和持续时间。",
+    "uses": "运动分析、轨迹、产线事件。",
+    "failures": "摄像机移动、遮挡和 ID 切换影响规则；事件必须结合场景验证。",
+    "params": [
+      {
+        "key": "sample_every",
+        "label": "推理间隔帧数",
+        "default": 1,
+        "help": "当前时序工作流固定逐帧运行，不抽帧；结果保留原时长和帧率。",
+        "type": "number",
+        "min": 1,
+        "max": 1,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "line_x",
+        "label": "计数线横坐标比例",
+        "default": 0.5,
+        "help": "在原图上建立竖直越线判定线。",
+        "type": "number",
+        "min": 0.05,
+        "max": 0.95,
+        "step": 0.05,
+        "options": []
+      },
+      {
+        "key": "dwell",
+        "label": "停留秒数",
+        "default": 2,
+        "help": "同一 ID 在区域内连续停留时长。",
+        "type": "number",
+        "min": 0.1,
+        "max": 60,
+        "step": 0.1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "video"
+    ],
+    "interaction": "rectangle",
+    "model": "yolov8n",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": true,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "sequence",
+    "name": "事件顺序规则",
+    "english": "sequence",
+    "category": "视频与时序",
+    "summary": "流式处理连续视频并保留时间轴。",
+    "principle": "按配置事件序列及时间窗口验证轨迹产生的事件。",
+    "uses": "运动分析、轨迹、产线事件。",
+    "failures": "摄像机移动、遮挡和 ID 切换影响规则；事件必须结合场景验证。",
+    "params": [
+      {
+        "key": "sample_every",
+        "label": "推理间隔帧数",
+        "default": 1,
+        "help": "当前时序工作流固定逐帧运行，不抽帧；结果保留原时长和帧率。",
+        "type": "number",
+        "min": 1,
+        "max": 1,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "line_x",
+        "label": "计数线横坐标比例",
+        "default": 0.5,
+        "help": "在原图上建立竖直越线判定线。",
+        "type": "number",
+        "min": 0.05,
+        "max": 0.95,
+        "step": 0.05,
+        "options": []
+      },
+      {
+        "key": "dwell",
+        "label": "停留秒数",
+        "default": 2,
+        "help": "同一 ID 在区域内连续停留时长。",
+        "type": "number",
+        "min": 0.1,
+        "max": 60,
+        "step": 0.1,
+        "options": []
+      },
+      {
+        "key": "event_order",
+        "label": "事件顺序",
+        "default": [
+          "enter",
+          "cross",
+          "dwell"
+        ],
+        "help": "可用事件：enter、cross、dwell、exit。",
+        "type": "json",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "window",
+        "label": "时间窗口",
+        "default": 10,
+        "help": "首个事件到最后事件允许的秒数。",
+        "type": "number",
+        "min": 1,
+        "max": 120,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "video"
+    ],
+    "interaction": "rectangle",
+    "model": "yolov8n",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": true,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "video_segment",
+    "name": "视频分割",
+    "english": "video_segment",
+    "category": "视频与时序",
+    "summary": "流式处理连续视频并保留时间轴。",
+    "principle": "SAM2 以首帧提示初始化记忆并在后续帧传播。",
+    "uses": "运动分析、轨迹、产线事件。",
+    "failures": "摄像机移动、遮挡和 ID 切换影响规则；事件必须结合场景验证。",
+    "params": [
+      {
+        "key": "sample_every",
+        "label": "推理间隔帧数",
+        "default": 1,
+        "help": "当前时序工作流固定逐帧运行，不抽帧；结果保留原时长和帧率。",
+        "type": "number",
+        "min": 1,
+        "max": 1,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "video"
+    ],
+    "interaction": "rectangle",
+    "model": "sam2",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": true,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "calibrate",
+    "name": "相机标定",
+    "english": "calibrate",
+    "category": "标定与三维",
+    "summary": "由专用输入计算几何关系。",
+    "principle": "基于投影几何、特征对应或空间邻域估计。",
+    "uses": "尺寸校正、空间理解和重建。",
+    "failures": "标定视角不足、错误内参、纹理少会失败；单目重建没有真实尺度。",
+    "params": [
+      {
+        "key": "cols",
+        "label": "内角点列数",
+        "default": 9,
+        "help": "棋盘格内角点列数。",
+        "type": "number",
+        "min": 3,
+        "max": 20,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "rows",
+        "label": "内角点行数",
+        "default": 6,
+        "help": "棋盘格内角点行数。",
+        "type": "number",
+        "min": 3,
+        "max": 20,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "square_mm",
+        "label": "棋盘格边长 mm",
+        "default": 25,
+        "help": "真实棋盘格格子边长。",
+        "type": "number",
+        "min": 1,
+        "max": 200,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image",
+      "calibration_images"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "undistort",
+    "name": "畸变校正",
+    "english": "undistort",
+    "category": "标定与三维",
+    "summary": "由专用输入计算几何关系。",
+    "principle": "基于投影几何、特征对应或空间邻域估计。",
+    "uses": "尺寸校正、空间理解和重建。",
+    "failures": "标定视角不足、错误内参、纹理少会失败；单目重建没有真实尺度。",
+    "params": [
+      {
+        "key": "camera",
+        "label": "相机矩阵",
+        "default": [
+          [
+            800,
+            0,
+            320
+          ],
+          [
+            0,
+            800,
+            240
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "help": "与原图分辨率对应的 3×3 内参。",
+        "type": "json",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "distortion",
+        "label": "畸变系数",
+        "default": [
+          -0.2,
+          0.05,
+          0,
+          0,
+          0
+        ],
+        "help": "k1,k2,p1,p2,k3。",
+        "type": "json",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "stereo",
+    "name": "双目视差与深度",
+    "english": "stereo",
+    "category": "标定与三维",
+    "summary": "由专用输入计算几何关系。",
+    "principle": "基于投影几何、特征对应或空间邻域估计。",
+    "uses": "尺寸校正、空间理解和重建。",
+    "failures": "标定视角不足、错误内参、纹理少会失败；单目重建没有真实尺度。",
+    "params": [
+      {
+        "key": "disparities",
+        "label": "视差搜索数",
+        "default": 64,
+        "help": "向上取 16 的倍数。",
+        "type": "number",
+        "min": 16,
+        "max": 256,
+        "step": 16,
+        "options": []
+      },
+      {
+        "key": "block",
+        "label": "匹配块边长",
+        "default": 5,
+        "help": "自动取奇数。",
+        "type": "number",
+        "min": 3,
+        "max": 21,
+        "step": 2,
+        "options": []
+      },
+      {
+        "key": "focal",
+        "label": "焦距像素",
+        "default": 0,
+        "help": "0 表示未知，只输出视差。",
+        "type": "number",
+        "min": 0,
+        "max": 10000,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "baseline",
+        "label": "基线毫米",
+        "default": 0,
+        "help": "已校正平行双目基线，非零且提供焦距才计算深度。",
+        "type": "number",
+        "min": 0,
+        "max": 2000,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image",
+      "reference"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "stereo_rectify",
+    "name": "双目校正",
+    "english": "stereo_rectify",
+    "category": "标定与三维",
+    "summary": "由专用输入计算几何关系。",
+    "principle": "基于投影几何、特征对应或空间邻域估计。",
+    "uses": "尺寸校正、空间理解和重建。",
+    "failures": "标定视角不足、错误内参、纹理少会失败；单目重建没有真实尺度。",
+    "params": [
+      {
+        "key": "calibration",
+        "label": "双目标定 JSON",
+        "default": {},
+        "help": "需要 K1,D1,K2,D2,R,T。可用相机标定结果配合已知双目外参。",
+        "type": "json",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image",
+      "reference"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "reconstruct",
+    "name": "双视图基础重建",
+    "english": "reconstruct",
+    "category": "标定与三维",
+    "summary": "由专用输入计算几何关系。",
+    "principle": "基于投影几何、特征对应或空间邻域估计。",
+    "uses": "尺寸校正、空间理解和重建。",
+    "failures": "标定视角不足、错误内参、纹理少会失败；单目重建没有真实尺度。",
+    "params": [
+      {
+        "key": "camera",
+        "label": "第一视图内参",
+        "default": [
+          [
+            800,
+            0,
+            320
+          ],
+          [
+            0,
+            800,
+            240
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "help": "需真实内参；单目多视图重建只有相对尺度。",
+        "type": "json",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "camera_reference",
+        "label": "第二视图内参",
+        "default": [
+          [
+            800,
+            0,
+            320
+          ],
+          [
+            0,
+            800,
+            240
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "help": "同一相机时使用相同内参。双相机可分别填写。",
+        "type": "json",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image",
+      "reference"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "pointcloud",
+    "name": "点云查看、滤波与配准",
+    "english": "pointcloud",
+    "category": "标定与三维",
+    "summary": "由专用输入计算几何关系。",
+    "principle": "基于投影几何、特征对应或空间邻域估计。",
+    "uses": "尺寸校正、空间理解和重建。",
+    "failures": "标定视角不足、错误内参、纹理少会失败；单目重建没有真实尺度。",
+    "params": [
+      {
+        "key": "voxel",
+        "label": "体素边长",
+        "default": 0.05,
+        "help": "0 保留全部点；单位与输入点云相同。",
+        "type": "number",
+        "min": 0,
+        "max": 10,
+        "step": 0.01,
+        "options": []
+      },
+      {
+        "key": "operation",
+        "label": "操作",
+        "default": "view",
+        "help": "plane 用 RANSAC 平面分割；register 需要第二份点云。",
+        "type": "select",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": [
+          "view",
+          "plane",
+          "register"
+        ]
+      },
+      {
+        "key": "distance",
+        "label": "平面距离阈值",
+        "default": 0.05,
+        "help": "RANSAC 内点距离。",
+        "type": "number",
+        "min": 0.001,
+        "max": 2,
+        "step": 0.001,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "pointcloud"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "augmentation",
+    "name": "预处理与数据增强",
+    "english": "Data augmentation",
+    "category": "模型学习与评估",
+    "summary": "展示可重复的数据增强。",
+    "principle": "对图像施加翻转、旋转、亮度和噪声扰动。",
+    "uses": "学习训练输入分布。",
+    "failures": "增强必须符合真实场景，标注也需同步变换。",
+    "params": [
+      {
+        "key": "angle",
+        "label": "旋转",
+        "default": 10,
+        "help": "角度。",
+        "type": "number",
+        "min": -90,
+        "max": 90,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "brightness",
+        "label": "亮度增益",
+        "default": 1.1,
+        "help": "乘法增益。",
+        "type": "number",
+        "min": 0.1,
+        "max": 2,
+        "step": 0.05,
+        "options": []
+      },
+      {
+        "key": "noise",
+        "label": "噪声标准差",
+        "default": 5,
+        "help": "固定随机种子保证可重复。",
+        "type": "number",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "flip",
+        "label": "翻转",
+        "default": "none",
+        "help": "镜像变换。",
+        "type": "select",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": [
+          "none",
+          "horizontal",
+          "vertical"
+        ]
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "eval_classification",
+    "name": "分类指标",
+    "english": "eval_classification",
+    "category": "模型学习与评估",
+    "summary": "输入真实标注与预测计算指标。",
+    "principle": "按分类混淆矩阵、框的 IoU 匹配或像素交并比计算。",
+    "uses": "数据集验证和回归比较。",
+    "failures": "必须提供真值，不能从无标签图片生成准确率。",
+    "params": [
+      {
+        "key": "annotations",
+        "label": "标注与预测",
+        "default": {},
+        "help": "格式见算法说明下方输入示例和 README；分类为 truth/prediction 数组，检测为真值/预测框列表。",
+        "type": "json",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "eval_detection",
+    "name": "检测 AP / mAP",
+    "english": "eval_detection",
+    "category": "模型学习与评估",
+    "summary": "输入真实标注与预测计算指标。",
+    "principle": "按分类混淆矩阵、框的 IoU 匹配或像素交并比计算。",
+    "uses": "数据集验证和回归比较。",
+    "failures": "必须提供真值，不能从无标签图片生成准确率。",
+    "params": [
+      {
+        "key": "annotations",
+        "label": "标注与预测",
+        "default": {},
+        "help": "格式见算法说明下方输入示例和 README；分类为 truth/prediction 数组，检测为真值/预测框列表。",
+        "type": "json",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "eval_segmentation",
+    "name": "分割 IoU / Dice",
+    "english": "eval_segmentation",
+    "category": "模型学习与评估",
+    "summary": "输入真实标注与预测计算指标。",
+    "principle": "按分类混淆矩阵、框的 IoU 匹配或像素交并比计算。",
+    "uses": "数据集验证和回归比较。",
+    "failures": "必须提供真值，不能从无标签图片生成准确率。",
+    "params": [
+      {
+        "key": "mode",
+        "label": "掩膜类型",
+        "default": "binary",
+        "help": "binary 按 127 阈值；multiclass 将灰度值作为整数类别 ID。",
+        "type": "select",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": [
+          "binary",
+          "multiclass"
+        ]
+      },
+      {
+        "key": "ignore_label",
+        "label": "忽略类别 ID",
+        "default": 255,
+        "help": "多类别模式中此真值标签不参加统计。",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image",
+      "truth_mask"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "rgb",
+    "name": "RGB 颜色空间",
+    "english": "RGB",
+    "category": "图像基础",
+    "summary": "观察不同颜色空间的编码。",
+    "principle": "通过非线性或线性变换分离色相、亮度与色度；结果显示编码通道而非自然色。",
+    "uses": "颜色分割、白平衡、光照分析。",
+    "failures": "HSV 的 H 范围为 0–179，不能按 RGB 解释。",
+    "params": [
+      {
+        "key": "space",
+        "label": "目标空间",
+        "default": "RGB",
+        "help": "输出三个编码通道，数据记录通道范围。",
+        "type": "select",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": [
+          "RGB"
+        ]
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "hsv",
+    "name": "HSV 颜色空间",
+    "english": "HSV",
+    "category": "图像基础",
+    "summary": "观察不同颜色空间的编码。",
+    "principle": "通过非线性或线性变换分离色相、亮度与色度；结果显示编码通道而非自然色。",
+    "uses": "颜色分割、白平衡、光照分析。",
+    "failures": "HSV 的 H 范围为 0–179，不能按 RGB 解释。",
+    "params": [
+      {
+        "key": "space",
+        "label": "目标空间",
+        "default": "HSV",
+        "help": "输出三个编码通道，数据记录通道范围。",
+        "type": "select",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": [
+          "HSV"
+        ]
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "lab",
+    "name": "Lab 颜色空间",
+    "english": "Lab",
+    "category": "图像基础",
+    "summary": "观察不同颜色空间的编码。",
+    "principle": "通过非线性或线性变换分离色相、亮度与色度；结果显示编码通道而非自然色。",
+    "uses": "颜色分割、白平衡、光照分析。",
+    "failures": "HSV 的 H 范围为 0–179，不能按 RGB 解释。",
+    "params": [
+      {
+        "key": "space",
+        "label": "目标空间",
+        "default": "Lab",
+        "help": "输出三个编码通道，数据记录通道范围。",
+        "type": "select",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": [
+          "Lab"
+        ]
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "ycrcb",
+    "name": "YCrCb 颜色空间",
+    "english": "YCrCb",
+    "category": "图像基础",
+    "summary": "观察不同颜色空间的编码。",
+    "principle": "通过非线性或线性变换分离色相、亮度与色度；结果显示编码通道而非自然色。",
+    "uses": "颜色分割、白平衡、光照分析。",
+    "failures": "HSV 的 H 范围为 0–179，不能按 RGB 解释。",
+    "params": [
+      {
+        "key": "space",
+        "label": "目标空间",
+        "default": "YCrCb",
+        "help": "输出三个编码通道，数据记录通道范围。",
+        "type": "select",
+        "min": null,
+        "max": null,
+        "step": 1,
+        "options": [
+          "YCrCb"
+        ]
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "image",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "contour_area",
+    "name": "轮廓面积",
+    "english": "contour_area",
+    "category": "边缘与形状",
+    "summary": "定位二值图中的独立对象并输出几何属性。",
+    "principle": "用格林公式计算闭合边界包围的面积，单位 px²。",
+    "uses": "零件计数、轮廓检测和形状一致性。",
+    "failures": "相接物体可能连成一个；形状匹配需要同一阈值语义。",
+    "params": [
+      {
+        "key": "threshold",
+        "label": "阈值",
+        "default": 127,
+        "help": "像素大于该亮度时进入前景；光照变化会影响分割。",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "min_area",
+        "label": "最小面积",
+        "default": 100,
+        "help": "过滤面积过小的目标，单位为原图像素平方。",
+        "type": "number",
+        "min": 0,
+        "max": 100000,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "contour_perimeter",
+    "name": "轮廓周长",
+    "english": "contour_perimeter",
+    "category": "边缘与形状",
+    "summary": "定位二值图中的独立对象并输出几何属性。",
+    "principle": "按顺序累加相邻轮廓点距离，闭合轮廓包含首尾线段。",
+    "uses": "零件计数、轮廓检测和形状一致性。",
+    "failures": "相接物体可能连成一个；形状匹配需要同一阈值语义。",
+    "params": [
+      {
+        "key": "threshold",
+        "label": "阈值",
+        "default": 127,
+        "help": "像素大于该亮度时进入前景；光照变化会影响分割。",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "min_area",
+        "label": "最小面积",
+        "default": 100,
+        "help": "过滤面积过小的目标，单位为原图像素平方。",
+        "type": "number",
+        "min": 0,
+        "max": 100000,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "centroid",
+    "name": "图像矩与质心",
+    "english": "centroid",
+    "category": "边缘与形状",
+    "summary": "定位二值图中的独立对象并输出几何属性。",
+    "principle": "几何矩 m10/m00、m01/m00 给出面积中心。",
+    "uses": "零件计数、轮廓检测和形状一致性。",
+    "failures": "相接物体可能连成一个；形状匹配需要同一阈值语义。",
+    "params": [
+      {
+        "key": "threshold",
+        "label": "阈值",
+        "default": 127,
+        "help": "像素大于该亮度时进入前景；光照变化会影响分割。",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "min_area",
+        "label": "最小面积",
+        "default": 100,
+        "help": "过滤面积过小的目标，单位为原图像素平方。",
+        "type": "number",
+        "min": 0,
+        "max": 100000,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "bounding_box",
+    "name": "外接框",
+    "english": "bounding_box",
+    "category": "边缘与形状",
+    "summary": "定位二值图中的独立对象并输出几何属性。",
+    "principle": "轴对齐外接框与旋转最小面积矩形描述目标范围。",
+    "uses": "零件计数、轮廓检测和形状一致性。",
+    "failures": "相接物体可能连成一个；形状匹配需要同一阈值语义。",
+    "params": [
+      {
+        "key": "threshold",
+        "label": "阈值",
+        "default": 127,
+        "help": "像素大于该亮度时进入前景；光照变化会影响分割。",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "min_area",
+        "label": "最小面积",
+        "default": 100,
+        "help": "过滤面积过小的目标，单位为原图像素平方。",
+        "type": "number",
+        "min": 0,
+        "max": 100000,
+        "step": 1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "industrial_template",
+    "name": "工业模板定位",
+    "english": "Template matching",
+    "category": "工业视觉",
+    "summary": "寻找局部模板的最佳位置。",
+    "principle": "滑动窗口计算归一化相关系数。",
+    "uses": "固定视角定位、工业模板搜索。",
+    "failures": "尺度或旋转变化会降低得分；模板必须小于原图。",
+    "params": [],
+    "inputs": [
+      "image",
+      "template"
+    ],
+    "interaction": "rectangle",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": true,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "angle_measure",
+    "name": "角度测量",
+    "english": "measure",
+    "category": "工业视觉",
+    "summary": "从最小外接矩形估计目标主轴角度，输出度数；近圆形目标方向不稳定。",
+    "principle": "规则算法按阈值、轮廓或参考差异分析；异常模型使用局部预训练特征的正常记忆库。",
+    "uses": "固定相机、稳定光照下的质量检测。",
+    "failures": "需要合适参考与正常样本；通用模型不具备专用缺陷类别。",
+    "params": [
+      {
+        "key": "threshold",
+        "label": "阈值",
+        "default": 127,
+        "help": "像素大于该亮度时进入前景；光照变化会影响分割。",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "min_area",
+        "label": "最小面积",
+        "default": 100,
+        "help": "过滤面积过小的目标，单位为原图像素平方。",
+        "type": "number",
+        "min": 0,
+        "max": 100000,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "pixels_per_mm",
+        "label": "每毫米像素数",
+        "default": 0,
+        "help": "0 表示未标定，只输出 px；必须提供同一平面的尺度。",
+        "type": "number",
+        "min": 0,
+        "max": 10000,
+        "step": 0.1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  },
+  {
+    "id": "gap_measure",
+    "name": "间隙测量",
+    "english": "measure",
+    "category": "工业视觉",
+    "summary": "用轮廓边界最近邻距离计算目标间隙，默认输出像素。",
+    "principle": "规则算法按阈值、轮廓或参考差异分析；异常模型使用局部预训练特征的正常记忆库。",
+    "uses": "固定相机、稳定光照下的质量检测。",
+    "failures": "需要合适参考与正常样本；通用模型不具备专用缺陷类别。",
+    "params": [
+      {
+        "key": "threshold",
+        "label": "阈值",
+        "default": 127,
+        "help": "像素大于该亮度时进入前景；光照变化会影响分割。",
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "min_area",
+        "label": "最小面积",
+        "default": 100,
+        "help": "过滤面积过小的目标，单位为原图像素平方。",
+        "type": "number",
+        "min": 0,
+        "max": 100000,
+        "step": 1,
+        "options": []
+      },
+      {
+        "key": "pixels_per_mm",
+        "label": "每毫米像素数",
+        "default": 0,
+        "help": "0 表示未标定，只输出 px；必须提供同一平面的尺度。",
+        "type": "number",
+        "min": 0,
+        "max": 10000,
+        "step": 0.1,
+        "options": []
+      }
+    ],
+    "inputs": [
+      "image"
+    ],
+    "interaction": "",
+    "model": "",
+    "output": "image",
+    "input_kind": "image",
+    "output_kind": "overlay",
+    "preview": false,
+    "temporal": false,
+    "status": "implemented",
+    "reason": ""
+  }
+]

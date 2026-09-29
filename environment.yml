@@ -1,0 +1,8 @@
+name: vision-lab
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - ffmpeg
+# Python 应用依赖见 backend/requirements-models.txt；CPU PyTorch 先安装专用 wheel，见 scripts/setup_conda.sh。
