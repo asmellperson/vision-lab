@@ -89,7 +89,7 @@ npm run build
 
 ## 模型准备、离线运行与设备
 
-已验证的 22 套模型另存为 [GitHub Release：models-2026-09-29](https://github.com/asmellperson/vision-lab/releases/tag/models-2026-09-29) 附件，每套独立打包，包含权重、配置、词表、原始版本清单和第三方许可说明。克隆源码不会下载这些附件；需要恢复本次模型快照时，按 [模型附件下载与恢复说明](docs/MODEL_RELEASE.md) 下载、校验并解压到项目根目录。
+已验证的 22 套模型另存为 [GitHub Release：models-2026-09-29](https://github.com/asmellperson/vision-lab/releases/tag/models-2026-09-29) 附件，每套独立打包，较大的压缩包拆为最多 16 MiB 的分卷，包含权重、配置、词表、原始版本清单和第三方许可说明。克隆源码不会下载这些附件；需要恢复本次模型快照时，按 [模型附件下载与恢复说明](docs/MODEL_RELEASE.md) 下载、校验、合并并解压到项目根目录。
 
 也可以继续从官方来源下载模型：
 

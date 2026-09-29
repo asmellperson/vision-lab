@@ -47,6 +47,23 @@
           "size": 46830571,
           "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec"
         }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-resnet18.tar.gz.part-001",
+          "size": 16777216,
+          "sha256": "7a9b21d684aa1cf8a12d09380158f734be9015af215b00b33300d63cfcdbd94e"
+        },
+        {
+          "name": "vision-lab-model-resnet18.tar.gz.part-002",
+          "size": 16777216,
+          "sha256": "1415c776661920cab4c86d012696e7d836fade15f8ba7d5447477b9389ab40d4"
+        },
+        {
+          "name": "vision-lab-model-resnet18.tar.gz.part-003",
+          "size": 10028686,
+          "sha256": "5a5641817167cf2e5e6401f07c8c7930f3832e947826b34ec22030c46395a586"
+        }
       ]
     },
     {
@@ -83,6 +100,23 @@
           "path": "models/deeplab/release-metadata/licenses/torchvision.txt",
           "size": 1517,
           "sha256": "6502f676851cfe25f8af75531dfb32375b7325b73c37e7b43741fa422893e71d"
+        }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-deeplab.tar.gz.part-001",
+          "size": 16777216,
+          "sha256": "831338593023e127cbfddc5d6b63101c6a9280a191f61776eb1d1e0aff024edb"
+        },
+        {
+          "name": "vision-lab-model-deeplab.tar.gz.part-002",
+          "size": 16777216,
+          "sha256": "522924bfd1012e98d64e98f4920d873832a839ff4e8cb8e78a78344a1819147a"
+        },
+        {
+          "name": "vision-lab-model-deeplab.tar.gz.part-003",
+          "size": 7634222,
+          "sha256": "731bdc6ce99ff6747e75d5b8392b70a10e716eacbd13e20e2659913ace1f6158"
         }
       ]
     },
@@ -121,6 +155,48 @@
           "size": 1517,
           "sha256": "6502f676851cfe25f8af75531dfb32375b7325b73c37e7b43741fa422893e71d"
         }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-r3d.tar.gz.part-001",
+          "size": 16777216,
+          "sha256": "13c77d46de9a3c1728a725d484829d0535dd4819b6d52ba4cb395cab11c3342b"
+        },
+        {
+          "name": "vision-lab-model-r3d.tar.gz.part-002",
+          "size": 16777216,
+          "sha256": "8cd6b32b8077d396c0c3388e08e8173d80c60e1337d837fb82342097fb406da9"
+        },
+        {
+          "name": "vision-lab-model-r3d.tar.gz.part-003",
+          "size": 16777216,
+          "sha256": "9e7db4449f952cae604f80f152e36c9675a6dfabf8112fcc273fbe9e7600b365"
+        },
+        {
+          "name": "vision-lab-model-r3d.tar.gz.part-004",
+          "size": 16777216,
+          "sha256": "96b7f6b8bc851be9c2290edf67883f32936ab6c5ab03747528189fb1db8f903b"
+        },
+        {
+          "name": "vision-lab-model-r3d.tar.gz.part-005",
+          "size": 16777216,
+          "sha256": "fe5704d4ce92deb37c125a55c25e723ddef903c5bad9fe9e70d57fed2a5920b2"
+        },
+        {
+          "name": "vision-lab-model-r3d.tar.gz.part-006",
+          "size": 16777216,
+          "sha256": "f653b6d08f371e3cacb9ab7a9aa284036d2cf3696bbf808ca766ab5d8d748157"
+        },
+        {
+          "name": "vision-lab-model-r3d.tar.gz.part-007",
+          "size": 16777216,
+          "sha256": "1fd28c88697021dc84fcc7653d88cbaef6c12580c0db83ef5eb912fa74e10c1b"
+        },
+        {
+          "name": "vision-lab-model-r3d.tar.gz.part-008",
+          "size": 6921954,
+          "sha256": "18ddf11d3efa6c7623888322c313f648f2948dbb85f8de2c1c0b0fa2305e936b"
+        }
       ]
     },
     {
@@ -157,6 +233,13 @@
           "path": "models/yolov8n/yolov8n.pt",
           "size": 6549796,
           "sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36"
+        }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-yolov8n.tar.gz",
+          "size": 5998506,
+          "sha256": "cb0830f2d31a9e113120f50c8ef82b674ca656058451f29f7d6132cb87c4e3be"
         }
       ]
     },
@@ -195,6 +278,13 @@
           "size": 7071756,
           "sha256": "a7cd8f929e1903d78a12a48efecab430209f18dc46cb96c3599a5980c63c423c"
         }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-yolov8n-seg.tar.gz",
+          "size": 6476492,
+          "sha256": "4dc887fbfee2bc2790b668011ab7bf24cf3b88677102b222184b85ebe77615aa"
+        }
       ]
     },
     {
@@ -232,6 +322,13 @@
           "size": 6832633,
           "sha256": "c6fa93dd1ee4a2c18c900a45c1d864a1c6f7aba75d84f91648a30b7fb641d212"
         }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-yolov8n-pose.tar.gz",
+          "size": 6257360,
+          "sha256": "ea58ca9854492b5f50401b4593ef10f3acdb587e1042108c93eb08157fb4cbeb"
+        }
       ]
     },
     {
@@ -268,6 +365,13 @@
           "path": "models/yolov8n-obb/yolov8n-obb.pt",
           "size": 6567590,
           "sha256": "fa6e4cd2691f132875c143135affaa66b5d89394ebb1d07d19770a9b6382c1b8"
+        }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-yolov8n-obb.tar.gz",
+          "size": 5943071,
+          "sha256": "b0f1c0f01bfc3671b686fd5596e14011cdbf772432bffc882981d7bfe652b05e"
         }
       ]
     },
@@ -310,6 +414,33 @@
           "path": "models/sam2/sam2_t.pt",
           "size": 78064050,
           "sha256": "94375f988270836169320bd901960c67b5770e8bef3867d70102f01a8b5ca501"
+        }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-sam2.tar.gz.part-001",
+          "size": 16777216,
+          "sha256": "07c237438a3b4885b589680342905e258f4958104b0db0ee9836ce678320b19b"
+        },
+        {
+          "name": "vision-lab-model-sam2.tar.gz.part-002",
+          "size": 16777216,
+          "sha256": "849ae6995fbe65312a8a2d19cf8684796372584338f252ac08b3119053069f98"
+        },
+        {
+          "name": "vision-lab-model-sam2.tar.gz.part-003",
+          "size": 16777216,
+          "sha256": "dfc635adf305381444369c058e315b471e952a3454d96f26deb52aab6869b3a9"
+        },
+        {
+          "name": "vision-lab-model-sam2.tar.gz.part-004",
+          "size": 16777216,
+          "sha256": "c7b6103dcab81a608de733fb8994699852cb211ed23d499097161a3247085ae2"
+        },
+        {
+          "name": "vision-lab-model-sam2.tar.gz.part-005",
+          "size": 5328439,
+          "sha256": "288b37122f1b40b3c450ac7487c029cfd19115b188e857fc4828f2f0e6c6431d"
         }
       ]
     },
@@ -368,6 +499,13 @@
           "size": 11422,
           "sha256": "3e0af25fdd06aa9586ae97adb00ea927ebe5a3805ac77d2d3a81ce5f55693333"
         }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-rapidocr.tar.gz",
+          "size": 14947075,
+          "sha256": "c74dc7a6bfd3252612beb943110fcd377856cedcf5eb0178106740fb63dc077f"
+        }
       ]
     },
     {
@@ -419,6 +557,38 @@
           "path": "models/depth-anything/release-metadata/licenses/depth-anything.txt",
           "size": 11357,
           "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-depth-anything.tar.gz.part-001",
+          "size": 16777216,
+          "sha256": "87de155fbb5e8fcd657a8a69a31bb0c912004d79307eaada7576ff450b5c95fe"
+        },
+        {
+          "name": "vision-lab-model-depth-anything.tar.gz.part-002",
+          "size": 16777216,
+          "sha256": "011d1afe5f9dfe4cb973618a58e3887ec047724cdb673a465b6685e767c5ca8a"
+        },
+        {
+          "name": "vision-lab-model-depth-anything.tar.gz.part-003",
+          "size": 16777216,
+          "sha256": "88e827eb17f74bca68f13b0ca733f37643944bc219adb84812ffac190d6c7e0b"
+        },
+        {
+          "name": "vision-lab-model-depth-anything.tar.gz.part-004",
+          "size": 16777216,
+          "sha256": "25f8ee34bae657928872fa14d7eae74819b5f39d0812329a3f6c828c5dcb8b76"
+        },
+        {
+          "name": "vision-lab-model-depth-anything.tar.gz.part-005",
+          "size": 16777216,
+          "sha256": "6c4865f7eed1bb7c93d19b181398f0abfdac36d1fc8e8825055a437c88a07cbd"
+        },
+        {
+          "name": "vision-lab-model-depth-anything.tar.gz.part-006",
+          "size": 8473636,
+          "sha256": "42a61b2b2a039112bc194246278037d19adc80e4734de98a6e16d087c2c1ad95"
         }
       ]
     },
@@ -497,6 +667,133 @@
           "size": 862328,
           "sha256": "5047b556ce86ccaf6aa22b3ffccfc52d391ea4accdab9c2f2407da5b742d4363"
         }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-001",
+          "size": 16777216,
+          "sha256": "faf3717826a334aee65f6fcfa6fbe781ac66181bbc8a708a51182531c0858884"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-002",
+          "size": 16777216,
+          "sha256": "8190f552ceaf12be61dc8b0670a51949aea780716c1afc96ac9ed44dda64c875"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-003",
+          "size": 16777216,
+          "sha256": "b06289cc09bd14e9d86e3cad9ce97a9834de5df7d167db1c5cda6e18632e7128"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-004",
+          "size": 16777216,
+          "sha256": "4c3534dc455dc169cc9fc20b6908779e43d0463f7f9196e9d8e9f9a199f578c3"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-005",
+          "size": 16777216,
+          "sha256": "51d80ad3f76b40b0a43813fd1d4de5eef287409b401eb7b027667ac93e0d57bc"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-006",
+          "size": 16777216,
+          "sha256": "ebed454e7ee5700e136519b20ac32229997dd2c47b3a95425edd400fb6b2d442"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-007",
+          "size": 16777216,
+          "sha256": "50c74ab73755e7c1bb714d669c7f0bd06ef3bff849568fbed4a252076b183eb3"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-008",
+          "size": 16777216,
+          "sha256": "994e2e0c49c0861d03118f024f2d5ef7bb6606baa1216caa66bf40ca07946d6d"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-009",
+          "size": 16777216,
+          "sha256": "beec84f2a7d94d1d3f4eb5c07d01ac690683743c5208f990f8d1dd0fc58a44b4"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-010",
+          "size": 16777216,
+          "sha256": "e329b30430249b51cb0a3c8d78adfb2c2decdcbd44e69b83439c427d7b707109"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-011",
+          "size": 16777216,
+          "sha256": "2f06a37421a131d1347bb1f6d2ee2a87d113e1366c99a47a69e18f7af7e2f44f"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-012",
+          "size": 16777216,
+          "sha256": "ec6548c70982221d9c209a99c26987e0da51b95e40d32b56c63a92f182cbce63"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-013",
+          "size": 16777216,
+          "sha256": "9382ab7e4449e3f4cafd9329e0a0142338c56f600348cad9ac93cc8c490e0f9c"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-014",
+          "size": 16777216,
+          "sha256": "16113902babb6a0ccdf4d75b3a5bbb30c2a464c4783e0562816d8be21ca67b46"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-015",
+          "size": 16777216,
+          "sha256": "5318706a0b84f52a929106f9a215b46755605348b042112131dd9ca1b716b66c"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-016",
+          "size": 16777216,
+          "sha256": "d7b6943cd7ff400a335e2ce0b46b0692ec0c77ab89b2da44fb360532ca59db67"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-017",
+          "size": 16777216,
+          "sha256": "028691b925e2fb07ca9df48b8479d8cb47ffa758b8cead5a2b9db1b7253b378e"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-018",
+          "size": 16777216,
+          "sha256": "c3a483dd1877176b963086b7dcca7180862fdf135a2d8eab0e8a9e2b162dd34f"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-019",
+          "size": 16777216,
+          "sha256": "4c8d818e557b7f76be2d796c6ffd0a7ac178d31249dcd701a7c8a2fc9ec1447e"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-020",
+          "size": 16777216,
+          "sha256": "5faabe9fc223a6df2e170c379b05ea71d06e2861c2ca35a4efb8c48cd4155058"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-021",
+          "size": 16777216,
+          "sha256": "d9343f78db25116ad584976c41ba0df288275f612d8e90cd324dc4be22ea375f"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-022",
+          "size": 16777216,
+          "sha256": "8dfc97da90cb980d66ec155a5053f68eb4c43672e1a04fde706b9955c075f92c"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-023",
+          "size": 16777216,
+          "sha256": "214db5e20b31d1bacd8d08dfea5e5fe77c3ac6cff36eb9e65a2fdd2e4166a69c"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-024",
+          "size": 16777216,
+          "sha256": "6a6b05b37485f1d37d177852bfcc2ccbe1f77bdc485ac01135efb5a13b2c46bf"
+        },
+        {
+          "name": "vision-lab-model-clip.tar.gz.part-025",
+          "size": 9015203,
+          "sha256": "e2c9cfa42ed680b7071294a010c6f7995f460532135febeac0c7001de8265a33"
+        }
       ]
     },
     {
@@ -568,6 +865,183 @@
           "path": "models/owlvit/vocab.json",
           "size": 1059962,
           "sha256": "e089ad92ba36837a0d31433e555c8f45fe601ab5c221d4f607ded32d9f7a4349"
+        }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-001",
+          "size": 16777216,
+          "sha256": "6d5402dc5e0329716cdc484051e1d97cd26753186de3a25c882eade2bef35fd3"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-002",
+          "size": 16777216,
+          "sha256": "82dd3274e33cd46cae82c86b8c16c463d976d8591659b09e56add1579f0d22cc"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-003",
+          "size": 16777216,
+          "sha256": "284af9a8b6b5a5e9cdf97e08db4583559a205f6f0cd9ec5f6d3b5075923f2a74"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-004",
+          "size": 16777216,
+          "sha256": "0d1c81e62ebe4c6832e4f3b2fcaaa4e4368667bd0b302a8820936c6cf5180a84"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-005",
+          "size": 16777216,
+          "sha256": "a7b5a34b09466b74133453bc3a2ea9e64ae6f5983b49220f4c0215c256166180"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-006",
+          "size": 16777216,
+          "sha256": "d3b890d25377a3404c52cf39caad1f5d9cb00e545284128b7bda24881c05c681"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-007",
+          "size": 16777216,
+          "sha256": "dfffb8fb075264c913a63c1bea8a1d3d6e7057606ef71d9a8c86f47ac0beeb75"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-008",
+          "size": 16777216,
+          "sha256": "8ae6e334d5d4c9aa192fcb7ff09c6534e2b115c9bb87114b30435e4989677b01"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-009",
+          "size": 16777216,
+          "sha256": "1939dc203adfebd7a6b0553e074ecb84ca25f46bc60e5eed24b850b4a4e7f2ea"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-010",
+          "size": 16777216,
+          "sha256": "e8a5db5fc0b4be77800102f1a5de14896d98111c5f4a5d1af5d6d436b9ab2d5f"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-011",
+          "size": 16777216,
+          "sha256": "e68efa842c075d8d9fbbc048d9d2df5b75b0434e408f6304d2fad11100eea4d4"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-012",
+          "size": 16777216,
+          "sha256": "7dcfba96dd5232fe91aaac65e40f95d5c45f0d49dc6fbfde42e88ed3f57efeca"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-013",
+          "size": 16777216,
+          "sha256": "38386047fef84c1245da5862d6c23d0aff7c74a36bb41e7cee67b1f1018ba9cb"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-014",
+          "size": 16777216,
+          "sha256": "54c2c65a154d61862321065f7863e3d30fc6855a456924aad78af6aaf30751f8"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-015",
+          "size": 16777216,
+          "sha256": "de5098722136d8cb3f12adf102dbc07dc092f5e6ecee65055f0503515e36c70d"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-016",
+          "size": 16777216,
+          "sha256": "3085dbda85448e4cfdf1f5eefe01baaf3e89fe190e03609caf4740292c20b896"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-017",
+          "size": 16777216,
+          "sha256": "ff80f70fb544ee745bab26ac0d5365828d63a33c91aa2e2c5531747edbfe5f73"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-018",
+          "size": 16777216,
+          "sha256": "69fded2826858fa44f13de413cf9f6c219dbf1947c33bb90af2a6256389f6096"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-019",
+          "size": 16777216,
+          "sha256": "88309adf193b236acbfa1c44e12c038667c8f3e36d737ec2f24194383c191524"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-020",
+          "size": 16777216,
+          "sha256": "1f3d61068267147d15be79d5b3a27a81b807d65446bde6ed11d0a848e64a0b94"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-021",
+          "size": 16777216,
+          "sha256": "89526439dd2b1059109e04661478fdda26e67413d9ad8939963c8163c8df81bf"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-022",
+          "size": 16777216,
+          "sha256": "c1b71fe4030121cd2b1caab4cce99307d8aced4d6669d4a678beba251b79cf5e"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-023",
+          "size": 16777216,
+          "sha256": "a69e493be4f83a785f56e8b48b2dff3274233380f82055938d4b1f1f98cd23fd"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-024",
+          "size": 16777216,
+          "sha256": "0ad9b18685346460a11b3195bd3dd144bda5b4eeea3984928e3b2028c9d5a4c5"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-025",
+          "size": 16777216,
+          "sha256": "0f8c7e9dbdf92b8851f3240374e1fd723451cfd1c6a952fd6113d527deeb4b74"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-026",
+          "size": 16777216,
+          "sha256": "16d99c41101c00f53ba0f68736b59e61f76a0947bd8abb57e84425c2e34e73f6"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-027",
+          "size": 16777216,
+          "sha256": "497a62e5a6d17fa20c96cd477b4ec54dafbd144e9c99170336a8c51844f782d3"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-028",
+          "size": 16777216,
+          "sha256": "2754d8b605651644553a9d005c10a67fe253afa58cfd3cc8d8141eb6516ba360"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-029",
+          "size": 16777216,
+          "sha256": "bdee63764813fddf6831d503f7a476c948b536ab3489cc57611f53fafe03a3c3"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-030",
+          "size": 16777216,
+          "sha256": "376f5b93880e5c093ba8d03263c58ec78464ed87da699a5a2c6f8108e7c54403"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-031",
+          "size": 16777216,
+          "sha256": "1a0eb7ad9bf04d5435b0153738c5e8889ee5e0c9556d0f4e3f05dea15e3cc9b2"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-032",
+          "size": 16777216,
+          "sha256": "f0071b86b18c6fd639ae4254f461eb0e12b47cf582dbe2117ff16f15cea2c222"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-033",
+          "size": 16777216,
+          "sha256": "df81f92ef49c8a274e8d248cf53a4562e9250003208b23a7876d12e840f31b85"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-034",
+          "size": 16777216,
+          "sha256": "6f1d28d8a2f29d8b0cef62f268025380cea8c242bd5a18ccd0f195578b6fab7e"
+        },
+        {
+          "name": "vision-lab-model-owlvit.tar.gz.part-035",
+          "size": 515311,
+          "sha256": "a39c5baa64cf1eb77bf45abc4f156e76e1df31ed983137414551db9775ac28df"
         }
       ]
     },
@@ -641,6 +1115,283 @@
           "size": 231508,
           "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
         }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-001",
+          "size": 16777216,
+          "sha256": "628a74b89f3e86671ddb1161a829276a1a1f1d286214cc2335788a7defc34363"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-002",
+          "size": 16777216,
+          "sha256": "88cbde1d2fb155c1d23b73ae2a397919ce921968de228b5f7ff09fe5b3e27f68"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-003",
+          "size": 16777216,
+          "sha256": "fd93bc305335b754c27ee3a7a05d5af9a6c2990e35a5d231a0e1ec25cb21727e"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-004",
+          "size": 16777216,
+          "sha256": "3749e6e3b45cafd9966894dae3b17ecf26b5b89e2fae2ae2301dd924f333cd01"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-005",
+          "size": 16777216,
+          "sha256": "b293f631abb2e32a7b8d7c72a558decbebf7b058a987880d1551cf2837f8ee2d"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-006",
+          "size": 16777216,
+          "sha256": "1a79d3f65663e861189f8e3930ca1998ac9b115d421051066fe17ba89e57c8ad"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-007",
+          "size": 16777216,
+          "sha256": "15a8c8fed7146ab90bc77229a2ed033c28feb73ab8408a2dbb9c32dfa3136bff"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-008",
+          "size": 16777216,
+          "sha256": "14bd7fe8b7ab1bc1104f6d256f356b9b3188851fa2a7a6fc17bb37a1be2a5e45"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-009",
+          "size": 16777216,
+          "sha256": "5a3131e50461b78643bcf0e41e52389e9ad4085fedf1b1e66122e1e368a7d164"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-010",
+          "size": 16777216,
+          "sha256": "469e4dac9a423b7806cf478fbbc8943c43a6bc662ae7f58c785c896917a8ad89"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-011",
+          "size": 16777216,
+          "sha256": "515567906a76cda2fce5a5fb93ce08f2eefb0dbe8053a61eb4f29b4568ec87c9"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-012",
+          "size": 16777216,
+          "sha256": "e2d01f59f790c50a2eedcd957c310260b62c5bfdc8e3add01569b74ad8eecce4"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-013",
+          "size": 16777216,
+          "sha256": "d01fe6064c5de77e54132b684a5b45e16d3cef12e3d0f4e24fdf286e16649cd6"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-014",
+          "size": 16777216,
+          "sha256": "39258bdf305a77ed441b7f0e8104d2c24c0b5c0bd81392af67c99f78ef28a9b0"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-015",
+          "size": 16777216,
+          "sha256": "662d9b645be853a74c10a98a99f4ac7db3ae37d20409a712b8db6cb463b5c727"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-016",
+          "size": 16777216,
+          "sha256": "10967000a4f80af346065761af507ea50f31697123965fd394b0e9c3f7307013"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-017",
+          "size": 16777216,
+          "sha256": "146d565b3c809ed1fb8040ab218ccf4d5e2493c752953fc55d0263fe897095e0"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-018",
+          "size": 16777216,
+          "sha256": "9dfa7f194fb2c5eba7685fe83180ea4b8765ab31ec9810cca4389d469cf1d3c9"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-019",
+          "size": 16777216,
+          "sha256": "66d70098eacef8fc3eea04638307a0aaa41f1e702527a3ac15b7f6568697706e"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-020",
+          "size": 16777216,
+          "sha256": "94cf82ce744a0fbabfa223fa939207c407c68eef93efac5b5767a24714b7dd86"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-021",
+          "size": 16777216,
+          "sha256": "ca5d92fe5ca2b4fc3961063af70355797bfd31106fe82aec37d9caa56541ad21"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-022",
+          "size": 16777216,
+          "sha256": "38fb540927d66ea67a472be923fcfc2d73ff00cf32b9bdfe4a4cd32069056d0a"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-023",
+          "size": 16777216,
+          "sha256": "0724e67740b214f3538cf188fd578c85cff6931b8fca15e03ec0198cec3000ed"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-024",
+          "size": 16777216,
+          "sha256": "feb34151161bcaa23c0cfabbed3aa311f9f5094f235cbfd8a2272176215d2b87"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-025",
+          "size": 16777216,
+          "sha256": "1bcb5221f21bcd505888a68837834b3b66de298b70a1021e0386d3de8bba37e3"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-026",
+          "size": 16777216,
+          "sha256": "b93121fd9c62a5fde2763520c3dee8f5656ed584a723b1b76786c854b65fdacb"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-027",
+          "size": 16777216,
+          "sha256": "bea1b431673eb735d9bab7c86ea7ed338b354a2ce4286e2455a0ab7d4a9269d4"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-028",
+          "size": 16777216,
+          "sha256": "22217f72b29cb73f2f1585926815568a22d6648bdc1801967afceeda56e54679"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-029",
+          "size": 16777216,
+          "sha256": "5b9db80af8777d84dd8738918648c9dd2e3cf782ea49a2be2ead2611e0284d5a"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-030",
+          "size": 16777216,
+          "sha256": "200609b85dc7faaba0bd9228aaf247f827bc976edc5564a755e4eb86dc93191a"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-031",
+          "size": 16777216,
+          "sha256": "ff5550c00caad50321c5a7a78686c89646a4208320a733cd62cd7623ccd1d806"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-032",
+          "size": 16777216,
+          "sha256": "eaa107d1ad809e523e62e8b1a1ddc88667ec5f6315b5ea22c6ba355d02141570"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-033",
+          "size": 16777216,
+          "sha256": "06030824ea66d1ef21119f168d903cdd27677d330a2148023341ca6f69ec960b"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-034",
+          "size": 16777216,
+          "sha256": "ce272d59c646c63d1e6e655e1a58f36161f8a9014d17c1d78c8016f610877731"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-035",
+          "size": 16777216,
+          "sha256": "200a11ce66257c9938d29d5f5a94cef7f0bff9d3b02ab16864652fe240e75044"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-036",
+          "size": 16777216,
+          "sha256": "1c273714b4ecfba8eb10302fc7109f1ed399d08259e5e45bc79d01598b1e3968"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-037",
+          "size": 16777216,
+          "sha256": "6e145727267f5a25fb8493d58920e8687d936a7d546bca0d78bb5bb37351209c"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-038",
+          "size": 16777216,
+          "sha256": "bbd3456e581dbbfa057dc09a0ff85078cff337c654fc338dab2f3e1962bb395f"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-039",
+          "size": 16777216,
+          "sha256": "086b413441f79a2538365e5cff4cdc026a9a5b1928aedd03cf439eac235bc599"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-040",
+          "size": 16777216,
+          "sha256": "68400e9e26e74eea09a08c0ba24f8578ada5058ce4f7d0fbda983b694d847650"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-041",
+          "size": 16777216,
+          "sha256": "f89bf964812b0114da278f3090fcdedae87afb803c7fc102f70660b630400a1d"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-042",
+          "size": 16777216,
+          "sha256": "d9aac738714f2d9bcea8029f3a7a348ef23e756fd4889bc1e038e0faf7a38a24"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-043",
+          "size": 16777216,
+          "sha256": "bc831dc519d72f812dcde243d604ddfff0659f097e3ebdf6d4f997233f858dc2"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-044",
+          "size": 16777216,
+          "sha256": "42df6feaa2b8a167aaf5b9edd88e03d981daf4b0d1688b0122f8cae03afa1748"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-045",
+          "size": 16777216,
+          "sha256": "a65b390e9432b11f73b706c0cc318a4e3db255d436e219be886c00363eaf050c"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-046",
+          "size": 16777216,
+          "sha256": "6a1fc28531f6bb5520d88abb9c56a3523709ed5e05e88405becd3f7ce0c639dc"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-047",
+          "size": 16777216,
+          "sha256": "25dae5f0aba3af806216cef1ca94975b53b3c44c747f302012b6b77678e8453c"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-048",
+          "size": 16777216,
+          "sha256": "d67e66b891f91a112bb251dea6fe02c1ba7db10ea7b49b5f0300270afb02f7ed"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-049",
+          "size": 16777216,
+          "sha256": "788c88bc292c5912e8d773fb20dbe583b1c3d684aa9978c2c0cc486d120154a8"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-050",
+          "size": 16777216,
+          "sha256": "5ee86feb05018a9a5ddca4da91cccaaee3a6e9d1a1583415617778ba93265b22"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-051",
+          "size": 16777216,
+          "sha256": "6804e272890d4977e09da70702f3ed318d1f3c28b16f4fe24da1965e167d2c8b"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-052",
+          "size": 16777216,
+          "sha256": "71e1e3c58ebaad669894ae78f207849ca84b179d9a771df87f546438c6bac03b"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-053",
+          "size": 16777216,
+          "sha256": "32d2fae2c319bbaa369c9cf1825497972e73195928c00def46a3ab55e2b1d2e3"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-054",
+          "size": 16777216,
+          "sha256": "b435aab1dd273d7e200ea3657420b5a7c308bd39f53ce78e623417ea1a83663f"
+        },
+        {
+          "name": "vision-lab-model-blip.tar.gz.part-055",
+          "size": 14517233,
+          "sha256": "88802dd5401b8886282e2220dbc968c537116737a0bbc28f59ca31667579740d"
+        }
       ]
     },
     {
@@ -713,6 +1464,438 @@
           "size": 231508,
           "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
         }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-001",
+          "size": 16777216,
+          "sha256": "a4faa39cca1203ede4951458a645a332ac3b0286bfc4ad82933f88ddb30f09db"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-002",
+          "size": 16777216,
+          "sha256": "237e86c4b461c450dc8bfacc916597165d4221f7f620eff530612bc4868a042c"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-003",
+          "size": 16777216,
+          "sha256": "f232b04cc269485eb704af21ead9b63e8be0ffe118d5a03fc7c6ad1b59ec194a"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-004",
+          "size": 16777216,
+          "sha256": "b227f2c1a1f441580d03f5c7ae2f6954d3089ff24a656d5d0a7f5348a21b6f7b"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-005",
+          "size": 16777216,
+          "sha256": "23201f30298903c0a7a9909756d4ffffe3795b5edfecc73f4dcda5dd81cf6d6b"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-006",
+          "size": 16777216,
+          "sha256": "2c18f7a381bc75e0949e0c897ae7124e3c596928fb6a7d224d4706be2dec746c"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-007",
+          "size": 16777216,
+          "sha256": "44bd9b1ce648fec7a329c779e8c632d09dd74196b84a5e039d3fd765863ab730"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-008",
+          "size": 16777216,
+          "sha256": "eb17a753350280b3b9ac0b3928b433847807343a52a1133e28bde65a96ba68c1"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-009",
+          "size": 16777216,
+          "sha256": "84d41c0bef66d6e19d96b69467fa0f81a47eb77427b059204ca378796955c0cd"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-010",
+          "size": 16777216,
+          "sha256": "e56ca0dfdd70edaee482b895196f92ecaf99800d72074b7ebae7a57b5c25032d"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-011",
+          "size": 16777216,
+          "sha256": "7fa4ab2a80aa8a62744dd11ede4c535d623cdc2e79437325a7603cc5c0a28ab7"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-012",
+          "size": 16777216,
+          "sha256": "af1650e8b57455bb8e7c241f2502532b8e9e0f4a70c528430075f9dd45136411"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-013",
+          "size": 16777216,
+          "sha256": "78d273036f28061e743caf0d6f0a3957114106df84f23066f8bf67469758af99"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-014",
+          "size": 16777216,
+          "sha256": "e68b1e8845172c4fbd14ebad5fc70d87296798634ad2c78fdca6e74debf91a16"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-015",
+          "size": 16777216,
+          "sha256": "2623b21c47ec9dfad07abec05991a320bc7b8ac9ab4e3e3a219df5f0361ec50a"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-016",
+          "size": 16777216,
+          "sha256": "90e5967c6c0ebd0f1f1edbe1d27b53c1acf9ac074fd650088ab9d7db8bea0f3d"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-017",
+          "size": 16777216,
+          "sha256": "50e9de5aa6abdf6278e2d3679c8b26aa7c39a03724aeab8a640953438f820e04"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-018",
+          "size": 16777216,
+          "sha256": "54ae0e5d3921d2b59eddd7c7156872f603570ab25f27fd96fd3dcf3513d28afb"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-019",
+          "size": 16777216,
+          "sha256": "1554b440fbaf11cae16a4d044f40fa09eb425630bafcc6bc9db996490b84281d"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-020",
+          "size": 16777216,
+          "sha256": "807a8f3d599ac1af3adaba9b1fce47f90aeabe7422e3d80441c24faaca0407db"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-021",
+          "size": 16777216,
+          "sha256": "012d1c0847739bafe10a0eddcd453b4780f6a5c7bf858f38efad3fb96f8ed019"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-022",
+          "size": 16777216,
+          "sha256": "1ea94ead7442a5ad5e2348e49a652c8dd673df08f88efd160dc3292496d1bc05"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-023",
+          "size": 16777216,
+          "sha256": "47bc1732d88fa5a7941aadc39d9a4b3aeb33981bf5961585619cbd81f20489bc"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-024",
+          "size": 16777216,
+          "sha256": "73ec7e2af306ae6676eaf5a1ca0b747c26d297f26c8419ced9e93a7b9560fd03"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-025",
+          "size": 16777216,
+          "sha256": "369a25e58604e881ad1c11f41d2ee8ca32493a1704e66eaf6700a9fdfd6c0d84"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-026",
+          "size": 16777216,
+          "sha256": "3f14f15fa6a54584cf00eb8a40045b0cdd904b6ac70fe2626b461a83da8025a9"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-027",
+          "size": 16777216,
+          "sha256": "e37ccb307cfe23cb7f5c5a84029dcbe4567ec418fddb00ed21a4bfd80ccb02c3"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-028",
+          "size": 16777216,
+          "sha256": "4abea956c9a46adbe964e16e07e4fd862e2dfcc0f5babe0dd604aeeff67d44c1"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-029",
+          "size": 16777216,
+          "sha256": "bc08d1a6d641da280cdd1dd9702e87a9a74e16e4e6b1a3976db88816c34ab3cf"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-030",
+          "size": 16777216,
+          "sha256": "28b8263bd613df01a65b7bbbd78f988b70f6f0767ce430eb9b1210e0f3c9d172"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-031",
+          "size": 16777216,
+          "sha256": "a91640388e73b9d4322406a13d9a9e82553cee4b177b440da5dd3acbd56a9aeb"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-032",
+          "size": 16777216,
+          "sha256": "1b0c9d8ef2d2319ce6cae66a491eb0ab7a99a919dba12c3c2ea39dd062605a4c"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-033",
+          "size": 16777216,
+          "sha256": "943307da7e2472f579decc2de19d08e61bf7c3bca6a11dbc66bbc8ac63669edf"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-034",
+          "size": 16777216,
+          "sha256": "a64210dde55a85e2bda1b10975606ec31094663aef7dbebf92e99a333b5737a6"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-035",
+          "size": 16777216,
+          "sha256": "0a03dc1d93c0baa9e7527ef04cc176d3cb2ca153bffeb9938e175eceba25cacc"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-036",
+          "size": 16777216,
+          "sha256": "46e62cd6046fb929dfc3d3ee033fdf7bf0f8b1f74b5754e5513ed5d47d9f5937"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-037",
+          "size": 16777216,
+          "sha256": "92956dec969603ecb6a43d8d7d6464d4826c81a150d6dc0dfe477d4486130f93"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-038",
+          "size": 16777216,
+          "sha256": "a128b768db5adb0da83c66d2f7aebeddb107a3d0939b41895380db7efe0559c5"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-039",
+          "size": 16777216,
+          "sha256": "845088f11d27b755ff78d2266a6e36e9a1c3f46302c740a560b98db33415918a"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-040",
+          "size": 16777216,
+          "sha256": "06f08e5662e2fff25eef8da4ebba50a4d1980ee3130947f159b1fd76c0cabd41"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-041",
+          "size": 16777216,
+          "sha256": "17fa12d0de8306d5c9d9643852ce5d48c7d2ebcea4c9cb2995d49169f33cd3ed"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-042",
+          "size": 16777216,
+          "sha256": "6d49dfe819bea28eb6321de827ca38c710ad7b53c67f972d3b29d89c62efd586"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-043",
+          "size": 16777216,
+          "sha256": "edc8e029e7a2dd0525997a79620a3e0e29104aabe2cf7efa4ee1f312d434fc2d"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-044",
+          "size": 16777216,
+          "sha256": "d8dcdc2feddb15620c73d5c64b4cea1786280bd06e3fa71515dbb907a44c8cea"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-045",
+          "size": 16777216,
+          "sha256": "16c14388e001e7b538ac0a7372003c69049e1f354cbad44a5259c1d6409d7afb"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-046",
+          "size": 16777216,
+          "sha256": "016c20303cb98088ab0ee2976a39d2739c07717ebb0031904f2898f2fefbbd2d"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-047",
+          "size": 16777216,
+          "sha256": "f56efc142005567dbf02ab47344b610f2ae26b46e466c4ccb793b544d0ed70c4"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-048",
+          "size": 16777216,
+          "sha256": "f5b64997510b20a37ae7abcfa5b92602efbfa0ac3e6e3eb133b0ce3c82d6b844"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-049",
+          "size": 16777216,
+          "sha256": "80018a3be6cc08f9290171076c3b3917581c8b6ef39003b525e82475ac4b3d24"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-050",
+          "size": 16777216,
+          "sha256": "9651d620346b9caf47025be0f3867cf7b8d6a42a61763691c9387b728d88fe8a"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-051",
+          "size": 16777216,
+          "sha256": "f5e241f84ed406f883b8c001b5adb6a0fddc2eb83cf843dc216d237b596424b1"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-052",
+          "size": 16777216,
+          "sha256": "9a45f493e5915c39d0458d30707c7f61bb25006ad74a6043f14318c625e718cb"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-053",
+          "size": 16777216,
+          "sha256": "32e3586c61b17123c16ff8e96aed70b64c88aa7b8023a06b2a30c636127fdb5b"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-054",
+          "size": 16777216,
+          "sha256": "ebd5555eaa564446b27012f4db4815c5ca09f91f3b98bac3235ba09cdcce326a"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-055",
+          "size": 16777216,
+          "sha256": "42bef2e5c862275c9a3fd9bceddeb4c0ad9feefad0eb24a659839d06b804db9b"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-056",
+          "size": 16777216,
+          "sha256": "19c8353184ea3685fa62b692859ce2f0ea766a61a175a4b2b14c09c6d90b3f75"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-057",
+          "size": 16777216,
+          "sha256": "c9a32ff3ec55aedfb3c7b66d21d6bffecff59fe220e9082e173c16265c07e452"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-058",
+          "size": 16777216,
+          "sha256": "46f8ed3774a182da3b5ca1c58b4c99b61949c364f37b86a65758543b90820114"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-059",
+          "size": 16777216,
+          "sha256": "53cc77f87dcf06e1501bd6b675f65486f658e16df277b3f795c0b0d06ad10610"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-060",
+          "size": 16777216,
+          "sha256": "d974707095f45388f45680a4071ab368b2a4b13ca297ddab54ce57e723c1061f"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-061",
+          "size": 16777216,
+          "sha256": "3f186e7d0f0a4b24def49aed92f3acafcfcb89b6941c63112fe366ad1079f5ad"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-062",
+          "size": 16777216,
+          "sha256": "2baf3ff035f16cd0e7bc25dc0efa72e793959d7883c2c05c33840d0fd4e7ca05"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-063",
+          "size": 16777216,
+          "sha256": "3db4d06a37f65d04a26b3c41ca5e9c7e925477a49f879225bdcd0213f65ac7d3"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-064",
+          "size": 16777216,
+          "sha256": "087ecbb00fad2def350a5e9d1641ab30c58cd4a21b73bd3ceac9c99c6c05c14a"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-065",
+          "size": 16777216,
+          "sha256": "f9235d377af1fa1ac771a5f5422b1d00adee25f63660c52c481d4fd26e2667df"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-066",
+          "size": 16777216,
+          "sha256": "987aa2cbd376f1e144a24c0f0d94d91a230ee2b92ced66587141fee99955d571"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-067",
+          "size": 16777216,
+          "sha256": "312b673acd39d717eed016ca575466fa5fed5fd72704dc41dcdafab5e64d9340"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-068",
+          "size": 16777216,
+          "sha256": "1256e49d0205bb2a96fa9d9d19a024536e08ae95ef56c488afa20f8595696c26"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-069",
+          "size": 16777216,
+          "sha256": "47ba33a5b0079dd7e17ad0ea8c9bb97fd3265f1d90926b1506204972991b9abb"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-070",
+          "size": 16777216,
+          "sha256": "c3afa04b52bddad7612609d270ea3ba744812a1f3fbf00430fbc647829065a5b"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-071",
+          "size": 16777216,
+          "sha256": "130ae1e7e17a9694612bbf45df3161f700016dafaaddd09a294243e79e110706"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-072",
+          "size": 16777216,
+          "sha256": "16d7440731056cc77cb333239dd27267b7b0b725538978e1bb464646b5ebeaf6"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-073",
+          "size": 16777216,
+          "sha256": "486cedacd8dda69916307a2720969379944d495150f7a70a46ea1fa070c946de"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-074",
+          "size": 16777216,
+          "sha256": "2629a98270a02e10fec4bd76031bc1812e6d4f7d1768d9406cbbfbce3bcd80ff"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-075",
+          "size": 16777216,
+          "sha256": "fbe95ce416dbf732ae102bc961ba40f700a14ef6d729a2efce99cc2bcba2b39a"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-076",
+          "size": 16777216,
+          "sha256": "750a489fb1bb2fcd167867f02b8d8fe392cb40531a4cdafdee94946c7fdf3fce"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-077",
+          "size": 16777216,
+          "sha256": "db9fe3b900b54ffb58103fd239f7f790e2f764f87b58b64618f214ec7245e5c8"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-078",
+          "size": 16777216,
+          "sha256": "adfada33e5e4e0d822c10802ed57b7eeb8aff7a044374eca6127fc2131d443ed"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-079",
+          "size": 16777216,
+          "sha256": "1dbd362fb563f2669cc1e503ee39e9de1fee1f982a0e4e8d5f3f2becfe4d296b"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-080",
+          "size": 16777216,
+          "sha256": "46d1e50e4aa5b3da2cfbb763b0f3373b05d6df73745a5ed043eab8a25c1ae6b4"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-081",
+          "size": 16777216,
+          "sha256": "eb7e172af98bfb2f88b46c24004c32058f4102b2d8dc8ac804a4d0bafe11ded5"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-082",
+          "size": 16777216,
+          "sha256": "7a49b57676e70839feb0a970a6914980c0ee1a7849987f7701317407a8b4af39"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-083",
+          "size": 16777216,
+          "sha256": "4c1b2c6870bdd097d2c28caa47b1f2312f3b62a6631ea028291bdb0e33ec1fad"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-084",
+          "size": 16777216,
+          "sha256": "82a3fab6d211b5ff943c8d2736b3e45abb8b6509bec48cc067c5a61bb4cb6723"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-085",
+          "size": 16777216,
+          "sha256": "6debe568b5cef07ae2883b369d6e4d01328ff9af86e48eade55d10ae0fc5cf3f"
+        },
+        {
+          "name": "vision-lab-model-blip-vqa.tar.gz.part-086",
+          "size": 3657462,
+          "sha256": "ee19c36529437a3a9b76020c8c22577cccd8740e01e7e38488a7b29d6e1a72dd"
+        }
       ]
     },
     {
@@ -765,6 +1948,58 @@
           "size": 11354,
           "sha256": "b208c52b00a2df2c8f4c3298c34407bf2bfe409968213372251c91fcc737a1a5"
         }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-detr-panoptic.tar.gz.part-001",
+          "size": 16777216,
+          "sha256": "17034b2de007d336895871ba332b47ebc49be4762daa717875bded08829c92c2"
+        },
+        {
+          "name": "vision-lab-model-detr-panoptic.tar.gz.part-002",
+          "size": 16777216,
+          "sha256": "c36c18c0b6cd1bbd4efa2fc3bc08bfd27eaffb37913f525b7eff47c15fe0f317"
+        },
+        {
+          "name": "vision-lab-model-detr-panoptic.tar.gz.part-003",
+          "size": 16777216,
+          "sha256": "c3842d08db307804df2953430678ec73bc1649251e7c008e81b0fbb7ff62f501"
+        },
+        {
+          "name": "vision-lab-model-detr-panoptic.tar.gz.part-004",
+          "size": 16777216,
+          "sha256": "2f8c9bd992cb139559514b999e800f03805737c9460c78b4b71adcba37421e13"
+        },
+        {
+          "name": "vision-lab-model-detr-panoptic.tar.gz.part-005",
+          "size": 16777216,
+          "sha256": "5eb4ca32ca7aa0dabb7a46b22eba4733729122b56170e1aacb569a40000e8cbb"
+        },
+        {
+          "name": "vision-lab-model-detr-panoptic.tar.gz.part-006",
+          "size": 16777216,
+          "sha256": "d207848a41aed9d86e203c237280debce970d2fb25d3fb2ef4484e019ff234d2"
+        },
+        {
+          "name": "vision-lab-model-detr-panoptic.tar.gz.part-007",
+          "size": 16777216,
+          "sha256": "d2864bf77d61bd330d27f27c9ec33bf6d1eda6043a64f72f1f93a8321c631e2b"
+        },
+        {
+          "name": "vision-lab-model-detr-panoptic.tar.gz.part-008",
+          "size": 16777216,
+          "sha256": "11f1f27470d739adfad1efb1fb8d7b33650db091bcac2651a9ee8f67955b1cfc"
+        },
+        {
+          "name": "vision-lab-model-detr-panoptic.tar.gz.part-009",
+          "size": 16777216,
+          "sha256": "1dcbb582f4559fbbef74c4fc37c2b36b87afb850c70fef98c427230df3238ee2"
+        },
+        {
+          "name": "vision-lab-model-detr-panoptic.tar.gz.part-010",
+          "size": 9212844,
+          "sha256": "b76f29d088d3d7e48600cc8a0c8a61bdd350ab2b08da338d263a0334ea3ddaaf"
+        }
       ]
     },
     {
@@ -801,6 +2036,23 @@
           "path": "models/layout/release-metadata/licenses/layout.txt",
           "size": 34523,
           "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-layout.tar.gz.part-001",
+          "size": 16777216,
+          "sha256": "a7dc346db6c12bd3d098f27d042182f57489b7422715ff465ccfb0ae81c40625"
+        },
+        {
+          "name": "vision-lab-model-layout.tar.gz.part-002",
+          "size": 16777216,
+          "sha256": "cf22e0abc3a9b6b483e3ae9371f70a78c5835e85598eb1c42e601ca7676ab82a"
+        },
+        {
+          "name": "vision-lab-model-layout.tar.gz.part-003",
+          "size": 4024789,
+          "sha256": "d67fa4a21714d71d22cbe0d1a42338e3e38c44841fffc3a9d8f1c785c7dd77ba"
         }
       ]
     },
@@ -854,6 +2106,23 @@
           "size": 11348,
           "sha256": "d66ccc11682c7458b19b376e1335e8665cbe412ff71f554bfec25f1791cddfa0"
         }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-edsr.tar.gz.part-001",
+          "size": 16777216,
+          "sha256": "11d0acec725eca1f240b0cd29f50360286bdf102eee19f9db2d12cf07c01a65b"
+        },
+        {
+          "name": "vision-lab-model-edsr.tar.gz.part-002",
+          "size": 16777216,
+          "sha256": "8addd2c9c543df2421030012e7c0b0e972d46e6ae88f638bbc56a770026877d2"
+        },
+        {
+          "name": "vision-lab-model-edsr.tar.gz.part-003",
+          "size": 11547891,
+          "sha256": "3ef8b06c64736396793f0c068cded01aaf22a541422e4b517f4db81aef1a0e0f"
+        }
       ]
     },
     {
@@ -905,6 +2174,38 @@
           "path": "models/swin-denoise/weights.pth",
           "size": 104611957,
           "sha256": "4cae18bed8a291b9a5deeeab48756bbe6f61fcf7f31a4cca0969b24608601387"
+        }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-swin-denoise.tar.gz.part-001",
+          "size": 16777216,
+          "sha256": "29fe4d4dc0bcdcf79ab0412218d3d6e8c3364b771af4f2fb68dc6889d4ee3612"
+        },
+        {
+          "name": "vision-lab-model-swin-denoise.tar.gz.part-002",
+          "size": 16777216,
+          "sha256": "62585642e2957e9d2a212d0e71c477bdbc7e26baf86a987c173ae49c20b37749"
+        },
+        {
+          "name": "vision-lab-model-swin-denoise.tar.gz.part-003",
+          "size": 16777216,
+          "sha256": "400f096d50d4ca240eedfa65cabd6f968182ea5ab4448e45dc2861a225deb16b"
+        },
+        {
+          "name": "vision-lab-model-swin-denoise.tar.gz.part-004",
+          "size": 16777216,
+          "sha256": "12c7a805b7bbd12044723ab802ce86bafe34e849b6cef8a29e71cd46f6da1272"
+        },
+        {
+          "name": "vision-lab-model-swin-denoise.tar.gz.part-005",
+          "size": 16777216,
+          "sha256": "bb15bfc9f0318c8123f0cf5b916ec8a80d73a1eadea5e4dbd40c071c255ca360"
+        },
+        {
+          "name": "vision-lab-model-swin-denoise.tar.gz.part-006",
+          "size": 13453478,
+          "sha256": "7c9ec17b17c807f2a0203754bcb647eeee0d050711e1422de2514b0df74e10b7"
         }
       ]
     },
@@ -958,6 +2259,38 @@
           "size": 104700429,
           "sha256": "194e38fb5b607c9dc5a5b3e08e65b2e79ee2bf0ef5048e0612f6b2ff2f79da31"
         }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-restormer.tar.gz.part-001",
+          "size": 16777216,
+          "sha256": "878f52ece883d814b6ed4f1a882ab3dd732d57458e147a783727a0e8fe05eb1d"
+        },
+        {
+          "name": "vision-lab-model-restormer.tar.gz.part-002",
+          "size": 16777216,
+          "sha256": "081bf6005fc5aa965f2047ddfd2d0857bb73a5715b54e26650d7918796d71f08"
+        },
+        {
+          "name": "vision-lab-model-restormer.tar.gz.part-003",
+          "size": 16777216,
+          "sha256": "acca0bf95b256f5d642456598cd30e146eebe75436b9e4360d6675145b55f72d"
+        },
+        {
+          "name": "vision-lab-model-restormer.tar.gz.part-004",
+          "size": 16777216,
+          "sha256": "565e5b4fba612b2b3453c79b69530667468881b9ee85c9f38e46b13c05441974"
+        },
+        {
+          "name": "vision-lab-model-restormer.tar.gz.part-005",
+          "size": 16777216,
+          "sha256": "4fbf458e82735f9d473d8400cc4a3c82b446e0827c62e79ab0ea80c4360310db"
+        },
+        {
+          "name": "vision-lab-model-restormer.tar.gz.part-006",
+          "size": 13526155,
+          "sha256": "d6017292285eb63b200b1ee3297f95fbfa1d81b0c4399da08ae12429b6b3a939"
+        }
       ]
     },
     {
@@ -1000,6 +2333,13 @@
           "size": 4574861,
           "sha256": "309c8469258dda742793dce0ebea8e6dd393174f89934733ecc8b14c76f4ddd8"
         }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-rmbg.tar.gz",
+          "size": 4258884,
+          "sha256": "5979b64e3367414a1c4e2a8e60f9131e25b454124dc1d4e6ebe819aa16d1eaf4"
+        }
       ]
     },
     {
@@ -1036,6 +2376,13 @@
           "path": "models/face_landmarker/release-metadata/licenses/mediapipe.txt",
           "size": 12331,
           "sha256": "8707eef0533987efc5b155d64761eeb6e20793f50b9bd1a68dad1cf4719d0ed8"
+        }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-face_landmarker.tar.gz",
+          "size": 3357790,
+          "sha256": "92844acf5bab8c4dff890e8ae5b6f64cbe40f11bb1261d559a76e32c1f06f624"
         }
       ]
     },
@@ -1074,7 +2421,19 @@
           "size": 12331,
           "sha256": "8707eef0533987efc5b155d64761eeb6e20793f50b9bd1a68dad1cf4719d0ed8"
         }
+      ],
+      "volumes": [
+        {
+          "name": "vision-lab-model-hand_landmarker.tar.gz",
+          "size": 6047047,
+          "sha256": "49e040616c9209304246f2d5794549f76a13377ae77527d53afabdf8b02b8e11"
+        }
       ]
     }
-  ]
+  ],
+  "packaging": {
+    "max_asset_bytes": 16777216,
+    "volume_suffix": ".part-NNN",
+    "restore": "Join volumes in ascending suffix order, then verify ARCHIVE_SHA256SUMS before extraction."
+  }
 }
