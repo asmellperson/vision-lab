@@ -1,0 +1,71 @@
+{
+  "algorithm_count": 140,
+  "questions_per_algorithm": 6,
+  "question_count": 840,
+  "model_architecture_count": 22,
+  "books": {
+    "study": {
+      "docx": "/usr/zyy/vision-lab/docs/algorithm-study/01_140算法原理与练习.docx",
+      "sha256": "16816cedb178217484a7cbe95dc352b28347a0826a6d42b9913017d3adad1b95",
+      "pdf_pages": 205,
+      "exact_docx_question_count": 840,
+      "exact_answer_count": 0,
+      "pdf_unique_question_count": 840,
+      "blank_pages": [],
+      "text_overflow": [],
+      "sparse_pages_for_review": [
+        {
+          "page": 1,
+          "body_characters": 121,
+          "excerpt": "VISION LAB\n  \n计算机视觉140 算法学习文档\n  \n原理详解· \n \n模型架构· \n \n实验方法· 840 道配套练习\n 140 个算法实验 · 13 个模块 · 每算法 6 题\n 依据当前项目代码与模型配置编写\n 编写日期：2026 年 9 月 30 日\n"
+        }
+      ],
+      "review_sheets": [
+        "/tmp/visionlab-renamed-sheets/study-001-025.jpg",
+        "/tmp/visionlab-renamed-sheets/study-026-050.jpg",
+        "/tmp/visionlab-renamed-sheets/study-051-075.jpg",
+        "/tmp/visionlab-renamed-sheets/study-076-100.jpg",
+        "/tmp/visionlab-renamed-sheets/study-101-125.jpg",
+        "/tmp/visionlab-renamed-sheets/study-126-150.jpg",
+        "/tmp/visionlab-renamed-sheets/study-151-175.jpg",
+        "/tmp/visionlab-renamed-sheets/study-176-200.jpg",
+        "/tmp/visionlab-renamed-sheets/study-201-205.jpg"
+      ],
+      "delivered_pdf": "docs/algorithm-study/01_140算法原理与练习.pdf",
+      "pdf_sha256": "c8ef3c1ec167005e855b16dd79dbc89eb76e591bbf448e5f2fcd525783838f90",
+      "page_number_sequence_verified": true,
+      "visual_review_complete": true,
+      "embedded_architecture_diagrams": 22
+    },
+    "answers": {
+      "docx": "/usr/zyy/vision-lab/docs/algorithm-study/02_140算法练习参考答案.docx",
+      "sha256": "4a423e94c9fca8ae11900283a7e0116fe361106191be225717b49362a199941e",
+      "pdf_pages": 116,
+      "exact_docx_question_count": 840,
+      "exact_answer_count": 840,
+      "pdf_unique_question_count": 840,
+      "blank_pages": [],
+      "text_overflow": [],
+      "sparse_pages_for_review": [
+        {
+          "page": 1,
+          "body_characters": 106,
+          "excerpt": "VISION LAB\n  \n计算机视觉140 算法练习参考答案\n  \n独立答案册· 840 题逐题解析\n 140 个算法实验 · 13 个模块 · 每算法 6 题\n 依据当前项目代码与模型配置编写\n 编写日期：2026 年 9 月 30 日\n"
+        }
+      ],
+      "review_sheets": [
+        "/tmp/visionlab-renamed-sheets/answers-001-025.jpg",
+        "/tmp/visionlab-renamed-sheets/answers-026-050.jpg",
+        "/tmp/visionlab-renamed-sheets/answers-051-075.jpg",
+        "/tmp/visionlab-renamed-sheets/answers-076-100.jpg",
+        "/tmp/visionlab-renamed-sheets/answers-101-116.jpg"
+      ],
+      "delivered_pdf": "docs/algorithm-study/02_140算法练习参考答案.pdf",
+      "pdf_sha256": "ab314fd43df76a0c104fb34714c1364eca6e37639cff084921c9b11d1e491f76",
+      "page_number_sequence_verified": true,
+      "visual_review_complete": true,
+      "embedded_architecture_diagrams": 0
+    }
+  },
+  "automated_checks_pass": true
+}

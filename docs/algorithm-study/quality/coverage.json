@@ -1,0 +1,1988 @@
+{
+  "algorithm_count": 140,
+  "question_count": 840,
+  "model_count": 22,
+  "modules": {
+    "图像基础": 21,
+    "滤波与增强": 10,
+    "阈值与形态学": 12,
+    "边缘与形状": 14,
+    "几何与传统分割": 10,
+    "特征与匹配": 13,
+    "工业视觉": 11,
+    "文字与图文理解": 9,
+    "深度学习识别": 10,
+    "标定与三维": 7,
+    "图像恢复": 6,
+    "视频与时序": 10,
+    "模型学习与评估": 7
+  },
+  "source_sha256": {
+    "docs/algorithm-catalog.json": "6c0d1e05c92d5dc4fd1b4b6a1e510771569b050129f400152aea844e48413051",
+    "frontend/src/learning/lessons.ts": "3cd6b348a4be345bad4db2d4b28b94e783743dc631aa1df7945ff1a24ec740f2",
+    "backend/app/inference.py": "5ed577546525c297b99b0e3da425c9a58bb3a2b9823834e8a1921810b7da6a62",
+    "backend/app/models.py": "4c3b7ee2b25a32bece9fde014ad5140df7e43bdacba8a0fa3f7c5e41b772ac58"
+  },
+  "algorithms": [
+    {
+      "number": 1,
+      "id": "pixels",
+      "name": "像素与取色",
+      "category": "图像基础",
+      "question_ids": [
+        "Q001-1",
+        "Q001-2",
+        "Q001-3",
+        "Q001-4",
+        "Q001-5",
+        "Q001-6"
+      ]
+    },
+    {
+      "number": 2,
+      "id": "gray",
+      "name": "灰度化",
+      "category": "图像基础",
+      "question_ids": [
+        "Q002-1",
+        "Q002-2",
+        "Q002-3",
+        "Q002-4",
+        "Q002-5",
+        "Q002-6"
+      ]
+    },
+    {
+      "number": 3,
+      "id": "color",
+      "name": "颜色空间转换",
+      "category": "图像基础",
+      "question_ids": [
+        "Q003-1",
+        "Q003-2",
+        "Q003-3",
+        "Q003-4",
+        "Q003-5",
+        "Q003-6"
+      ]
+    },
+    {
+      "number": 4,
+      "id": "channel",
+      "name": "通道分离",
+      "category": "图像基础",
+      "question_ids": [
+        "Q004-1",
+        "Q004-2",
+        "Q004-3",
+        "Q004-4",
+        "Q004-5",
+        "Q004-6"
+      ]
+    },
+    {
+      "number": 5,
+      "id": "merge",
+      "name": "通道合并",
+      "category": "图像基础",
+      "question_ids": [
+        "Q005-1",
+        "Q005-2",
+        "Q005-3",
+        "Q005-4",
+        "Q005-5",
+        "Q005-6"
+      ]
+    },
+    {
+      "number": 6,
+      "id": "add",
+      "name": "加法",
+      "category": "图像基础",
+      "question_ids": [
+        "Q006-1",
+        "Q006-2",
+        "Q006-3",
+        "Q006-4",
+        "Q006-5",
+        "Q006-6"
+      ]
+    },
+    {
+      "number": 7,
+      "id": "subtract",
+      "name": "减法",
+      "category": "图像基础",
+      "question_ids": [
+        "Q007-1",
+        "Q007-2",
+        "Q007-3",
+        "Q007-4",
+        "Q007-5",
+        "Q007-6"
+      ]
+    },
+    {
+      "number": 8,
+      "id": "blend",
+      "name": "加权融合",
+      "category": "图像基础",
+      "question_ids": [
+        "Q008-1",
+        "Q008-2",
+        "Q008-3",
+        "Q008-4",
+        "Q008-5",
+        "Q008-6"
+      ]
+    },
+    {
+      "number": 9,
+      "id": "bit_and",
+      "name": "按位与",
+      "category": "图像基础",
+      "question_ids": [
+        "Q009-1",
+        "Q009-2",
+        "Q009-3",
+        "Q009-4",
+        "Q009-5",
+        "Q009-6"
+      ]
+    },
+    {
+      "number": 10,
+      "id": "bit_or",
+      "name": "按位或",
+      "category": "图像基础",
+      "question_ids": [
+        "Q010-1",
+        "Q010-2",
+        "Q010-3",
+        "Q010-4",
+        "Q010-5",
+        "Q010-6"
+      ]
+    },
+    {
+      "number": 11,
+      "id": "bit_xor",
+      "name": "按位异或",
+      "category": "图像基础",
+      "question_ids": [
+        "Q011-1",
+        "Q011-2",
+        "Q011-3",
+        "Q011-4",
+        "Q011-5",
+        "Q011-6"
+      ]
+    },
+    {
+      "number": 12,
+      "id": "bit_not",
+      "name": "按位非",
+      "category": "图像基础",
+      "question_ids": [
+        "Q012-1",
+        "Q012-2",
+        "Q012-3",
+        "Q012-4",
+        "Q012-5",
+        "Q012-6"
+      ]
+    },
+    {
+      "number": 13,
+      "id": "histogram",
+      "name": "直方图",
+      "category": "图像基础",
+      "question_ids": [
+        "Q013-1",
+        "Q013-2",
+        "Q013-3",
+        "Q013-4",
+        "Q013-5",
+        "Q013-6"
+      ]
+    },
+    {
+      "number": 14,
+      "id": "brightness",
+      "name": "亮度与对比度",
+      "category": "图像基础",
+      "question_ids": [
+        "Q014-1",
+        "Q014-2",
+        "Q014-3",
+        "Q014-4",
+        "Q014-5",
+        "Q014-6"
+      ]
+    },
+    {
+      "number": 15,
+      "id": "gamma",
+      "name": "伽马校正",
+      "category": "图像基础",
+      "question_ids": [
+        "Q015-1",
+        "Q015-2",
+        "Q015-3",
+        "Q015-4",
+        "Q015-5",
+        "Q015-6"
+      ]
+    },
+    {
+      "number": 16,
+      "id": "equalize",
+      "name": "直方图均衡",
+      "category": "图像基础",
+      "question_ids": [
+        "Q016-1",
+        "Q016-2",
+        "Q016-3",
+        "Q016-4",
+        "Q016-5",
+        "Q016-6"
+      ]
+    },
+    {
+      "number": 17,
+      "id": "clahe",
+      "name": "CLAHE 局部均衡",
+      "category": "图像基础",
+      "question_ids": [
+        "Q017-1",
+        "Q017-2",
+        "Q017-3",
+        "Q017-4",
+        "Q017-5",
+        "Q017-6"
+      ]
+    },
+    {
+      "number": 18,
+      "id": "rgb",
+      "name": "RGB 颜色空间",
+      "category": "图像基础",
+      "question_ids": [
+        "Q018-1",
+        "Q018-2",
+        "Q018-3",
+        "Q018-4",
+        "Q018-5",
+        "Q018-6"
+      ]
+    },
+    {
+      "number": 19,
+      "id": "hsv",
+      "name": "HSV 颜色空间",
+      "category": "图像基础",
+      "question_ids": [
+        "Q019-1",
+        "Q019-2",
+        "Q019-3",
+        "Q019-4",
+        "Q019-5",
+        "Q019-6"
+      ]
+    },
+    {
+      "number": 20,
+      "id": "lab",
+      "name": "Lab 颜色空间",
+      "category": "图像基础",
+      "question_ids": [
+        "Q020-1",
+        "Q020-2",
+        "Q020-3",
+        "Q020-4",
+        "Q020-5",
+        "Q020-6"
+      ]
+    },
+    {
+      "number": 21,
+      "id": "ycrcb",
+      "name": "YCrCb 颜色空间",
+      "category": "图像基础",
+      "question_ids": [
+        "Q021-1",
+        "Q021-2",
+        "Q021-3",
+        "Q021-4",
+        "Q021-5",
+        "Q021-6"
+      ]
+    },
+    {
+      "number": 22,
+      "id": "mean",
+      "name": "均值滤波",
+      "category": "滤波与增强",
+      "question_ids": [
+        "Q022-1",
+        "Q022-2",
+        "Q022-3",
+        "Q022-4",
+        "Q022-5",
+        "Q022-6"
+      ]
+    },
+    {
+      "number": 23,
+      "id": "gaussian",
+      "name": "高斯滤波",
+      "category": "滤波与增强",
+      "question_ids": [
+        "Q023-1",
+        "Q023-2",
+        "Q023-3",
+        "Q023-4",
+        "Q023-5",
+        "Q023-6"
+      ]
+    },
+    {
+      "number": 24,
+      "id": "median",
+      "name": "中值滤波",
+      "category": "滤波与增强",
+      "question_ids": [
+        "Q024-1",
+        "Q024-2",
+        "Q024-3",
+        "Q024-4",
+        "Q024-5",
+        "Q024-6"
+      ]
+    },
+    {
+      "number": 25,
+      "id": "bilateral",
+      "name": "双边滤波",
+      "category": "滤波与增强",
+      "question_ids": [
+        "Q025-1",
+        "Q025-2",
+        "Q025-3",
+        "Q025-4",
+        "Q025-5",
+        "Q025-6"
+      ]
+    },
+    {
+      "number": 26,
+      "id": "nlm",
+      "name": "非局部均值去噪",
+      "category": "滤波与增强",
+      "question_ids": [
+        "Q026-1",
+        "Q026-2",
+        "Q026-3",
+        "Q026-4",
+        "Q026-5",
+        "Q026-6"
+      ]
+    },
+    {
+      "number": 27,
+      "id": "convolution",
+      "name": "自定义卷积核",
+      "category": "滤波与增强",
+      "question_ids": [
+        "Q027-1",
+        "Q027-2",
+        "Q027-3",
+        "Q027-4",
+        "Q027-5",
+        "Q027-6"
+      ]
+    },
+    {
+      "number": 28,
+      "id": "sharpen",
+      "name": "锐化",
+      "category": "滤波与增强",
+      "question_ids": [
+        "Q028-1",
+        "Q028-2",
+        "Q028-3",
+        "Q028-4",
+        "Q028-5",
+        "Q028-6"
+      ]
+    },
+    {
+      "number": 29,
+      "id": "fft",
+      "name": "傅里叶频谱",
+      "category": "滤波与增强",
+      "question_ids": [
+        "Q029-1",
+        "Q029-2",
+        "Q029-3",
+        "Q029-4",
+        "Q029-5",
+        "Q029-6"
+      ]
+    },
+    {
+      "number": 30,
+      "id": "lowpass",
+      "name": "频域低通",
+      "category": "滤波与增强",
+      "question_ids": [
+        "Q030-1",
+        "Q030-2",
+        "Q030-3",
+        "Q030-4",
+        "Q030-5",
+        "Q030-6"
+      ]
+    },
+    {
+      "number": 31,
+      "id": "highpass",
+      "name": "频域高通",
+      "category": "滤波与增强",
+      "question_ids": [
+        "Q031-1",
+        "Q031-2",
+        "Q031-3",
+        "Q031-4",
+        "Q031-5",
+        "Q031-6"
+      ]
+    },
+    {
+      "number": 32,
+      "id": "threshold",
+      "name": "固定阈值",
+      "category": "阈值与形态学",
+      "question_ids": [
+        "Q032-1",
+        "Q032-2",
+        "Q032-3",
+        "Q032-4",
+        "Q032-5",
+        "Q032-6"
+      ]
+    },
+    {
+      "number": 33,
+      "id": "adaptive",
+      "name": "自适应阈值",
+      "category": "阈值与形态学",
+      "question_ids": [
+        "Q033-1",
+        "Q033-2",
+        "Q033-3",
+        "Q033-4",
+        "Q033-5",
+        "Q033-6"
+      ]
+    },
+    {
+      "number": 34,
+      "id": "otsu",
+      "name": "Otsu 自动阈值",
+      "category": "阈值与形态学",
+      "question_ids": [
+        "Q034-1",
+        "Q034-2",
+        "Q034-3",
+        "Q034-4",
+        "Q034-5",
+        "Q034-6"
+      ]
+    },
+    {
+      "number": 35,
+      "id": "erode",
+      "name": "腐蚀",
+      "category": "阈值与形态学",
+      "question_ids": [
+        "Q035-1",
+        "Q035-2",
+        "Q035-3",
+        "Q035-4",
+        "Q035-5",
+        "Q035-6"
+      ]
+    },
+    {
+      "number": 36,
+      "id": "dilate",
+      "name": "膨胀",
+      "category": "阈值与形态学",
+      "question_ids": [
+        "Q036-1",
+        "Q036-2",
+        "Q036-3",
+        "Q036-4",
+        "Q036-5",
+        "Q036-6"
+      ]
+    },
+    {
+      "number": 37,
+      "id": "open",
+      "name": "开运算",
+      "category": "阈值与形态学",
+      "question_ids": [
+        "Q037-1",
+        "Q037-2",
+        "Q037-3",
+        "Q037-4",
+        "Q037-5",
+        "Q037-6"
+      ]
+    },
+    {
+      "number": 38,
+      "id": "close",
+      "name": "闭运算",
+      "category": "阈值与形态学",
+      "question_ids": [
+        "Q038-1",
+        "Q038-2",
+        "Q038-3",
+        "Q038-4",
+        "Q038-5",
+        "Q038-6"
+      ]
+    },
+    {
+      "number": 39,
+      "id": "morph_gradient",
+      "name": "形态学梯度",
+      "category": "阈值与形态学",
+      "question_ids": [
+        "Q039-1",
+        "Q039-2",
+        "Q039-3",
+        "Q039-4",
+        "Q039-5",
+        "Q039-6"
+      ]
+    },
+    {
+      "number": 40,
+      "id": "tophat",
+      "name": "顶帽",
+      "category": "阈值与形态学",
+      "question_ids": [
+        "Q040-1",
+        "Q040-2",
+        "Q040-3",
+        "Q040-4",
+        "Q040-5",
+        "Q040-6"
+      ]
+    },
+    {
+      "number": 41,
+      "id": "blackhat",
+      "name": "黑帽",
+      "category": "阈值与形态学",
+      "question_ids": [
+        "Q041-1",
+        "Q041-2",
+        "Q041-3",
+        "Q041-4",
+        "Q041-5",
+        "Q041-6"
+      ]
+    },
+    {
+      "number": 42,
+      "id": "skeleton",
+      "name": "骨架提取",
+      "category": "阈值与形态学",
+      "question_ids": [
+        "Q042-1",
+        "Q042-2",
+        "Q042-3",
+        "Q042-4",
+        "Q042-5",
+        "Q042-6"
+      ]
+    },
+    {
+      "number": 43,
+      "id": "distance",
+      "name": "距离变换",
+      "category": "阈值与形态学",
+      "question_ids": [
+        "Q043-1",
+        "Q043-2",
+        "Q043-3",
+        "Q043-4",
+        "Q043-5",
+        "Q043-6"
+      ]
+    },
+    {
+      "number": 44,
+      "id": "sobel",
+      "name": "Sobel",
+      "category": "边缘与形状",
+      "question_ids": [
+        "Q044-1",
+        "Q044-2",
+        "Q044-3",
+        "Q044-4",
+        "Q044-5",
+        "Q044-6"
+      ]
+    },
+    {
+      "number": 45,
+      "id": "scharr",
+      "name": "Scharr",
+      "category": "边缘与形状",
+      "question_ids": [
+        "Q045-1",
+        "Q045-2",
+        "Q045-3",
+        "Q045-4",
+        "Q045-5",
+        "Q045-6"
+      ]
+    },
+    {
+      "number": 46,
+      "id": "laplacian",
+      "name": "Laplacian",
+      "category": "边缘与形状",
+      "question_ids": [
+        "Q046-1",
+        "Q046-2",
+        "Q046-3",
+        "Q046-4",
+        "Q046-5",
+        "Q046-6"
+      ]
+    },
+    {
+      "number": 47,
+      "id": "canny",
+      "name": "Canny",
+      "category": "边缘与形状",
+      "question_ids": [
+        "Q047-1",
+        "Q047-2",
+        "Q047-3",
+        "Q047-4",
+        "Q047-5",
+        "Q047-6"
+      ]
+    },
+    {
+      "number": 48,
+      "id": "contours",
+      "name": "轮廓、面积与周长",
+      "category": "边缘与形状",
+      "question_ids": [
+        "Q048-1",
+        "Q048-2",
+        "Q048-3",
+        "Q048-4",
+        "Q048-5",
+        "Q048-6"
+      ]
+    },
+    {
+      "number": 49,
+      "id": "components",
+      "name": "连通域与质心",
+      "category": "边缘与形状",
+      "question_ids": [
+        "Q049-1",
+        "Q049-2",
+        "Q049-3",
+        "Q049-4",
+        "Q049-5",
+        "Q049-6"
+      ]
+    },
+    {
+      "number": 50,
+      "id": "hull",
+      "name": "凸包",
+      "category": "边缘与形状",
+      "question_ids": [
+        "Q050-1",
+        "Q050-2",
+        "Q050-3",
+        "Q050-4",
+        "Q050-5",
+        "Q050-6"
+      ]
+    },
+    {
+      "number": 51,
+      "id": "shape_match",
+      "name": "形状匹配",
+      "category": "边缘与形状",
+      "question_ids": [
+        "Q051-1",
+        "Q051-2",
+        "Q051-3",
+        "Q051-4",
+        "Q051-5",
+        "Q051-6"
+      ]
+    },
+    {
+      "number": 52,
+      "id": "hough_lines",
+      "name": "霍夫直线",
+      "category": "边缘与形状",
+      "question_ids": [
+        "Q052-1",
+        "Q052-2",
+        "Q052-3",
+        "Q052-4",
+        "Q052-5",
+        "Q052-6"
+      ]
+    },
+    {
+      "number": 53,
+      "id": "hough_circles",
+      "name": "霍夫圆",
+      "category": "边缘与形状",
+      "question_ids": [
+        "Q053-1",
+        "Q053-2",
+        "Q053-3",
+        "Q053-4",
+        "Q053-5",
+        "Q053-6"
+      ]
+    },
+    {
+      "number": 54,
+      "id": "contour_area",
+      "name": "轮廓面积",
+      "category": "边缘与形状",
+      "question_ids": [
+        "Q054-1",
+        "Q054-2",
+        "Q054-3",
+        "Q054-4",
+        "Q054-5",
+        "Q054-6"
+      ]
+    },
+    {
+      "number": 55,
+      "id": "contour_perimeter",
+      "name": "轮廓周长",
+      "category": "边缘与形状",
+      "question_ids": [
+        "Q055-1",
+        "Q055-2",
+        "Q055-3",
+        "Q055-4",
+        "Q055-5",
+        "Q055-6"
+      ]
+    },
+    {
+      "number": 56,
+      "id": "centroid",
+      "name": "图像矩与质心",
+      "category": "边缘与形状",
+      "question_ids": [
+        "Q056-1",
+        "Q056-2",
+        "Q056-3",
+        "Q056-4",
+        "Q056-5",
+        "Q056-6"
+      ]
+    },
+    {
+      "number": 57,
+      "id": "bounding_box",
+      "name": "外接框",
+      "category": "边缘与形状",
+      "question_ids": [
+        "Q057-1",
+        "Q057-2",
+        "Q057-3",
+        "Q057-4",
+        "Q057-5",
+        "Q057-6"
+      ]
+    },
+    {
+      "number": 58,
+      "id": "crop",
+      "name": "ROI 裁剪",
+      "category": "几何与传统分割",
+      "question_ids": [
+        "Q058-1",
+        "Q058-2",
+        "Q058-3",
+        "Q058-4",
+        "Q058-5",
+        "Q058-6"
+      ]
+    },
+    {
+      "number": 59,
+      "id": "resize",
+      "name": "缩放与插值",
+      "category": "几何与传统分割",
+      "question_ids": [
+        "Q059-1",
+        "Q059-2",
+        "Q059-3",
+        "Q059-4",
+        "Q059-5",
+        "Q059-6"
+      ]
+    },
+    {
+      "number": 60,
+      "id": "rotate",
+      "name": "旋转",
+      "category": "几何与传统分割",
+      "question_ids": [
+        "Q060-1",
+        "Q060-2",
+        "Q060-3",
+        "Q060-4",
+        "Q060-5",
+        "Q060-6"
+      ]
+    },
+    {
+      "number": 61,
+      "id": "affine",
+      "name": "仿射变换",
+      "category": "几何与传统分割",
+      "question_ids": [
+        "Q061-1",
+        "Q061-2",
+        "Q061-3",
+        "Q061-4",
+        "Q061-5",
+        "Q061-6"
+      ]
+    },
+    {
+      "number": 62,
+      "id": "perspective",
+      "name": "透视变换",
+      "category": "几何与传统分割",
+      "question_ids": [
+        "Q062-1",
+        "Q062-2",
+        "Q062-3",
+        "Q062-4",
+        "Q062-5",
+        "Q062-6"
+      ]
+    },
+    {
+      "number": 63,
+      "id": "register",
+      "name": "图像配准",
+      "category": "几何与传统分割",
+      "question_ids": [
+        "Q063-1",
+        "Q063-2",
+        "Q063-3",
+        "Q063-4",
+        "Q063-5",
+        "Q063-6"
+      ]
+    },
+    {
+      "number": 64,
+      "id": "region_grow",
+      "name": "区域生长",
+      "category": "几何与传统分割",
+      "question_ids": [
+        "Q064-1",
+        "Q064-2",
+        "Q064-3",
+        "Q064-4",
+        "Q064-5",
+        "Q064-6"
+      ]
+    },
+    {
+      "number": 65,
+      "id": "watershed",
+      "name": "分水岭",
+      "category": "几何与传统分割",
+      "question_ids": [
+        "Q065-1",
+        "Q065-2",
+        "Q065-3",
+        "Q065-4",
+        "Q065-5",
+        "Q065-6"
+      ]
+    },
+    {
+      "number": 66,
+      "id": "grabcut",
+      "name": "GrabCut 前景分割",
+      "category": "几何与传统分割",
+      "question_ids": [
+        "Q066-1",
+        "Q066-2",
+        "Q066-3",
+        "Q066-4",
+        "Q066-5",
+        "Q066-6"
+      ]
+    },
+    {
+      "number": 67,
+      "id": "kmeans_segment",
+      "name": "颜色聚类分割",
+      "category": "几何与传统分割",
+      "question_ids": [
+        "Q067-1",
+        "Q067-2",
+        "Q067-3",
+        "Q067-4",
+        "Q067-5",
+        "Q067-6"
+      ]
+    },
+    {
+      "number": 68,
+      "id": "harris",
+      "name": "Harris 角点",
+      "category": "特征与匹配",
+      "question_ids": [
+        "Q068-1",
+        "Q068-2",
+        "Q068-3",
+        "Q068-4",
+        "Q068-5",
+        "Q068-6"
+      ]
+    },
+    {
+      "number": 69,
+      "id": "shi",
+      "name": "Shi-Tomasi 角点",
+      "category": "特征与匹配",
+      "question_ids": [
+        "Q069-1",
+        "Q069-2",
+        "Q069-3",
+        "Q069-4",
+        "Q069-5",
+        "Q069-6"
+      ]
+    },
+    {
+      "number": 70,
+      "id": "sift",
+      "name": "SIFT 特征",
+      "category": "特征与匹配",
+      "question_ids": [
+        "Q070-1",
+        "Q070-2",
+        "Q070-3",
+        "Q070-4",
+        "Q070-5",
+        "Q070-6"
+      ]
+    },
+    {
+      "number": 71,
+      "id": "orb",
+      "name": "ORB 特征",
+      "category": "特征与匹配",
+      "question_ids": [
+        "Q071-1",
+        "Q071-2",
+        "Q071-3",
+        "Q071-4",
+        "Q071-5",
+        "Q071-6"
+      ]
+    },
+    {
+      "number": 72,
+      "id": "hog",
+      "name": "HOG 方向梯度",
+      "category": "特征与匹配",
+      "question_ids": [
+        "Q072-1",
+        "Q072-2",
+        "Q072-3",
+        "Q072-4",
+        "Q072-5",
+        "Q072-6"
+      ]
+    },
+    {
+      "number": 73,
+      "id": "lbp",
+      "name": "LBP 局部纹理",
+      "category": "特征与匹配",
+      "question_ids": [
+        "Q073-1",
+        "Q073-2",
+        "Q073-3",
+        "Q073-4",
+        "Q073-5",
+        "Q073-6"
+      ]
+    },
+    {
+      "number": 74,
+      "id": "matching",
+      "name": "特征匹配",
+      "category": "特征与匹配",
+      "question_ids": [
+        "Q074-1",
+        "Q074-2",
+        "Q074-3",
+        "Q074-4",
+        "Q074-5",
+        "Q074-6"
+      ]
+    },
+    {
+      "number": 75,
+      "id": "ransac",
+      "name": "RANSAC 鲁棒匹配",
+      "category": "特征与匹配",
+      "question_ids": [
+        "Q075-1",
+        "Q075-2",
+        "Q075-3",
+        "Q075-4",
+        "Q075-5",
+        "Q075-6"
+      ]
+    },
+    {
+      "number": 76,
+      "id": "stitch",
+      "name": "图像拼接",
+      "category": "特征与匹配",
+      "question_ids": [
+        "Q076-1",
+        "Q076-2",
+        "Q076-3",
+        "Q076-4",
+        "Q076-5",
+        "Q076-6"
+      ]
+    },
+    {
+      "number": 77,
+      "id": "template",
+      "name": "模板匹配",
+      "category": "特征与匹配",
+      "question_ids": [
+        "Q077-1",
+        "Q077-2",
+        "Q077-3",
+        "Q077-4",
+        "Q077-5",
+        "Q077-6"
+      ]
+    },
+    {
+      "number": 78,
+      "id": "knn",
+      "name": "KNN 小型学习",
+      "category": "特征与匹配",
+      "question_ids": [
+        "Q078-1",
+        "Q078-2",
+        "Q078-3",
+        "Q078-4",
+        "Q078-5",
+        "Q078-6"
+      ]
+    },
+    {
+      "number": 79,
+      "id": "svm",
+      "name": "SVM 小型学习",
+      "category": "特征与匹配",
+      "question_ids": [
+        "Q079-1",
+        "Q079-2",
+        "Q079-3",
+        "Q079-4",
+        "Q079-5",
+        "Q079-6"
+      ]
+    },
+    {
+      "number": 80,
+      "id": "kmeans_demo",
+      "name": "K-means 小型学习",
+      "category": "特征与匹配",
+      "question_ids": [
+        "Q080-1",
+        "Q080-2",
+        "Q080-3",
+        "Q080-4",
+        "Q080-5",
+        "Q080-6"
+      ]
+    },
+    {
+      "number": 81,
+      "id": "count",
+      "name": "零件计数",
+      "category": "工业视觉",
+      "question_ids": [
+        "Q081-1",
+        "Q081-2",
+        "Q081-3",
+        "Q081-4",
+        "Q081-5",
+        "Q081-6"
+      ]
+    },
+    {
+      "number": 82,
+      "id": "measure",
+      "name": "尺寸、角度与间隙",
+      "category": "工业视觉",
+      "question_ids": [
+        "Q082-1",
+        "Q082-2",
+        "Q082-3",
+        "Q082-4",
+        "Q082-5",
+        "Q082-6"
+      ]
+    },
+    {
+      "number": 83,
+      "id": "color_check",
+      "name": "颜色一致性",
+      "category": "工业视觉",
+      "question_ids": [
+        "Q083-1",
+        "Q083-2",
+        "Q083-3",
+        "Q083-4",
+        "Q083-5",
+        "Q083-6"
+      ]
+    },
+    {
+      "number": 84,
+      "id": "difference",
+      "name": "参考图差异",
+      "category": "工业视觉",
+      "question_ids": [
+        "Q084-1",
+        "Q084-2",
+        "Q084-3",
+        "Q084-4",
+        "Q084-5",
+        "Q084-6"
+      ]
+    },
+    {
+      "number": 85,
+      "id": "defects",
+      "name": "表面缺陷规则",
+      "category": "工业视觉",
+      "question_ids": [
+        "Q085-1",
+        "Q085-2",
+        "Q085-3",
+        "Q085-4",
+        "Q085-5",
+        "Q085-6"
+      ]
+    },
+    {
+      "number": 86,
+      "id": "assembly",
+      "name": "缺件与错装规则",
+      "category": "工业视觉",
+      "question_ids": [
+        "Q086-1",
+        "Q086-2",
+        "Q086-3",
+        "Q086-4",
+        "Q086-5",
+        "Q086-6"
+      ]
+    },
+    {
+      "number": 87,
+      "id": "anomaly",
+      "name": "工业异常热力图",
+      "category": "工业视觉",
+      "question_ids": [
+        "Q087-1",
+        "Q087-2",
+        "Q087-3",
+        "Q087-4",
+        "Q087-5",
+        "Q087-6"
+      ]
+    },
+    {
+      "number": 88,
+      "id": "char_check",
+      "name": "字符校验",
+      "category": "工业视觉",
+      "question_ids": [
+        "Q088-1",
+        "Q088-2",
+        "Q088-3",
+        "Q088-4",
+        "Q088-5",
+        "Q088-6"
+      ]
+    },
+    {
+      "number": 89,
+      "id": "industrial_template",
+      "name": "工业模板定位",
+      "category": "工业视觉",
+      "question_ids": [
+        "Q089-1",
+        "Q089-2",
+        "Q089-3",
+        "Q089-4",
+        "Q089-5",
+        "Q089-6"
+      ]
+    },
+    {
+      "number": 90,
+      "id": "angle_measure",
+      "name": "角度测量",
+      "category": "工业视觉",
+      "question_ids": [
+        "Q090-1",
+        "Q090-2",
+        "Q090-3",
+        "Q090-4",
+        "Q090-5",
+        "Q090-6"
+      ]
+    },
+    {
+      "number": 91,
+      "id": "gap_measure",
+      "name": "间隙测量",
+      "category": "工业视觉",
+      "question_ids": [
+        "Q091-1",
+        "Q091-2",
+        "Q091-3",
+        "Q091-4",
+        "Q091-5",
+        "Q091-6"
+      ]
+    },
+    {
+      "number": 92,
+      "id": "qr",
+      "name": "二维码识别",
+      "category": "文字与图文理解",
+      "question_ids": [
+        "Q092-1",
+        "Q092-2",
+        "Q092-3",
+        "Q092-4",
+        "Q092-5",
+        "Q092-6"
+      ]
+    },
+    {
+      "number": 93,
+      "id": "barcode",
+      "name": "条码识别",
+      "category": "文字与图文理解",
+      "question_ids": [
+        "Q093-1",
+        "Q093-2",
+        "Q093-3",
+        "Q093-4",
+        "Q093-5",
+        "Q093-6"
+      ]
+    },
+    {
+      "number": 94,
+      "id": "ocr",
+      "name": "文字检测与识别",
+      "category": "文字与图文理解",
+      "question_ids": [
+        "Q094-1",
+        "Q094-2",
+        "Q094-3",
+        "Q094-4",
+        "Q094-5",
+        "Q094-6"
+      ]
+    },
+    {
+      "number": 95,
+      "id": "layout",
+      "name": "版面分析",
+      "category": "文字与图文理解",
+      "question_ids": [
+        "Q095-1",
+        "Q095-2",
+        "Q095-3",
+        "Q095-4",
+        "Q095-5",
+        "Q095-6"
+      ]
+    },
+    {
+      "number": 96,
+      "id": "similarity",
+      "name": "图像相似度检索",
+      "category": "文字与图文理解",
+      "question_ids": [
+        "Q096-1",
+        "Q096-2",
+        "Q096-3",
+        "Q096-4",
+        "Q096-5",
+        "Q096-6"
+      ]
+    },
+    {
+      "number": 97,
+      "id": "text_retrieval",
+      "name": "图文检索",
+      "category": "文字与图文理解",
+      "question_ids": [
+        "Q097-1",
+        "Q097-2",
+        "Q097-3",
+        "Q097-4",
+        "Q097-5",
+        "Q097-6"
+      ]
+    },
+    {
+      "number": 98,
+      "id": "grounding",
+      "name": "文字提示目标检测",
+      "category": "文字与图文理解",
+      "question_ids": [
+        "Q098-1",
+        "Q098-2",
+        "Q098-3",
+        "Q098-4",
+        "Q098-5",
+        "Q098-6"
+      ]
+    },
+    {
+      "number": 99,
+      "id": "caption",
+      "name": "图像描述",
+      "category": "文字与图文理解",
+      "question_ids": [
+        "Q099-1",
+        "Q099-2",
+        "Q099-3",
+        "Q099-4",
+        "Q099-5",
+        "Q099-6"
+      ]
+    },
+    {
+      "number": 100,
+      "id": "vqa",
+      "name": "视觉问答",
+      "category": "文字与图文理解",
+      "question_ids": [
+        "Q100-1",
+        "Q100-2",
+        "Q100-3",
+        "Q100-4",
+        "Q100-5",
+        "Q100-6"
+      ]
+    },
+    {
+      "number": 101,
+      "id": "classify",
+      "name": "图像分类",
+      "category": "深度学习识别",
+      "question_ids": [
+        "Q101-1",
+        "Q101-2",
+        "Q101-3",
+        "Q101-4",
+        "Q101-5",
+        "Q101-6"
+      ]
+    },
+    {
+      "number": 102,
+      "id": "detect",
+      "name": "目标检测",
+      "category": "深度学习识别",
+      "question_ids": [
+        "Q102-1",
+        "Q102-2",
+        "Q102-3",
+        "Q102-4",
+        "Q102-5",
+        "Q102-6"
+      ]
+    },
+    {
+      "number": 103,
+      "id": "obb",
+      "name": "旋转框检测",
+      "category": "深度学习识别",
+      "question_ids": [
+        "Q103-1",
+        "Q103-2",
+        "Q103-3",
+        "Q103-4",
+        "Q103-5",
+        "Q103-6"
+      ]
+    },
+    {
+      "number": 104,
+      "id": "instance",
+      "name": "实例分割",
+      "category": "深度学习识别",
+      "question_ids": [
+        "Q104-1",
+        "Q104-2",
+        "Q104-3",
+        "Q104-4",
+        "Q104-5",
+        "Q104-6"
+      ]
+    },
+    {
+      "number": 105,
+      "id": "pose",
+      "name": "人体姿态",
+      "category": "深度学习识别",
+      "question_ids": [
+        "Q105-1",
+        "Q105-2",
+        "Q105-3",
+        "Q105-4",
+        "Q105-5",
+        "Q105-6"
+      ]
+    },
+    {
+      "number": 106,
+      "id": "semantic",
+      "name": "语义分割",
+      "category": "深度学习识别",
+      "question_ids": [
+        "Q106-1",
+        "Q106-2",
+        "Q106-3",
+        "Q106-4",
+        "Q106-5",
+        "Q106-6"
+      ]
+    },
+    {
+      "number": 107,
+      "id": "panoptic",
+      "name": "全景分割",
+      "category": "深度学习识别",
+      "question_ids": [
+        "Q107-1",
+        "Q107-2",
+        "Q107-3",
+        "Q107-4",
+        "Q107-5",
+        "Q107-6"
+      ]
+    },
+    {
+      "number": 108,
+      "id": "sam",
+      "name": "交互式分割",
+      "category": "深度学习识别",
+      "question_ids": [
+        "Q108-1",
+        "Q108-2",
+        "Q108-3",
+        "Q108-4",
+        "Q108-5",
+        "Q108-6"
+      ]
+    },
+    {
+      "number": 109,
+      "id": "face",
+      "name": "人脸关键点",
+      "category": "深度学习识别",
+      "question_ids": [
+        "Q109-1",
+        "Q109-2",
+        "Q109-3",
+        "Q109-4",
+        "Q109-5",
+        "Q109-6"
+      ]
+    },
+    {
+      "number": 110,
+      "id": "hand",
+      "name": "手部关键点",
+      "category": "深度学习识别",
+      "question_ids": [
+        "Q110-1",
+        "Q110-2",
+        "Q110-3",
+        "Q110-4",
+        "Q110-5",
+        "Q110-6"
+      ]
+    },
+    {
+      "number": 111,
+      "id": "depth",
+      "name": "单目相对深度",
+      "category": "标定与三维",
+      "question_ids": [
+        "Q111-1",
+        "Q111-2",
+        "Q111-3",
+        "Q111-4",
+        "Q111-5",
+        "Q111-6"
+      ]
+    },
+    {
+      "number": 112,
+      "id": "calibrate",
+      "name": "相机标定",
+      "category": "标定与三维",
+      "question_ids": [
+        "Q112-1",
+        "Q112-2",
+        "Q112-3",
+        "Q112-4",
+        "Q112-5",
+        "Q112-6"
+      ]
+    },
+    {
+      "number": 113,
+      "id": "undistort",
+      "name": "畸变校正",
+      "category": "标定与三维",
+      "question_ids": [
+        "Q113-1",
+        "Q113-2",
+        "Q113-3",
+        "Q113-4",
+        "Q113-5",
+        "Q113-6"
+      ]
+    },
+    {
+      "number": 114,
+      "id": "stereo",
+      "name": "双目视差与深度",
+      "category": "标定与三维",
+      "question_ids": [
+        "Q114-1",
+        "Q114-2",
+        "Q114-3",
+        "Q114-4",
+        "Q114-5",
+        "Q114-6"
+      ]
+    },
+    {
+      "number": 115,
+      "id": "stereo_rectify",
+      "name": "双目校正",
+      "category": "标定与三维",
+      "question_ids": [
+        "Q115-1",
+        "Q115-2",
+        "Q115-3",
+        "Q115-4",
+        "Q115-5",
+        "Q115-6"
+      ]
+    },
+    {
+      "number": 116,
+      "id": "reconstruct",
+      "name": "双视图基础重建",
+      "category": "标定与三维",
+      "question_ids": [
+        "Q116-1",
+        "Q116-2",
+        "Q116-3",
+        "Q116-4",
+        "Q116-5",
+        "Q116-6"
+      ]
+    },
+    {
+      "number": 117,
+      "id": "pointcloud",
+      "name": "点云查看、滤波与配准",
+      "category": "标定与三维",
+      "question_ids": [
+        "Q117-1",
+        "Q117-2",
+        "Q117-3",
+        "Q117-4",
+        "Q117-5",
+        "Q117-6"
+      ]
+    },
+    {
+      "number": 118,
+      "id": "superres",
+      "name": "深度学习超分辨率",
+      "category": "图像恢复",
+      "question_ids": [
+        "Q118-1",
+        "Q118-2",
+        "Q118-3",
+        "Q118-4",
+        "Q118-5",
+        "Q118-6"
+      ]
+    },
+    {
+      "number": 119,
+      "id": "denoise_dl",
+      "name": "深度学习去噪",
+      "category": "图像恢复",
+      "question_ids": [
+        "Q119-1",
+        "Q119-2",
+        "Q119-3",
+        "Q119-4",
+        "Q119-5",
+        "Q119-6"
+      ]
+    },
+    {
+      "number": 120,
+      "id": "deblur",
+      "name": "深度学习去模糊",
+      "category": "图像恢复",
+      "question_ids": [
+        "Q120-1",
+        "Q120-2",
+        "Q120-3",
+        "Q120-4",
+        "Q120-5",
+        "Q120-6"
+      ]
+    },
+    {
+      "number": 121,
+      "id": "matting",
+      "name": "前景抠图与背景替换",
+      "category": "图像恢复",
+      "question_ids": [
+        "Q121-1",
+        "Q121-2",
+        "Q121-3",
+        "Q121-4",
+        "Q121-5",
+        "Q121-6"
+      ]
+    },
+    {
+      "number": 122,
+      "id": "lowlight",
+      "name": "低光增强 Retinex",
+      "category": "图像恢复",
+      "question_ids": [
+        "Q122-1",
+        "Q122-2",
+        "Q122-3",
+        "Q122-4",
+        "Q122-5",
+        "Q122-6"
+      ]
+    },
+    {
+      "number": 123,
+      "id": "inpaint",
+      "name": "图像修复",
+      "category": "图像恢复",
+      "question_ids": [
+        "Q123-1",
+        "Q123-2",
+        "Q123-3",
+        "Q123-4",
+        "Q123-5",
+        "Q123-6"
+      ]
+    },
+    {
+      "number": 124,
+      "id": "action",
+      "name": "视频动作识别",
+      "category": "视频与时序",
+      "question_ids": [
+        "Q124-1",
+        "Q124-2",
+        "Q124-3",
+        "Q124-4",
+        "Q124-5",
+        "Q124-6"
+      ]
+    },
+    {
+      "number": 125,
+      "id": "frame_diff",
+      "name": "帧差",
+      "category": "视频与时序",
+      "question_ids": [
+        "Q125-1",
+        "Q125-2",
+        "Q125-3",
+        "Q125-4",
+        "Q125-5",
+        "Q125-6"
+      ]
+    },
+    {
+      "number": 126,
+      "id": "mog2",
+      "name": "背景建模 MOG2",
+      "category": "视频与时序",
+      "question_ids": [
+        "Q126-1",
+        "Q126-2",
+        "Q126-3",
+        "Q126-4",
+        "Q126-5",
+        "Q126-6"
+      ]
+    },
+    {
+      "number": 127,
+      "id": "flow_sparse",
+      "name": "稀疏光流",
+      "category": "视频与时序",
+      "question_ids": [
+        "Q127-1",
+        "Q127-2",
+        "Q127-3",
+        "Q127-4",
+        "Q127-5",
+        "Q127-6"
+      ]
+    },
+    {
+      "number": 128,
+      "id": "flow_dense",
+      "name": "稠密光流",
+      "category": "视频与时序",
+      "question_ids": [
+        "Q128-1",
+        "Q128-2",
+        "Q128-3",
+        "Q128-4",
+        "Q128-5",
+        "Q128-6"
+      ]
+    },
+    {
+      "number": 129,
+      "id": "single_track",
+      "name": "单目标跟踪",
+      "category": "视频与时序",
+      "question_ids": [
+        "Q129-1",
+        "Q129-2",
+        "Q129-3",
+        "Q129-4",
+        "Q129-5",
+        "Q129-6"
+      ]
+    },
+    {
+      "number": 130,
+      "id": "multi_track",
+      "name": "多目标跟踪与轨迹",
+      "category": "视频与时序",
+      "question_ids": [
+        "Q130-1",
+        "Q130-2",
+        "Q130-3",
+        "Q130-4",
+        "Q130-5",
+        "Q130-6"
+      ]
+    },
+    {
+      "number": 131,
+      "id": "events",
+      "name": "计数、越线、区域与停留",
+      "category": "视频与时序",
+      "question_ids": [
+        "Q131-1",
+        "Q131-2",
+        "Q131-3",
+        "Q131-4",
+        "Q131-5",
+        "Q131-6"
+      ]
+    },
+    {
+      "number": 132,
+      "id": "sequence",
+      "name": "事件顺序规则",
+      "category": "视频与时序",
+      "question_ids": [
+        "Q132-1",
+        "Q132-2",
+        "Q132-3",
+        "Q132-4",
+        "Q132-5",
+        "Q132-6"
+      ]
+    },
+    {
+      "number": 133,
+      "id": "video_segment",
+      "name": "视频分割",
+      "category": "视频与时序",
+      "question_ids": [
+        "Q133-1",
+        "Q133-2",
+        "Q133-3",
+        "Q133-4",
+        "Q133-5",
+        "Q133-6"
+      ]
+    },
+    {
+      "number": 134,
+      "id": "gradcam",
+      "name": "Grad-CAM 类激活图",
+      "category": "模型学习与评估",
+      "question_ids": [
+        "Q134-1",
+        "Q134-2",
+        "Q134-3",
+        "Q134-4",
+        "Q134-5",
+        "Q134-6"
+      ]
+    },
+    {
+      "number": 135,
+      "id": "feature_maps",
+      "name": "特征图可视化",
+      "category": "模型学习与评估",
+      "question_ids": [
+        "Q135-1",
+        "Q135-2",
+        "Q135-3",
+        "Q135-4",
+        "Q135-5",
+        "Q135-6"
+      ]
+    },
+    {
+      "number": 136,
+      "id": "benchmark",
+      "name": "推理后端对比",
+      "category": "模型学习与评估",
+      "question_ids": [
+        "Q136-1",
+        "Q136-2",
+        "Q136-3",
+        "Q136-4",
+        "Q136-5",
+        "Q136-6"
+      ]
+    },
+    {
+      "number": 137,
+      "id": "augmentation",
+      "name": "预处理与数据增强",
+      "category": "模型学习与评估",
+      "question_ids": [
+        "Q137-1",
+        "Q137-2",
+        "Q137-3",
+        "Q137-4",
+        "Q137-5",
+        "Q137-6"
+      ]
+    },
+    {
+      "number": 138,
+      "id": "eval_classification",
+      "name": "分类指标",
+      "category": "模型学习与评估",
+      "question_ids": [
+        "Q138-1",
+        "Q138-2",
+        "Q138-3",
+        "Q138-4",
+        "Q138-5",
+        "Q138-6"
+      ]
+    },
+    {
+      "number": 139,
+      "id": "eval_detection",
+      "name": "检测 AP / mAP",
+      "category": "模型学习与评估",
+      "question_ids": [
+        "Q139-1",
+        "Q139-2",
+        "Q139-3",
+        "Q139-4",
+        "Q139-5",
+        "Q139-6"
+      ]
+    },
+    {
+      "number": 140,
+      "id": "eval_segmentation",
+      "name": "分割 IoU / Dice",
+      "category": "模型学习与评估",
+      "question_ids": [
+        "Q140-1",
+        "Q140-2",
+        "Q140-3",
+        "Q140-4",
+        "Q140-5",
+        "Q140-6"
+      ]
+    }
+  ]
+}

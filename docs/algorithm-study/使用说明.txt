@@ -1,0 +1,24 @@
+计算机视觉 140 算法学习资料
+
+01_140算法原理与练习.docx：学习册，包含共同基础、22 套模型架构专题、140 个算法原理、公式、实验建议和学习练习。每个算法 6 题，共 840 题。学习册不含参考答案。
+02_140算法练习参考答案.docx：独立答案册，按相同算法编号、算法 ID 和题号提供 840 题参考答案。
+同名 PDF 是便于直接阅读和打印的版式固定版本。
+
+学习范围以当前项目 docs/algorithm-catalog.json 中的 140 个入口为准。共享底层方法的多个入口仍分别讲解其任务、输出和边界。算法编号按 13 个模块的教学顺序编排；查找时可使用目录、算法 ID 或 Q001-1 这样的题号。
+
+深度学习部分说明输入处理、骨干、特征融合、解码器、任务头及后处理，并配有模块流程图。模型按本地实际加载的版本编写，例如资源 ID edsr 实际对应 Swin2SR，swin-denoise 实际对应 Restormer。模型架构编号 M01–M22 可在算法章节与专题之间交叉定位。
+
+建议先独立做题，再使用答案册核对。公式采用可编辑文本；Word 中可修改正文、批注或做学习笔记。目录和页码已更新，后续修改后可在 Word 中更新目录。DOCX 在不同办公软件或字体环境中的分页可能略有变化，固定分页以 PDF 为准。
+
+可维护源材料保存在 source/，覆盖与校验报告保存在 quality/。source/01–13 开头的 txt 文件保存各模块原创扩展内容和题目答案，architectures.txt 保存模型组成，content.json 为汇总数据。
+
+重新生成（从项目根目录执行，依赖 python-docx、matplotlib、Pillow、PyMuPDF、LibreOffice 及系统 Python UNO）：
+python docs/algorithm-study/source/build_documents.py
+/usr/bin/python3 docs/algorithm-study/source/update_toc.py
+python /usr/zyy/Fuda_CVPreject_V3/.agents/skills/professional-docx/scripts/check_docx.py docs/algorithm-study/01_140算法原理与练习.docx
+python /usr/zyy/Fuda_CVPreject_V3/.agents/skills/professional-docx/scripts/check_docx.py docs/algorithm-study/02_140算法练习参考答案.docx
+python /usr/zyy/Fuda_CVPreject_V3/.agents/skills/professional-docx/scripts/render_preview.py docs/algorithm-study/01_140算法原理与练习.docx --out /tmp/visionlab-study-final
+python /usr/zyy/Fuda_CVPreject_V3/.agents/skills/professional-docx/scripts/render_preview.py docs/algorithm-study/02_140算法练习参考答案.docx --out /tmp/visionlab-answers-final
+python docs/algorithm-study/source/validate_documents.py --study-preview /tmp/visionlab-study-final --answer-preview /tmp/visionlab-answers-final
+
+版式基于用户指定的 professional-docx skill 模板；资料来源在学习册末尾列出。
